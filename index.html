@@ -3,35 +3,11 @@
 
 <div id="header"></div>
 <script>
-  fetch('pages/header.html')
+  fetch('/pages/header.html')
     .then(r => r.text())
     .then(html => document.getElementById('header').innerHTML = html);
 </script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      background-color: #1a1a2e;
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #aaa;
-    }
-  </style>
-</head>
 <body>
   <h1>Hello, World!</h1>
   <p>My local server is working.</p>
