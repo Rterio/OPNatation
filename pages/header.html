@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #1a1a2e;
+      padding: 0 40px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #e94560;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.4rem;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #e94560;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #e94560;
+    }
+
+    nav a.active {
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Hamburger (mobile) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 2px;
+      background-color: white;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .hamburger { display: flex; }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a2e;
+        padding: 20px 40px;
+        gap: 15px;
+        border-bottom: 2px solid #e94560;
+      }
+
+      nav.open { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">My<span>Site</span></a>
+
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
