@@ -171,6 +171,12 @@
         border-bottom: 2px solid #e94560;
       }
 
+      nav.far-right {
+       margin-left: auto;
+      display: flex;
+      align-items: center;
+      }
+
       nav.left.open, nav.right.open {
         display: flex;
       }
@@ -213,33 +219,43 @@
   <!-- LEFT NAV -->
   <nav class="left" id="nav-left">
     <div class="nav-item">
-      <a href="/index.html" class="active">Home</a>
+      <a href="#">Compétitions</a>
+      <div class="dropdown">
+        <a href="pages/calendrier.html">Calendrier</a>
+        <a href="pages/Temps.html">Qualifications et records</a>
     </div>
     <div class="nav-item has-dropdown">
-      <a href="#">About</a>
+      <a href="#">Le Club</a>
       <div class="dropdown">
-        <a href="/pages/team.html">Our Team</a>
-        <a href="/pages/mission.html">Mission</a>
+        <a href="pages/Staff.html">Entraîneurs et CA</a>
+        <a href="pages/Galerie.html">Galerie</a>
       </div>
     </div>
   </nav>
 
   <!-- CENTER LOGO -->
   <a href="/index.html" class="logo">
-    <img src="/static/logo.png" alt="Site Logo">
+    <img src="static/image-removebg-preview.png" alt="Site Logo">
   </a>
 
   <!-- RIGHT NAV -->
   <nav class="right" id="nav-right">
     <div class="nav-item has-dropdown">
-      <a href="#">Projects</a>
+      <a href="#">Financement</a>
       <div class="dropdown">
-        <a href="/pages/project1.html">Project One</a>
-        <a href="/pages/project2.html">Project Two</a>
+        <a href="pages/Commanditaires.html">Commanditaires</a>
+        <a href="pages/Parrains.html">Parrains</a>
       </div>
     </div>
     <div class="nav-item">
-      <a href="/pages/contact.html">Contact</a>
+      <a href="/pages/contact.html">Boutique</a>
+    </div>
+  </nav>
+
+  <!-- FAR RIGHT BUTTON -->
+  <nav class="far-right" id="nav-far-right">
+    <div class="nav-item">
+      <a href="https://www.zeffy.com/fr-CA/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c" target="_blank" rel="noopener">Boutique</a>
     </div>
   </nav>
 
