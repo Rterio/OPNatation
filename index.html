@@ -12,44 +12,31 @@
       margin: 0;
     }
 
-main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 20px;
-  background-color: #ffffff;
-}
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
 
-.calendar-container {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-  /* Hides the Google branding bar at the bottom */
-  position: relative;
-}
+    .calendar-container {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      height: 690px; /* clips just the Google branding at bottom */
+    }
 
-.calendar-container iframe {
-  display: block;
-  width: 100%;
-  height: 750px;
-  border: none;
-  /* Shift up to hide the "Add to Google Calendar" footer */
-  margin-bottom: -60px;
-}
-
-/* Covers the bottom Google branding */
-.calendar-container::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background-color: white;
-}
+    .calendar-container iframe {
+      display: block;
+      width: 100%;
+      height: 750px;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -57,7 +44,7 @@ main {
   <!-- Header -->
   <div id="header"></div>
   <script>
-    fetch('pages/header.html')
+    fetch('/OPNatation/pages/header.html')
       .then(r => r.text())
       .then(html => document.getElementById('header').innerHTML = html);
   </script>
@@ -65,14 +52,20 @@ main {
   <!-- Page content -->
   <main>
     <div class="calendar-container">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FToronto&showPrint=0&src=OTBlNTUxYTY1NjE0MzY2OWZhZWRlMWE2ZDYwYTVkZmIxNTQ3ODNkMDg3MzM2MTRlZmJjYWFjYzA3MzVhNTRlZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZmFtaWx5MTEzMjAzNjI4Mzg2OTIxNjQ1NTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23b39ddb&color=%23ef6c00" style="border:solid 1px #777" width="800" height="750" frameborder="0" scrolling="no"></iframe>
+      <iframe src="https://calendar.google.com/calendar/embed?height=750&wkst=1&ctz=America%2FToronto&showPrint=0&src=OTBlNTUxYTY1NjE0MzY2OWZhZWRlMWE2ZDYwYTVkZmIxNTQ3ODNkMDg3MzM2MTRlZmJjYWFjYzA3MzVhNTRlZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZmFtaWx5MTEzMjAzNjI4Mzg2OTIxNjQ1NTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23b39ddb&color=%23ef6c00"
+        style="border: none"
+        width="100%"
+        height="750"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
     </div>
-   </main>
+  </main>
 
   <!-- Footer -->
   <div id="footer"></div>
   <script>
-    fetch('pages/footer.html')
+    fetch('/OPNatation/pages/footer.html')
       .then(r => r.text())
       .then(html => document.getElementById('footer').innerHTML = html);
   </script>
