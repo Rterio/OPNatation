@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<div id="header"></div>
-<script>
-  fetch('pages/header.html')
-    .then(r => r.text())
-    .then(html => document.getElementById('header').innerHTML = html);
-</script>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPNatation</title>
+</head>
 <body>
+
+  <!-- Header loads here -->
+  <div id="header"></div>
+  <script>
+    fetch('pages/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('header').innerHTML = html);
+  </script>
+
+  <!-- Your page content -->
   <h1>Hello, World!</h1>
   <p>My local server is working.</p>
+
 </body>
 </html>
