@@ -14,7 +14,7 @@
     header {
       background-color: #1a1a2e;
       padding: 0 40px;
-      height: 65px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -23,25 +23,36 @@
       z-index: 1000;
     }
 
-    .logo {
-      color: white;
-      font-size: 1.4rem;
-      font-family: Georgia, serif;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .logo span {
-      color: #e94560;
-    }
-
+    /* --- Left and right nav halves --- */
     nav {
       display: flex;
-      gap: 30px;
       align-items: center;
+      gap: 30px;
+      flex: 1;
     }
 
-    /* --- Top-level nav items --- */
+    nav.right {
+      justify-content: flex-end;
+    }
+
+    /* --- Logo in the center --- */
+    .logo {
+      flex-shrink: 0;
+      margin: 0 30px;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .logo img:hover {
+      opacity: 0.85;
+    }
+
+    /* --- Nav items --- */
     .nav-item {
       position: relative;
     }
@@ -55,7 +66,8 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      padding: 22px 0;
+      padding: 24px 0;
+      white-space: nowrap;
     }
 
     .nav-item > a:hover {
@@ -67,7 +79,7 @@
       font-weight: bold;
     }
 
-    /* Arrow indicator for dropdowns */
+    /* Arrow for dropdowns */
     .nav-item.has-dropdown > a::after {
       content: '▾';
       font-size: 0.75rem;
@@ -78,7 +90,7 @@
       transform: rotate(180deg);
     }
 
-    /* --- Dropdown menu --- */
+    /* --- Dropdown --- */
     .dropdown {
       display: none;
       position: absolute;
@@ -89,6 +101,12 @@
       border-top: none;
       min-width: 180px;
       flex-direction: column;
+    }
+
+    /* Right-side dropdowns open to the left */
+    nav.right .dropdown {
+      left: auto;
+      right: 0;
     }
 
     .nav-item:hover .dropdown {
@@ -131,24 +149,30 @@
       display: block;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .hamburger { display: flex; }
 
-      nav {
+      nav.left, nav.right {
         display: none;
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
-        top: 65px;
+        top: 70px;
         left: 0;
         width: 100%;
         background-color: #1a1a2e;
-        padding: 20px 40px;
+        padding: 10px 40px 20px;
         gap: 0;
         border-bottom: 2px solid #e94560;
       }
 
-      nav.open { display: flex; }
+      nav.left.open, nav.right.open {
+        display: flex;
+      }
+
+      nav.right.open {
+        top: auto;
+      }
 
       .nav-item > a {
         padding: 12px 0;
@@ -163,72 +187,80 @@
         margin-bottom: 8px;
       }
 
-      .nav-item:hover .dropdown,
       .nav-item.open .dropdown {
         display: flex;
+      }
+
+      .logo {
+        margin: 0 15px;
+      }
+
+      .logo img {
+        height: 36px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="/index.html" class="logo">My<span>Site</span></a>
+<header>
 
-    <button class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="main-nav">
-
-      <!-- Regular link (no dropdown) -->
-      <div class="nav-item">
-        <a href="/index.html" class="active">Home</a>
+  <!-- LEFT NAV -->
+  <nav class="left" id="nav-left">
+    <div class="nav-item">
+      <a href="/index.html" class="active">Home</a>
+    </div>
+    <div class="nav-item has-dropdown">
+      <a href="#">About</a>
+      <div class="dropdown">
+        <a href="/pages/team.html">Our Team</a>
+        <a href="/pages/mission.html">Mission</a>
       </div>
+    </div>
+  </nav>
 
-      <!-- Dropdown example 1 -->
-      <div class="nav-item has-dropdown">
-        <a href="#">About</a>
-        <div class="dropdown">
-          <a href="/pages/team.html">Our Team</a>
-          <a href="/pages/mission.html">Mission</a>
-          <a href="/pages/history.html">History</a>
-        </div>
+  <!-- CENTER LOGO -->
+  <a href="/index.html" class="logo">
+    <img src="static/image-removebg-preview.png" alt="Site Logo">
+  </a>
+
+  <!-- RIGHT NAV -->
+  <nav class="right" id="nav-right">
+    <div class="nav-item has-dropdown">
+      <a href="#">Projects</a>
+      <div class="dropdown">
+        <a href="/pages/project1.html">Project One</a>
+        <a href="/pages/project2.html">Project Two</a>
       </div>
+    </div>
+    <div class="nav-item">
+      <a href="/pages/contact.html">Contact</a>
+    </div>
+  </nav>
 
-      <!-- Dropdown example 2 -->
-      <div class="nav-item has-dropdown">
-        <a href="#">Projects</a>
-        <div class="dropdown">
-          <a href="/pages/project1.html">Project One</a>
-          <a href="/pages/project2.html">Project Two</a>
-          <a href="/pages/project3.html">Project Three</a>
-        </div>
-      </div>
+  <!-- HAMBURGER (mobile only) -->
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 
-      <!-- Regular link (no dropdown) -->
-      <div class="nav-item">
-        <a href="/pages/contact.html">Contact</a>
-      </div>
+</header>
 
-    </nav>
-  </header>
+<script>
+  function toggleMenu() {
+    document.getElementById('nav-left').classList.toggle('open');
+    document.getElementById('nav-right').classList.toggle('open');
+  }
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
-
-    // Mobile: tap to open dropdown instead of hover
-    document.querySelectorAll('.has-dropdown > a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 600) {
-          e.preventDefault();
-          this.parentElement.classList.toggle('open');
-             }
-      });
+  // Mobile: tap to toggle dropdowns
+  document.querySelectorAll('.has-dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      if (window.innerWidth <= 700) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+      }
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
