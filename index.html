@@ -3,7 +3,7 @@
 
 <div id="header"></div>
 <script>
-  fetch('/pages/header.html')
+  fetch('pages/header.html')
     .then(r => r.text())
     .then(html => document.getElementById('header').innerHTML = html);
 </script>
