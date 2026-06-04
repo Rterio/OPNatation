@@ -12,14 +12,15 @@
       margin: 0;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px 20px;
-      background-color: #ffffff;
-    }
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* add this */
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
 
     .calendar-container {
       width: 100%;
@@ -37,6 +38,15 @@
       height: 750px;
       border: none;
     }
+
+    .welcome-text {
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
   </style>
 </head>
 <body>
@@ -52,9 +62,9 @@
   <!-- Page content -->
   <main>
 
-    <div>
-    <h1>Bienvenue sur le site du club de natation Opti-Plus. Depuis le 30 août 1989, le club de natation Opti-Plus est un organisme à but non lucratif voué à la promotion et au développement de la natation, et ce, en favorisant tant l’initiation au sport, la progression des membres athlètes que le développement de l’excellence.</h1>
-    </div>
+<div class="welcome-text">
+  <p>Bienvenue sur le site du club de natation Opti-Plus. Depuis le 30 août 1989, le club de natation Opti-Plus est un organisme à but non lucratif voué à la promotion et au développement de la natation, et ce, en favorisant tant l’initiation au sport, la progression des membres athlètes que le développement de l’excellence.</p>
+</div>
 
     <div class="calendar-container">
       <h1>Calendrier des Activités</h1>
@@ -65,7 +75,7 @@
         frameborder="0"
         scrolling="no">
       </iframe>
-      
+
     </div>
   </main>
 
