@@ -17,7 +17,7 @@
       height: 70px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       border-bottom: 2px solid #e94560;
       position: relative;
       z-index: 1000;
@@ -28,7 +28,6 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      flex: 1;
     }
 
     nav.right {
@@ -38,7 +37,7 @@
     /* --- Logo in the center --- */
     .logo {
       flex-shrink: 0;
-      margin: 0 30px;
+      margin: 0 20px;
     }
 
     .logo img {
@@ -140,6 +139,8 @@
       cursor: pointer;
       background: none;
       border: none;
+      position: absolute;
+      right: 40px;
     }
 
     .hamburger span {
@@ -151,6 +152,10 @@
 
     @media (max-width: 700px) {
       .hamburger { display: flex; }
+
+      header {
+        justify-content: flex-start;
+      }
 
       nav.left, nav.right {
         display: none;
@@ -221,7 +226,7 @@
 
   <!-- CENTER LOGO -->
   <a href="/index.html" class="logo">
-    <img src="static/image-removebg-preview.png" alt="Site Logo">
+    <img src="/static/logo.png" alt="Site Logo">
   </a>
 
   <!-- RIGHT NAV -->
@@ -244,7 +249,7 @@
   </button>
 
 </header>
-  <!-- RIGHT NAV -->
+
 <script>
   function toggleMenu() {
     document.getElementById('nav-left').classList.toggle('open');
