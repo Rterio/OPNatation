@@ -34,6 +34,13 @@
       justify-content: flex-end;
     }
 
+    /* --- Far right nav --- */
+    nav.far-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
     /* --- Logo in the center --- */
     .logo {
       flex-shrink: 0;
@@ -157,7 +164,7 @@
         justify-content: flex-start;
       }
 
-      nav.left, nav.right {
+      nav.left, nav.right, nav.far-right {
         display: none;
         flex-direction: column;
         align-items: flex-start;
@@ -169,19 +176,14 @@
         padding: 10px 40px 20px;
         gap: 0;
         border-bottom: 2px solid #e94560;
+        margin-left: 0;
       }
 
-      nav.far-right {
-       margin-left: auto;
-      display: flex;
-      align-items: center;
-      }
-
-      nav.left.open, nav.right.open {
+      nav.left.open, nav.right.open, nav.far-right.open {
         display: flex;
       }
 
-      nav.right.open {
+      nav.right.open, nav.far-right.open {
         top: auto;
       }
 
@@ -218,11 +220,12 @@
 
   <!-- LEFT NAV -->
   <nav class="left" id="nav-left">
-    <div class="nav-item">
+    <div class="nav-item has-dropdown">
       <a href="#">Compétitions</a>
       <div class="dropdown">
         <a href="pages/calendrier.html">Calendrier</a>
         <a href="pages/Temps.html">Qualifications et records</a>
+      </div>
     </div>
     <div class="nav-item has-dropdown">
       <a href="#">Le Club</a>
@@ -248,14 +251,14 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="/pages/contact.html">Boutique</a>
+      <a href="https://www.zeffy.com/fr-CA/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c" target="_blank" rel="noopener">Boutique</a>
     </div>
   </nav>
 
   <!-- FAR RIGHT BUTTON -->
   <nav class="far-right" id="nav-far-right">
     <div class="nav-item">
-      <a href="https://www.zeffy.com/fr-CA/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c" target="_blank" rel="noopener">Boutique</a>
+      <a href="" target="_blank" rel="noopener">Inscriptions</a>
     </div>
   </nav>
 
@@ -270,6 +273,7 @@
   function toggleMenu() {
     document.getElementById('nav-left').classList.toggle('open');
     document.getElementById('nav-right').classList.toggle('open');
+    document.getElementById('nav-far-right').classList.toggle('open');
   }
 
   // Mobile: tap to toggle dropdowns
