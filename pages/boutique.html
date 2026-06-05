@@ -47,7 +47,7 @@
       margin-bottom: 1rem;
     }
 
-    /* --- Impeccable Custom Store Grid --- */
+    /* --- Custom Store Grid --- */
     .shop-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -139,7 +139,6 @@
       background-color: #2e2e4f;
     }
 
-    /* Fallback display styled to match our wrapper if JS fails */
     .fallback-wrapper {
       background: white;
       border: 1px solid #e5e7eb;
@@ -177,17 +176,13 @@
         <div class="product-card">
           <div>
             <div class="img-container">
-              <!-- Replace with actual path to your image later -->
-              <img src="/OPNatation/static/casque.jpg" alt="Casque vert OP">
+              <img src="/OPNatation/static/casque_vert.jpg" alt="Casque vert OP">
             </div>
             <div class="product-title">Casque vert OP</div>
             <div class="product-price">16 $</div>
-            <div class="product-desc">Ce casque officiel est requis lors de toutes les compétitions du club.</div>
+            <div class="product-desc">Ce casque est requis lors des compétitions.</div>
           </div>
-          <!-- We point directly to your Zeffy form URL via data attributes -->
-          <button class="buy-btn" data-zeffy-embed data-form-url="https://www.zeffy.com/embed/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c">
-            Ajouter au panier
-          </button>
+          <button class="buy-btn">Ajouter au panier</button>
         </div>
 
         <!-- Card 2: Lunette Speedo -->
@@ -198,11 +193,9 @@
             </div>
             <div class="product-title">Lunette Speedo Vanquisher 2.0</div>
             <div class="product-price">28 $</div>
-            <div class="product-desc">Teinte Argent / Noir. Ajustement anti-buée ultra confortable et performant.</div>
+            <div class="product-desc">Argent / Noir.</div>
           </div>
-          <button class="buy-btn" data-zeffy-embed data-form-url="https://www.zeffy.com/embed/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c">
-            Ajouter au panier
-          </button>
+          <button class="buy-btn">Ajouter au panier</button>
         </div>
 
         <!-- Card 3: Cotton ouaté -->
@@ -213,17 +206,69 @@
             </div>
             <div class="product-title">Cotton ouaté</div>
             <div class="product-price">58 $</div>
-            <div class="stock-badge">Seulement 2 restants !</div>
-            <div class="product-desc">Demander les tailles disponibles à votre entraîneur avant l'achat en ligne.</div>
+            <div class="stock-badge">2 restants</div>
+            <div class="product-desc">Demander les tailles disponibles avant l'achat.</div>
           </div>
-          <button class="buy-btn" data-zeffy-embed data-form-url="https://www.zeffy.com/embed/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c">
-            Ajouter au panier
-          </button>
+          <button class="buy-btn">Ajouter au panier</button>
+        </div>
+
+        <!-- Card 4: Serviette -->
+        <div class="product-card">
+          <div>
+            <div class="img-container">
+              <img src="/OPNatation/static/serviette.jpg" alt="Serviette">
+            </div>
+            <div class="product-title">Serviette</div>
+            <div class="product-price">35 $</div>
+            <div class="stock-badge">2 restants</div>
+            <div class="product-desc">Serviette de bain aux couleurs de l'équipe Opti-Plus.</div>
+          </div>
+          <button class="buy-btn">Ajouter au panier</button>
+        </div>
+
+        <!-- Card 5: Casquette -->
+        <div class="product-card">
+          <div>
+            <div class="img-container">
+              <img src="/OPNatation/static/casquette.jpg" alt="Casquette">
+            </div>
+            <div class="product-title">Casquette</div>
+            <div class="product-price">25 $</div>
+            <div class="product-desc">Casquette officielle OP Natation.</div>
+          </div>
+          <button class="buy-btn">Ajouter au panier</button>
+        </div>
+
+        <!-- Card 6: Gourde -->
+        <div class="product-card">
+          <div>
+            <div class="img-container">
+              <img src="/OPNatation/static/gourde.jpg" alt="Gourde">
+            </div>
+            <div class="product-title">Gourde</div>
+            <div class="product-price">15 $</div>
+            <div class="stock-badge">5 restants</div>
+            <div class="product-desc">Gourde réutilisable isolée pour l'entraînement.</div>
+          </div>
+          <button class="buy-btn">Ajouter au panier</button>
+        </div>
+
+        <!-- Card 7: T-shirt -->
+        <div class="product-card">
+          <div>
+            <div class="img-container">
+              <img src="/OPNatation/static/tshirt.jpg" alt="T-shirt">
+            </div>
+            <div class="product-title">T-shirt</div>
+            <div class="product-price">25 $</div>
+            <div class="product-desc">Large pour enfant.</div>
+          </div>
+          <button class="buy-btn">Ajouter au panier</button>
         </div>
 
       </div>
 
-      <!-- Native Zeffy Hidden Fallback Wrapper (Only triggers if the JS script fails to load) -->
+      <!-- Native Zeffy Hidden Fallback Wrapper -->
       <div data-zeffy-embed-fallback style="display:none;" class="fallback-wrapper">
         <p class="section-label" style="color: #ef4444;">Achat Direct Alternatif</p>
         <div style="position:relative; overflow:hidden; width:100%; height:600px;">
@@ -242,10 +287,34 @@
       .then(html => document.getElementById('footer').innerHTML = html);
   </script>
 
-  <!-- Your exact Zeffy Embedded Script Engine -->
-  <script
-    src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
-    onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';});">
+  <!-- Zeffy Embedded Script Engine + Manual Click Handler -->
+  <script src="https://www.zeffy.com/embed/v2/zeffy-embed.js"></script>
+  
+  <script>
+    // Fallback display logic if the remote Zeffy script engine blocks
+    window.addEventListener('error', function(e) {
+      if (e.target.src && e.target.src.includes('zeffy-embed.js')) {
+        document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el) {
+          el.style.display = 'block';
+        });
+      }
+    }, true);
+
+    // Intercept manual button clicks and explicitly deploy Zeffy's programmatic modal function
+    document.addEventListener('click', function(event) {
+      const button = event.target.closest('.buy-btn');
+      if (button) {
+        event.preventDefault();
+        
+        // Use Zeffy's global overlay handler if successfully compiled
+        if (window.ZeffyEmbed && typeof window.ZeffyEmbed.open === 'function') {
+          window.ZeffyEmbed.open("https://www.zeffy.com/embed/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c");
+        } else {
+          // Ad-blocker safe escape valve: opens the direct form link cleanly in a new window tab
+          window.open("https://www.zeffy.com/fr-CA/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c", '_blank');
+        }
+      }
+    });
   </script>
 
 </body>
