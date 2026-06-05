@@ -25,20 +25,22 @@
       z-index: 1000;
     }
 
-    /* Restricts the layout size so links don't fly to the screen edges */
+    /* Fixed alignment wrapper box keeping elements unified */
     .header-wrapper {
       width: 100%;
-      max-width: 1200px; /* Aligns perfectly with the boutique page layout */
+      max-width: 1200px;
       padding: 0 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* Centers the whole block naturally on desktop viewports */
+      position: relative;
     }
 
-    /* Master layout navigation container */
+    /* Master desktop alignment layout container */
     .nav-container {
       display: flex;
       align-items: center;
+      justify-content: center;
       width: 100%;
     }
 
@@ -48,22 +50,22 @@
       gap: 30px;
     }
 
-    /* Proportional spacing grids to float the logo securely in the center */
+    /* Keeps elements wrapped tightly instead of extending out to the page edges */
     nav.left {
-      flex: 1;
-      justify-content: flex-start;
+      display: flex;
+      justify-content: flex-end;
     }
 
     nav.right {
-      flex: 1;
-      justify-content: flex-end;
+      display: flex;
+      justify-content: flex-start;
       gap: 30px;
     }
 
-    /* Brand Logo alignment styling */
+    /* Logo stays centered between the menus naturally */
     .logo {
       flex-shrink: 0;
-      margin: 0 40px; /* Balanced spacing away from links */
+      margin: 0 40px; /* Adjust this value to bring links closer or push them away */
     }
 
     .logo img {
@@ -180,6 +182,8 @@
       cursor: pointer;
       background: none;
       border: none;
+      position: absolute;
+      right: 40px;
     }
 
     .hamburger span {
@@ -194,9 +198,10 @@
 
       .header-wrapper {
         padding: 0 25px;
+        justify-content: space-between;
       }
 
-      /* Responsive menu overlay fallback box */
+      /* Responsive vertical stacking view rules */
       .nav-container {
         display: none;
         flex-direction: column;
@@ -223,7 +228,6 @@
         gap: 0;
         margin: 0;
         justify-content: flex-start;
-        flex: none;
       }
 
       .nav-item {
