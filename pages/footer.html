@@ -7,7 +7,6 @@
     <div class="footer-sponsors">
       <span class="footer-label">Nos commanditaires</span>
       <div class="sponsor-logos">
-        <!-- Replace with actual sponsor images -->
         <img src="static/sponsor1.png" alt="Commanditaire 1">
         <img src="static/sponsor2.png" alt="Commanditaire 2">
       </div>
@@ -21,7 +20,6 @@
       <img src="/OPNatation/static/image-removebg-preview.png" alt="Logo">
     </a>
     <a href="https://www.facebook.com/profile.php?id=61564527099578&locale=fr_FR#" target="_blank" rel="noopener" class="facebook-btn">
-      <!-- Facebook icon SVG -->
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
       </svg>
@@ -32,10 +30,11 @@
 
 <style>
   footer {
-    background-color: #000;
-    color: #ccc;
+    background-color: #1a1a2e; /* Matched to deep brand navy */
+    color: #e5e7eb;            /* Brighter, clean white-grey body text color */
     font-family: Arial, sans-serif;
-    padding: 30px 60px 20px;
+    padding: 40px 60px 30px;
+    border-top: 1px solid rgba(229, 231, 235, 0.1); /* Subtle header-matched top border */
   }
 
   /* --- Top section --- */
@@ -43,61 +42,65 @@
     display: flex;
     justify-content: center;
     gap: 80px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
   }
 
   .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
+    gap: 10px;
   }
 
   .footer-links a {
-    color: #ccc;
+    color: #e5e7eb;
     text-decoration: none;
     font-size: 0.9rem;
+    letter-spacing: 0.5px;    /* Matches clean link tracking from navigation */
     transition: color 0.2s;
   }
 
   .footer-links a:hover {
-    color: white;
+    color: #e8f0fe;          /* Soft light-blue hover highlight color */
   }
 
   .footer-sponsors {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     align-items: center;
   }
 
   .footer-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #888;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: bold;
+    letter-spacing: 0.8px;   /* Clean uppercase tracker text labels */
   }
 
   .sponsor-logos {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     align-items: center;
   }
 
   .sponsor-logos img {
     height: 35px;
     width: auto;
-    opacity: 0.7;
+    opacity: 0.65;
+    filter: brightness(0) invert(1); /* Forces colored logos into matching white shapes */
     transition: opacity 0.2s;
   }
 
   .sponsor-logos img:hover {
-    opacity: 1;
+    opacity: 0.95;
   }
 
   /* --- Divider --- */
   .footer-divider {
-    border-top: 1px solid white;
-    margin: 0 0 20px;
+    border-top: 1px solid rgba(229, 231, 235, 0.1); /* Stripped hard white line for subtle border layout */
+    margin: 0 0 25px;
   }
 
   /* --- Bottom section --- */
@@ -109,7 +112,7 @@
   }
 
   .footer-logo img {
-    height: 35px;
+    height: 40px;
     width: auto;
     opacity: 0.85;
     transition: opacity 0.2s;
@@ -125,33 +128,41 @@
     gap: 8px;
     color: white;
     text-decoration: none;
-    font-size: 0.9rem;
-    border: 1px solid #444;
-    padding: 8px 16px;
-    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(229, 231, 235, 0.2); /* Soft pill-button border layout styling */
+    padding: 8px 18px;
+    border-radius: 99px;      /* Pill-button shaped to match Inscriptions action item */
     transition: background 0.2s, border-color 0.2s;
   }
 
   .facebook-btn:hover {
-    background-color: #1877f2;
-    border-color: #1877f2;
+    background-color: #1a56db; /* Matches brand blue button hover states */
+    border-color: #1a56db;
   }
 
   @media (max-width: 700px) {
     footer {
-      padding: 25px 30px 15px;
+      padding: 30px 30px 20px;
     }
 
     .footer-top {
       flex-direction: column;
       align-items: center;
-      gap: 25px;
+      gap: 30px;
       text-align: center;
     }
 
     .footer-bottom {
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
+    }
+    
+    .facebook-btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>
