@@ -25,22 +25,22 @@
       z-index: 1000;
     }
 
-    /* Sets the centered canvas bounding box */
     .header-wrapper {
       width: 100%;
       max-width: 1200px;
       padding: 0 40px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative; /* Allows the CTA button to anchor to the far right on desktop */
+      justify-content: space-between;
+      position: relative;
     }
 
-    /* Master desktop container holding the left links, logo, and right links */
+    /* Master desktop layout wrapper */
     .nav-container {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      width: 100%;
     }
 
     nav {
@@ -49,19 +49,24 @@
       gap: 30px;
     }
 
-    /* Left and Right navigation blocks now have exact mirror layouts */
     nav.left {
-      justify-content: flex-end;
+      justify-content: flex-start;
+      margin-right: auto;
     }
 
     nav.right {
-      justify-content: flex-start;
+      justify-content: flex-end;
+      margin-left: auto;
+      margin-right: 150px; /* Leaves a gap so links don't slide under the absolute button */
     }
 
-    /* Brand Logo stays dead-centered mathematically */
+    /* Absolute centering formula for the desktop logo */
     .logo {
-      flex-shrink: 0;
-      margin: 0 40px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
     }
 
     .logo img {
@@ -151,7 +156,7 @@
       color: #1a56db;
     }
 
-    /* Desktop CTA Button Container: Pinned safely to the right wall */
+    /* Pins the action registration item strictly to the right edge boundary */
     .cta-container {
       position: absolute;
       right: 40px;
@@ -186,8 +191,6 @@
       cursor: pointer;
       background: none;
       border: none;
-      position: absolute;
-      right: 40px;
     }
 
     .hamburger span {
@@ -205,7 +208,18 @@
         justify-content: space-between;
       }
 
-      /* Mobile overlay layout rules */
+      /* Logo resets to basic flow, keeping it static on mobile top bar */
+      .logo {
+        position: static;
+        transform: none;
+        margin: 0;
+      }
+
+      .logo img {
+        height: 36px;
+      }
+
+      /* Mobile vertical drawer navigation layout rules */
       .nav-container {
         display: none;
         flex-direction: column;
@@ -234,7 +248,6 @@
         justify-content: flex-start;
       }
 
-      /* Re-flow the CTA container cleanly back into vertical menu list on mobile */
       .cta-container {
         position: static;
         width: 100%;
@@ -280,15 +293,6 @@
       .nav-item.open .dropdown {
         display: flex;
       }
-
-      .logo {
-        margin: 0;
-        order: -1;
-      }
-
-      .logo img {
-        height: 36px;
-      }
     }
 
     /* --- Custom Native Modal Layout Styles --- */
@@ -320,6 +324,10 @@
 
   <div class="header-wrapper">
     
+    <a href="/OPNatation/index.html" class="logo">
+      <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
+    </a>
+
     <div class="nav-container" id="nav-container">
       <nav class="left">
         <div class="nav-item has-dropdown">
@@ -337,10 +345,6 @@
           </div>
         </div>
       </nav>
-
-      <a href="/OPNatation/index.html" class="logo">
-        <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
-      </a>
 
       <nav class="right">
         <div class="nav-item has-dropdown">
