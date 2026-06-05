@@ -249,7 +249,7 @@
       }
     }
 
-    /* --- Custom Native Modal Styles --- */
+    /* --- Styles personnalisés pour la fenêtre surgissante --- */
     .zeffy-modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -326,46 +326,47 @@
 </header>
 
 <script>
-  // 1. Dynamic click logic to generate an iframe overlay directly on the website
+  // Gestionnaire de clic pour générer l'iframe d'inscription Zeffy dans un popup sur mesure
   document.addEventListener('click', function(e) {
     const trigger = e.target.closest('.zeffy-trigger');
     if (trigger) {
       e.preventDefault();
 
-      // Create the background backdrop cover
+      // Création de l'arrière-plan semi-transparent
       const overlay = document.createElement('div');
       overlay.className = 'zeffy-modal-overlay';
 
-      // Create the floating window panel wrapper
+      // Création du conteneur de la boîte flottante
       const modalBox = document.createElement('div');
       modalBox.className = 'zeffy-modal-box';
 
-      // Add the circular quick-close button element
+      // Création du bouton de fermeture (X)
       const closeBtn = document.createElement('button');
       closeBtn.className = 'zeffy-modal-close';
       closeBtn.innerHTML = '&times;';
 
-      // Add Zeffy's embedded checkout iframe container
+      // Création de l'Iframe configuré avec votre nouvelle URL d'inscription
       const iframe = document.createElement('iframe');
       iframe.src = "https://www.zeffy.com/embed/ticketing/inscriptions-2025--2026-4";
       iframe.style.width = "100%";
       iframe.style.height = "100%";
       iframe.style.border = "none";
       iframe.setAttribute('allowpaymentrequest', 'true');
+      iframe.setAttribute('allowTransparency', 'true');
 
-      // Assemble nodes together
+      // Assemblage des éléments
       modalBox.appendChild(closeBtn);
       modalBox.appendChild(iframe);
       overlay.appendChild(modalBox);
       document.body.appendChild(overlay);
 
-      // Trigger smooth transition animations
+      // Lancement des animations fluides d'apparition
       setTimeout(() => {
         overlay.style.opacity = '1';
         modalBox.style.transform = 'translateY(0)';
       }, 10);
 
-      // Close handler functions
+      // Fonctions pour fermer proprement la fenêtre
       const closeModal = () => {
         overlay.style.opacity = '0';
         modalBox.style.transform = 'translateY(20px)';
@@ -379,7 +380,7 @@
     }
   });
 
-  // 2. Aggressive Favicon Inserter to forcefully bypass Chrome's deep tab caching
+  // Insertion automatique du Favicon
   (function() {
     const existingLinks = document.querySelectorAll("link[rel~='icon']");
     existingLinks.forEach(el => el.remove());
