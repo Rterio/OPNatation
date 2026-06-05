@@ -16,14 +16,13 @@
 
     header {
       background-color: #1a1a2e;
-      height: 120px; /* Expanded header height to hold the double stacked rows nicely */
+      height: 120px; /* Kept open height for stacked desktop view */
       display: flex;
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid #e5e7eb;
       position: relative;
       z-index: 1000;
-      transition: height 0.2s;
     }
 
     .header-wrapper {
@@ -31,25 +30,25 @@
       max-width: 1200px;
       padding: 10px 40px;
       display: flex;
-      flex-direction: column; /* Vertical alignment flow */
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px; /* Spacing layout gap between logo row and menu link row */
+      gap: 12px;
+      position: relative; /* Anchor point for absolute children elements */
     }
 
-    /* Master desktop link row rules */
+    /* Centers the main list items underneath the logo row */
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 40px; /* Balanced general grouping gap */
       width: 100%;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 35px; /* Spacing between normal links */
+      gap: 35px;
     }
 
     .logo {
@@ -57,7 +56,7 @@
     }
 
     .logo img {
-      height: 48px; /* Slightly more prominent logo visualization */
+      height: 48px;
       width: auto;
       display: block;
       transition: opacity 0.2s;
@@ -105,7 +104,7 @@
       position: absolute;
       top: 100%;
       left: 50%;
-      transform: translateX(-50%); /* Clean centered dropdown orientation alignments */
+      transform: translateX(-50%);
       background-color: #1a1a2e;
       border: 1px solid #e5e7eb;
       border-radius: 8px;
@@ -140,6 +139,13 @@
       color: #1a56db;
     }
 
+    /* Desktop: Pin the CTA button specifically to the top-right wall corner */
+    .cta-container {
+      position: absolute;
+      right: 40px;
+      top: 12px; /* Aligned vertically right alongside your main center logo row */
+    }
+
     .nav-item > button.zeffy-trigger {
       background-color: transparent;
       color: #ffffff;
@@ -167,6 +173,8 @@
       cursor: pointer;
       background: none;
       border: none;
+      position: absolute;
+      right: 40px;
     }
 
     .hamburger span {
@@ -178,13 +186,13 @@
 
     @media (max-width: 700px) {
       header {
-        height: 70px; /* Snaps back cleanly to classic sizing standard on mobile screen viewports */
+        height: 70px; /* Reset header on mobile viewport */
       }
 
       .hamburger { display: flex; }
 
       .header-wrapper {
-        flex-direction: row; /* Horizontal order row configuration */
+        flex-direction: row;
         justify-content: space-between;
         padding: 0 25px;
         gap: 0;
@@ -194,7 +202,7 @@
         height: 36px;
       }
 
-      /* Mobile dropdown list flow rules */
+      /* Mobile vertical drawer alignment list rules */
       .nav-container {
         display: none;
         flex-direction: column;
@@ -208,7 +216,6 @@
         border-bottom: 1px solid #e5e7eb;
         max-height: calc(100vh - 70px);
         overflow-y: auto;
-        gap: 0;
       }
 
       .nav-container.open {
@@ -220,6 +227,13 @@
         align-items: flex-start;
         width: 100%;
         gap: 0;
+      }
+
+      /* Re-flow button container out of absolute space into standard list order */
+      .cta-container {
+        position: static;
+        width: 100%;
+        display: block;
       }
 
       .nav-item {
@@ -293,9 +307,6 @@
             <a href="/OPNatation/pages/Galerie.html">Galerie</a>
           </div>
         </div>
-      </nav>
-
-      <nav>
         <div class="nav-item has-dropdown">
           <a href="#">Financement</a>
           <div class="dropdown">
@@ -306,6 +317,9 @@
         <div class="nav-item">
           <a href="/OPNatation/pages/Boutique.html">Boutique</a>
         </div>
+      </nav>
+
+      <div class="cta-container">
         <div class="nav-item">
           <button class="zeffy-trigger" onclick="
             (function(){
@@ -329,7 +343,7 @@
             })()
           ">Inscriptions</button>
         </div>
-      </nav>
+      </div>
 
     </div>
 
