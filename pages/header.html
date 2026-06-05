@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OPNatation Header Component</title>
 
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAcVQTFRFAAAAtq6uzMjI5OTj6ejn7erp7evr7+3t7uzt7uzs6+np5+blwLu5komHycbG5uTk9PLy+/v6/f39/v7+/v39/v39+/v77evr1NDO7uvs9PLz9vT09PPz8u/w7OrpwLu5saus7evr8vDw8/Ly8vHx8vHw8/Ly7evr3NnYy8XF7Orq9vX1/Pz8/////f399fPz9/b2/fz8//7+/f389vX0vLe06ubm+/v7/f39/v39/v39/f399vX1wLy47+3t+fn59/f28/Hy/v7+/fz85+Pi9vT0/f39/v7++vn53tzc+/v75+bk+vn5/f387+zs4t/g/Pz8/f396ujm+vn5+vn4ysLD19PR/Pv7+vn51tTT7+3s+Pb2+vr5+/r62tXV/Pz89vX0ta6s7uvq/f38+Pf3ioSD9vX1/v7+8vDv6OXl/fz89fX07uvr/v7+/Pz8+/v7/Pz87+3s9/b2///++fj39PPy+vj4/f396Obl9/b1/v7++/r6+/v6+vn58e/vsKmp8/Ly9vX11dDP+/r64uDh8vDx9/b3/Pv7/Pz8/Pz8+/v79/X28vHx4t/g4d3d9vX29vT17uztu7W3xcDBy8bIz8nLx8LE8NCLLgAAAJd0Uk5TAAASFhUUFBQUFBQVEQIYRpni7+7u79pXJj1bZmFFGQABHiIiIiIhFgIBHHjk/+w/fOn+8HkAJ+v8+/zxigAryJJX/OcOZf//1hPnQszgTDXj8BWmtgwX281tS2XC3A/iZAEk7ZIIe/4qD/OdOv36+Ocwif9vNZX2Mo/3zc2zQABclATTBVrB3eHg16ZKBg+hoU4ABAYFAlgR2IUAAADcSURBVHicY2QgABhHFVBLAQz8ZwKRn7Eo4IUoQChlZHyoABe5AbJCE6HgN5DLBlX2j4GRifEIxA22jIzvhBkZX0NMFWNkfPubQZLxGQOD9A6YIz1BJjOAjL7LoMLIeItBHci8xqC9Au6LSMa3zxj0ljLEXGQwYGQ8x2AMVHCKwXwOXEEq43EGK8YZmYyHGewYGQ8wODKe/MrgzNiPCIei3QxuQF3bGbwYGbcw+AI9zgD0eSNCQcPbA2Ba1J6RcRVDQDNGSLYgwqGpnpExH0tQTwJJZpEcF6MKiFMAAOcqLCG9YASGAAAAAElFTkSuQmCC">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAcVQTFRFAAAAtq6uzMjI5OTj6ejn7erp7evr7+3t7uzt7uzs6+np5+blwLu5komHycbG5uTk9PLy+/v6/f39/v7+/v39/v39+/v77evr1NDO7uvs9PLz9vT09PPz8u/w7OrpwLu5saus7evr8vDw8/Ly8vHx8vHw8/Ly7evr3NnYy8XF7Orq9vX1/Pz8/////f399fPz9/b2/fz8//7+/f389vX0vLe06ubm+/v7/f39/v39/v39/f399vX1wLy47+3t+fn59/f28/Hy/v7+/fz85+Pi9vT0/f39/v7++vn53tzc+/v75+bk+vn5/f387+zs4t/g/Pz8/f396ujm+vn5+vn4ysLD19PR/Pv7+vn51tTT7+3s+Pb2+vr5+/r62tXV/Pz89vX0ta6s7uvq/f38+Pf3ioSD9vX1/v7+8vDv6OXl/fz89fX07uvr/v7+/Pz8+/v7/Pz87+3s9/b2///++fj39PPy+vj4/f396Obl9/b1/v7++/r6+/v6+vn58e/vsKmp8/Ly9vX11dDP+/r64uDh8vDx9/b3/Pv7/Pz8/Pz8+/v79/X28vHx4t/g4d3d9vX29vT17uztu7W3xcDBy8bIz8nLx8LE8NCLLgAAAJd0Uk5TAAASFhUUFBQUFBQVEQIYRpni7+7u79pXJj1bZmFFGQABHiIiIiIhFgIBHHjk/+w/fOn+8HkAJ+v8+/zxigAryJJX/OcOZf//1hPnQszgTDXj8BWmtgwX281tS2XC3A/iZAEk7ZIIe/4qD/OdOv36+Ocwif9vNZX2Mo/3zc2zQABclATTBVrB3eHg16ZKBg+hoU4ABAYFAlgR2IUAAADcSURBVHicY2QgABhHFVBLAQz8ZwKRn7Eo4IUoQChlZHyoABe5AbJCE6HgN5DLBlX2j4GRifEIxA22jIzvhBkZX0NMFWNkfPubQZLxGQOD9A6YIz1BJjOAjL7LoMLIeItBHci8xqC9Au6LSMa3zxj0ljLEXGQwYGQ8x2AMVHCKwXwOXEEq43EGK8YZmYyHGewYGQ8wODKe/MrgzNiPCIei3QxuQF3bGbwYGbcw+AI9zgD0eSNCQcPbA2Ba1J6RcRVDQDNGSLYgwqGpnpExH0tQTwJJZEcF6MKiFMAAOcqLCG9YASGAAAAAElFTkSuQmCC">
 
   <style>
     * {
@@ -15,18 +15,17 @@
     }
 
     header {
-      background-color: #1a1a2e; /* Matches the dark navy element backgrounds */
+      background-color: #1a1a2e;
       padding: 0 40px;
       height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom: 1px solid #e5e7eb; /* Changed from hot pink to match the subtle structural dividers */
+      border-bottom: 1px solid #e5e7eb;
       position: relative;
       z-index: 1000;
     }
 
-    /* --- Left and right nav halves --- */
     nav {
       display: flex;
       align-items: center;
@@ -37,7 +36,6 @@
       justify-content: flex-end;
     }
 
-    /* --- Far right nav --- */
     nav.far-right {
       position: absolute;
       right: 40px;
@@ -45,7 +43,6 @@
       align-items: center;
     }
 
-    /* --- Logo in the center --- */
     .logo {
       flex-shrink: 0;
       margin: 0 20px;
@@ -62,17 +59,16 @@
       opacity: 0.85;
     }
 
-    /* --- Nav items --- */
     .nav-item {
       position: relative;
     }
 
     .nav-item > a {
-      color: #e5e7eb; /* Brighter, clean text to match badge/table color standards */
+      color: #e5e7eb;
       text-decoration: none;
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
-      letter-spacing: 0.5px; /* Adds the crisp, clean spacing used in section labels */
+      letter-spacing: 0.5px;
       transition: color 0.2s;
       display: flex;
       align-items: center;
@@ -82,7 +78,7 @@
     }
 
     .nav-item > a:hover {
-      color: #e8f0fe; /* Shifted hover effect to use the soft light-blue theme accent */
+      color: #e8f0fe;
     }
 
     .nav-item > a.active {
@@ -90,26 +86,24 @@
       font-weight: bold;
     }
 
-    /* Arrow for dropdowns */
     .nav-item.has-dropdown > a::after {
       content: '▾';
       font-size: 0.75rem;
       transition: transform 0.2s;
-      color: #888; /* Matches grey metadata tones */
+      color: #888;
     }
 
     .nav-item.has-dropdown:hover > a::after {
       transform: rotate(180deg);
     }
 
-    /* --- Dropdown --- */
     .dropdown {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #1a1a2e; /* Seamless background continuation */
-      border: 1px solid #e5e7eb; /* Matches card structural layout borders */
+      background-color: #1a1a2e;
+      border: 1px solid #e5e7eb;
       border-top: none;
       border-radius: 0 0 8px 8px;
       min-width: 200px;
@@ -118,7 +112,6 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    /* Right-side dropdowns open to the left */
     nav.right .dropdown {
       left: auto;
       right: 0;
@@ -135,7 +128,7 @@
       font-size: 0.85rem;
       padding: 12px 18px;
       transition: background 0.2s, color 0.2s;
-      border-bottom: 1px solid rgba(229, 231, 235, 0.1); /* Subtle white-divider row */
+      border-bottom: 1px solid rgba(229, 231, 235, 0.1);
     }
 
     .dropdown a:last-child {
@@ -143,11 +136,30 @@
     }
 
     .dropdown a:hover {
-      background-color: #e8f0fe; /* Uses badge background tone */
-      color: #1a56db; /* Matches badge deep-blue text color */
+      background-color: #e8f0fe;
+      color: #1a56db;
     }
 
-    /* --- Hamburger (mobile) --- */
+    .nav-item > button.zeffy-trigger {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #1a56db;
+      border-radius: 99px;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .nav-item > button.zeffy-trigger:hover {
+      background-color: #1a56db;
+      color: #ffffff;
+    }
+
     .hamburger {
       display: none;
       flex-direction: column;
@@ -199,6 +211,14 @@
       .nav-item > a {
         padding: 12px 0;
         width: 100%;
+      }
+
+      .nav-item > button.zeffy-trigger {
+        width: 100%;
+        text-align: center;
+        margin: 15px 0 5px 0;
+        background-color: #1a56db;
+        border: none;
       }
 
       .dropdown {
@@ -267,14 +287,16 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="https://www.zeffy.com/fr-CA/ticketing/b2788b3b-7978-4109-8f7c-4103e3ef6c0c" target="_blank" rel="noopener">Boutique</a>
+      <a href="/OPNatation/pages/Boutique.html">Boutique</a>
     </div>
   </nav>
 
-  <!-- FAR RIGHT BUTTON -->
+  <!-- FAR RIGHT NAVIGATION ACTION BUTTON -->
   <nav class="far-right" id="nav-far-right">
     <div class="nav-item">
-      <a href="/OPNatation/pages/Insciptions.html" target="_blank" rel="noopener">Inscriptions</a>
+      <button class="zeffy-trigger" zeffy-form-link="https://www.zeffy.com/embed/ticketing/inscriptions-2025--2026-4?modal=true">
+        Inscriptions
+      </button>
     </div>
   </nav>
 
@@ -285,8 +307,9 @@
 
 </header>
 
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
+
 <script>
-  // Aggressive Favicon Inserter to forcefully bypass Chrome's deep tab caching
   (function() {
     const existingLinks = document.querySelectorAll("link[rel~='icon']");
     existingLinks.forEach(el => el.remove());
@@ -294,7 +317,6 @@
     const link = document.createElement('link');
     link.rel = 'icon';
     link.type = 'image/png';
-    // Appending '?v=' cache buster forces Chrome to instantly read the file
     link.href = '/OPNatation/petitlogo.png?v=' + Date.now(); 
     
     document.head.appendChild(link);
@@ -308,7 +330,6 @@
     document.getElementById('nav-far-right').classList.toggle('open');
   }
 
-  // Mobile: tap to toggle dropdowns
   document.querySelectorAll('.has-dropdown > a').forEach(link => {
     link.addEventListener('click', function(e) {
       if (window.innerWidth <= 700) {
