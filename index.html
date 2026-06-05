@@ -1,59 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OPNatation</title>
+  <title>OPNatation — Accueil</title>
   <style>
     html, body {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       margin: 0;
+      font-family: Arial, sans-serif; /* Matched from Temps (1).html */
     }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column; /* add this */
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  background-color: #ffffff;
-}
+    main {
+      flex: 1;
+      padding: 60px 20px;
+      background-color: #f5f5f5; /* Matched light grey from Temps (1).html */
+    }
 
-    .calendar-container {
-      width: 100%;
+    .wrapper {
       max-width: 900px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-      position: relative;
-      height: 720px; /* clips just the Google branding at bottom */
+      margin: 0 auto;
     }
 
-    .calendar-container iframe {
+    h1 {
+      font-size: 2rem; /* Matched from Temps (1).html */
+      color: #1a1a2e; /* Matched from Temps (1).html */
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888; /* Matched from Temps (1).html */
+      font-size: 0.95rem; /* Matched from Temps (1).html */
+      margin-bottom: 3rem; /* Matched from Temps (1).html */
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888; /* Matched section heading styles from Temps (1).html */
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* --- Welcome Text Card --- */
+    .welcome-card {
+      background: white;
+      border: 1px solid #e5e7eb; /* Matched border color from Temps (1).html */
+      border-radius: 12px; /* Matched border radius from Temps (1).html */
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+      color: #1a1a2e;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* --- Calendar container --- */
+    .calendar-wrapper {
+      background: white;
+      border: 1px solid #e5e7eb; /* Matched stroke layout borders from Temps (1).html */
+      border-radius: 12px; /* Matched stroke-card radius from Temps (1).html */
+      overflow: hidden;
+      position: relative;
+      height: 720px; /* Clips just the Google branding at bottom */
+    }
+
+    .calendar-wrapper iframe {
       display: block;
       width: 100%;
       height: 750px;
       border: none;
     }
 
-    .welcome-text {
-  max-width: 900px;
-  text-align: center;
-  margin-bottom: 40px;
-  color: #333;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.calendar-container h1 {
-  text-align: center;
-  color: #1a1a2e;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; } /* Responsive text match from Temps (1).html */
+    }
   </style>
 </head>
 <body>
@@ -68,20 +96,24 @@ main {
 
   <!-- Page content -->
   <main>
+    <div class="wrapper">
+      
+      <h1>Club de natation Opti-Plus</h1>
+      <p class="subtitle">Voué à la promotion et au développement de la natation</p>
 
-<div class="welcome-text">
-  <p>Bienvenue sur le site du club de natation Opti-Plus. Depuis le 30 août 1989, le club de natation Opti-Plus est un organisme à but non lucratif voué à la promotion et au développement de la natation, et ce, en favorisant tant l’initiation au sport, la progression des membres athlètes que le développement de l’excellence.</p>
-</div>
+      <!-- Welcome section styled like a single card layout -->
+      <div class="welcome-card">
+        <p style="margin: 0;">Bienvenue sur le site du club de natation Opti-Plus. Depuis le 30 août 1989, le club de natation Opti-Plus est un organisme à but non lucratif voué à la promotion et au développement de la natation, et ce, en favorisant tant l’initiation au sport, la progression des membres athlètes que le développement de l’excellence.</p>
+      </div>
 
-    <div class="calendar-container">
-      <h1>Calendrier des Activités</h1>
-      <iframe src="https://calendar.google.com/calendar/embed?height=750&wkst=1&ctz=America%2FToronto&showPrint=0&src=OTBlNTUxYTY1NjE0MzY2OWZhZWRlMWE2ZDYwYTVkZmIxNTQ3ODNkMDg3MzM2MTRlZmJjYWFjYzA3MzVhNTRlZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZmFtaWx5MTEzMjAzNjI4Mzg2OTIxNjQ1NTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23b39ddb&color=%23ef6c00"
-        style="border: none"
-        width="100%"
-        height="750"
-        frameborder="0"
-        scrolling="no">
-      </iframe>
+      <!-- Activities Calendar Section -->
+      <p class="section-label">Calendrier des Activités</p>
+      
+      <div class="calendar-wrapper">
+        <iframe src="https://calendar.google.com/calendar/embed?height=750&wkst=1&ctz=America%2FToronto&showPrint=0&src=OTBlNTUxYTY1NjE0MzY2OWZhZWRlMWE2ZDYwYTVkZmIxNTQ3ODNkMDg3MzM2MTRlZmJjYWFjYzA3MzVhNTRlZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZmFtaWx5MTEzMjAzNjI4Mzg2OTIxNjQ1NTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23b39ddb&color=%23ef6c00"
+          scrolling="no">
+        </iframe>
+      </div>
 
     </div>
   </main>
