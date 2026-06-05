@@ -16,7 +16,6 @@
 
     header {
       background-color: #1a1a2e;
-      padding: 0 40px;
       height: 70px;
       display: flex;
       align-items: center;
@@ -26,7 +25,17 @@
       z-index: 1000;
     }
 
-    /* Target the master structural navigation wrapper box */
+    /* Restricts the layout size so links don't fly to the screen edges */
+    .header-wrapper {
+      width: 100%;
+      max-width: 1200px; /* Aligns perfectly with the boutique page layout */
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Master layout navigation container */
     .nav-container {
       display: flex;
       align-items: center;
@@ -39,29 +48,22 @@
       gap: 30px;
     }
 
-    /* Left side menus occupy flexible grid space to align the logo center */
+    /* Proportional spacing grids to float the logo securely in the center */
     nav.left {
       flex: 1;
       justify-content: flex-start;
     }
 
-    /* Right side menus handle spacing alignment from center outward */
     nav.right {
       flex: 1;
       justify-content: flex-end;
       gap: 30px;
     }
 
-    nav.far-right {
-      margin-left: 30px;
-      display: flex;
-      align-items: center;
-    }
-
-    /* Center layout styling for the branding logo */
+    /* Brand Logo alignment styling */
     .logo {
       flex-shrink: 0;
-      margin: 0 20px;
+      margin: 0 40px; /* Balanced spacing away from links */
     }
 
     .logo img {
@@ -190,11 +192,11 @@
     @media (max-width: 700px) {
       .hamburger { display: flex; }
 
-      header {
-        justify-content: space-between;
+      .header-wrapper {
+        padding: 0 25px;
       }
 
-      /* Unified responsive dropdown panel wrapper box */
+      /* Responsive menu overlay fallback box */
       .nav-container {
         display: none;
         flex-direction: column;
@@ -214,8 +216,7 @@
         display: flex;
       }
 
-      /* Allow items to stack cleanly without absolute conflicts */
-      nav, nav.left, nav.right, nav.far-right {
+      nav, nav.left, nav.right {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
@@ -267,7 +268,7 @@
 
       .logo {
         margin: 0;
-        order: -1; /* Ensures logo stays pinned to top of code reading flow on mobile screen */
+        order: -1;
       }
 
       .logo img {
@@ -302,75 +303,73 @@
 
 <header>
 
-  <!-- Structural Flex Container combining elements together cleanly -->
-  <div class="nav-container" id="nav-container">
-    <!-- LEFT NAV -->
-    <nav class="left">
-      <div class="nav-item has-dropdown">
-        <a href="#">Compétitions</a>
-        <div class="dropdown">
-          <a href="/OPNatation/pages/calendrier.html">Calendrier</a>
-          <a href="/OPNatation/pages/Temps.html">Qualifications et records</a>
+  <div class="header-wrapper">
+    
+    <div class="nav-container" id="nav-container">
+      <nav class="left">
+        <div class="nav-item has-dropdown">
+          <a href="#">Compétitions</a>
+          <div class="dropdown">
+            <a href="/OPNatation/pages/calendrier.html">Calendrier</a>
+            <a href="/OPNatation/pages/Temps.html">Qualifications et records</a>
+          </div>
         </div>
-      </div>
-      <div class="nav-item has-dropdown">
-        <a href="#">Le Club</a>
-        <div class="dropdown">
-          <a href="/OPNatation/pages/Staff.html">Entraîneurs et CA</a>
-          <a href="/OPNatation/pages/Galerie.html">Galerie</a>
+        <div class="nav-item has-dropdown">
+          <a href="#">Le Club</a>
+          <div class="dropdown">
+            <a href="/OPNatation/pages/Staff.html">Entraîneurs et CA</a>
+            <a href="/OPNatation/pages/Galerie.html">Galerie</a>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <!-- CENTER LOGO (Moved inside the master container for grid calculation layout balancing) -->
-    <a href="/OPNatation/index.html" class="logo">
-      <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
-    </a>
+      <a href="/OPNatation/index.html" class="logo">
+        <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
+      </a>
 
-    <!-- RIGHT NAV -->
-    <nav class="right">
-      <div class="nav-item has-dropdown">
-        <a href="#">Financement</a>
-        <div class="dropdown">
-          <a href="/OPNatation/pages/Commanditaires.html">Commanditaires</a>
-          <a href="/OPNatation/pages/Parrains.html">Parrains</a>
+      <nav class="right">
+        <div class="nav-item has-dropdown">
+          <a href="#">Financement</a>
+          <div class="dropdown">
+            <a href="/OPNatation/pages/Commanditaires.html">Commanditaires</a>
+            <a href="/OPNatation/pages/Parrains.html">Parrains</a>
+          </div>
         </div>
-      </div>
-      <div class="nav-item">
-        <a href="/OPNatation/pages/Boutique.html">Boutique</a>
-      </div>
-      
-      <!-- FAR RIGHT NAVIGATION ACTION BUTTON -->
-      <div class="nav-item">
-        <button class="zeffy-trigger" onclick="
-          (function(){
-            const overlay = document.createElement('div');
-            overlay.className = 'zeffy-modal-overlay';
-            const modalBox = document.createElement('div');
-            modalBox.className = 'zeffy-modal-box';
-            const closeBtn = document.createElement('button');
-            closeBtn.className = 'zeffy-modal-close';
-            closeBtn.innerHTML = '&times;';
-            const iframe = document.createElement('iframe');
-            iframe.src = 'https://www.zeffy.com/embed/ticketing/inscriptions-2025--2026-4';
-            iframe.style.width = '100%'; iframe.style.height = '100%'; iframe.style.border = 'none';
-            iframe.setAttribute('allowpaymentrequest', 'true');
-            iframe.setAttribute('allowTransparency', 'true');
-            modalBox.appendChild(closeBtn); modalBox.appendChild(iframe);
-            overlay.appendChild(modalBox); document.body.appendChild(overlay);
-            const closeMdl = () => overlay.remove();
-            closeBtn.addEventListener('click', closeMdl);
-            overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
-          })()
-        ">Inscriptions</button>
-      </div>
-    </nav>
+        <div class="nav-item">
+          <a href="/OPNatation/pages/Boutique.html">Boutique</a>
+        </div>
+        
+        <div class="nav-item">
+          <button class="zeffy-trigger" onclick="
+            (function(){
+              const overlay = document.createElement('div');
+              overlay.className = 'zeffy-modal-overlay';
+              const modalBox = document.createElement('div');
+              modalBox.className = 'zeffy-modal-box';
+              const closeBtn = document.createElement('button');
+              closeBtn.className = 'zeffy-modal-close';
+              closeBtn.innerHTML = '&times;';
+              const iframe = document.createElement('iframe');
+              iframe.src = 'https://www.zeffy.com/embed/ticketing/inscriptions-2025--2026-4';
+              iframe.style.width = '100%'; iframe.style.height = '100%'; iframe.style.border = 'none';
+              iframe.setAttribute('allowpaymentrequest', 'true');
+              iframe.setAttribute('allowTransparency', 'true');
+              modalBox.appendChild(closeBtn); modalBox.appendChild(iframe);
+              overlay.appendChild(modalBox); document.body.appendChild(overlay);
+              const closeMdl = () => overlay.remove();
+              closeBtn.addEventListener('click', closeMdl);
+              overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
+            })()
+          ">Inscriptions</button>
+        </div>
+      </nav>
+    </div>
+
+    <button class="hamburger" onclick="document.getElementById('nav-container').classList.toggle('open');">
+      <span></span><span></span><span></span>
+    </button>
+
   </div>
-
-  <!-- HAMBURGER (mobile only) -->
-  <button class="hamburger" onclick="document.getElementById('nav-container').classList.toggle('open');">
-    <span></span><span></span><span></span>
-  </button>
 
 </header>
 
