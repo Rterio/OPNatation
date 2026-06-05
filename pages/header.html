@@ -16,60 +16,48 @@
 
     header {
       background-color: #1a1a2e;
-      height: 70px;
+      height: 120px; /* Expanded header height to hold the double stacked rows nicely */
       display: flex;
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid #e5e7eb;
       position: relative;
       z-index: 1000;
+      transition: height 0.2s;
     }
 
     .header-wrapper {
       width: 100%;
       max-width: 1200px;
-      padding: 0 40px;
+      padding: 10px 40px;
       display: flex;
+      flex-direction: column; /* Vertical alignment flow */
       align-items: center;
-      justify-content: center; /* Centers the unified nav block perfectly */
-      position: relative;
+      justify-content: center;
+      gap: 12px; /* Spacing layout gap between logo row and menu link row */
     }
 
-    /* Master desktop container */
+    /* Master desktop link row rules */
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 40px; /* Balanced general grouping gap */
+      width: 100%;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 35px; /* Spacing between normal links */
     }
 
-    /* Set fixed, equal widths so the menus meet beautifully right at the center logo */
-    nav.left {
-      width: 260px;
-      justify-content: flex-end;
-    }
-
-    nav.right {
-      width: 260px;
-      justify-content: flex-start;
-    }
-
-    /* Absolute centering formula for the desktop logo badge */
     .logo {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
+      display: block;
     }
 
     .logo img {
-      height: 45px;
+      height: 48px; /* Slightly more prominent logo visualization */
       width: auto;
       display: block;
       transition: opacity 0.2s;
@@ -87,13 +75,13 @@
       color: #e5e7eb;
       text-decoration: none;
       font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       letter-spacing: 0.5px;
       transition: color 0.2s;
       display: flex;
       align-items: center;
       gap: 5px;
-      padding: 24px 0;
+      padding: 6px 0;
       white-space: nowrap;
     }
 
@@ -116,20 +104,16 @@
       display: none;
       position: absolute;
       top: 100%;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%); /* Clean centered dropdown orientation alignments */
       background-color: #1a1a2e;
       border: 1px solid #e5e7eb;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
+      border-radius: 8px;
       min-width: 200px;
       flex-direction: column;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    nav.right .dropdown {
-      left: auto;
-      right: 0;
+      margin-top: 5px;
     }
 
     .nav-item:hover .dropdown {
@@ -144,6 +128,7 @@
       padding: 12px 18px;
       transition: background 0.2s, color 0.2s;
       border-bottom: 1px solid rgba(229, 231, 235, 0.1);
+      text-align: center;
     }
 
     .dropdown a:last-child {
@@ -153,14 +138,6 @@
     .dropdown a:hover {
       background-color: #e8f0fe;
       color: #1a56db;
-    }
-
-    /* Puts the Action Button neatly on the right margin of the layout */
-    .cta-container {
-      position: absolute;
-      right: 40px;
-      display: flex;
-      align-items: center;
     }
 
     .nav-item > button.zeffy-trigger {
@@ -173,7 +150,7 @@
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 8px 20px;
+      padding: 8px 22px;
       cursor: pointer;
       transition: background-color 0.2s, border-color 0.2s, color 0.2s;
     }
@@ -200,25 +177,24 @@
     }
 
     @media (max-width: 700px) {
+      header {
+        height: 70px; /* Snaps back cleanly to classic sizing standard on mobile screen viewports */
+      }
+
       .hamburger { display: flex; }
 
       .header-wrapper {
-        padding: 0 25px;
+        flex-direction: row; /* Horizontal order row configuration */
         justify-content: space-between;
-      }
-
-      /* Resets logo to standard positioning layout on mobile top bar */
-      .logo {
-        position: static;
-        transform: none;
-        margin: 0;
+        padding: 0 25px;
+        gap: 0;
       }
 
       .logo img {
         height: 36px;
       }
 
-      /* Mobile vertical menu container list stack */
+      /* Mobile dropdown list flow rules */
       .nav-container {
         display: none;
         flex-direction: column;
@@ -232,25 +208,18 @@
         border-bottom: 1px solid #e5e7eb;
         max-height: calc(100vh - 70px);
         overflow-y: auto;
+        gap: 0;
       }
 
       .nav-container.open {
         display: flex;
       }
 
-      nav, nav.left, nav.right {
+      nav {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
         gap: 0;
-        margin: 0;
-        justify-content: flex-start;
-      }
-
-      .cta-container {
-        position: static;
-        width: 100%;
-        display: block;
       }
 
       .nav-item {
@@ -272,6 +241,7 @@
 
       .dropdown {
         position: static;
+        transform: none;
         border: none;
         border-left: 2px solid #e8f0fe;
         margin-left: 15px;
@@ -282,6 +252,7 @@
 
       .dropdown a {
         padding: 10px 14px;
+        text-align: left;
       }
 
       .dropdown a:hover {
@@ -292,28 +263,6 @@
       .nav-item.open .dropdown {
         display: flex;
       }
-    }
-
-    /* --- Custom Native Modal Layout Styles --- */
-    .zeffy-modal-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 99999; opacity: 1;
-    }
-    .zeffy-modal-box {
-      width: 100%; max-width: 550px; height: 90%; max-height: 750px;
-      background: white; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3); position: relative;
-    }
-    .zeffy-modal-close {
-      position: absolute; top: 12px; right: 16px;
-      background: #1a1a2e; color: white; border: none;
-      width: 28px; height: 28px; border-radius: 50%;
-      font-size: 16px; font-weight: bold; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 10;
     }
   </style>
 </head>
@@ -328,7 +277,8 @@
     </a>
 
     <div class="nav-container" id="nav-container">
-      <nav class="left">
+      
+      <nav>
         <div class="nav-item has-dropdown">
           <a href="#">Compétitions</a>
           <div class="dropdown">
@@ -345,7 +295,7 @@
         </div>
       </nav>
 
-      <nav class="right">
+      <nav>
         <div class="nav-item has-dropdown">
           <a href="#">Financement</a>
           <div class="dropdown">
@@ -356,9 +306,6 @@
         <div class="nav-item">
           <a href="/OPNatation/pages/Boutique.html">Boutique</a>
         </div>
-      </nav>
-      
-      <div class="cta-container">
         <div class="nav-item">
           <button class="zeffy-trigger" onclick="
             (function(){
@@ -382,7 +329,8 @@
             })()
           ">Inscriptions</button>
         </div>
-      </div>
+      </nav>
+
     </div>
 
     <button class="hamburger" onclick="document.getElementById('nav-container').classList.toggle('open');">
