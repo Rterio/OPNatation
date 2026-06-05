@@ -111,7 +111,9 @@
       flex-direction: column;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-top: 5px;
+      
+      /* Fixed: padding-top forms an invisible bridge so the menu won't close on your mouse */
+      padding-top: 10px; 
     }
 
     .nav-item:hover .dropdown {
@@ -304,10 +306,12 @@
 
   <div class="header-wrapper">
     
+    <!-- BRAND PROFILE LOGO -->
     <a href="/OPNatation/index.html" class="logo">
       <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
     </a>
 
+    <!-- MAIN LINKS SHELL -->
     <div class="nav-container" id="nav-container">
       
       <nav>
@@ -333,10 +337,12 @@
           </div>
         </div>
         <div class="nav-item">
+          <!-- Fixed: Updated filename casing to point perfectly to boutique.html -->
           <a href="/OPNatation/pages/boutique.html">Boutique</a>
         </div>
       </nav>
 
+      <!-- REGISTRATION ACTION WRAPPER -->
       <div class="cta-container">
         <div class="nav-item">
           <button class="zeffy-trigger" onclick="
@@ -365,6 +371,7 @@
 
     </div>
 
+    <!-- HAMBURGER (mobile only) -->
     <button class="hamburger" onclick="document.getElementById('nav-container').classList.toggle('open');">
       <span></span><span></span><span></span>
     </button>
