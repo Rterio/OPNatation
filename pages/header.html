@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>OPNatation Header Component</title>
   <style>
     * {
       margin: 0;
@@ -12,13 +12,13 @@
     }
 
     header {
-      background-color: #1a1a2e;
+      background-color: #1a1a2e; /* Matches the dark navy element backgrounds */
       padding: 0 40px;
       height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom: 2px solid #e94560;
+      border-bottom: 1px solid #e5e7eb; /* Changed from hot pink to match the subtle structural dividers */
       position: relative;
       z-index: 1000;
     }
@@ -65,10 +65,11 @@
     }
 
     .nav-item > a {
-      color: #ccc;
+      color: #e5e7eb; /* Brighter, clean text to match badge/table color standards */
       text-decoration: none;
       font-family: Arial, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px; /* Adds the crisp, clean spacing used in section labels */
       transition: color 0.2s;
       display: flex;
       align-items: center;
@@ -78,7 +79,7 @@
     }
 
     .nav-item > a:hover {
-      color: #e94560;
+      color: #e8f0fe; /* Shifted hover effect to use the soft light-blue theme accent */
     }
 
     .nav-item > a.active {
@@ -91,6 +92,7 @@
       content: '▾';
       font-size: 0.75rem;
       transition: transform 0.2s;
+      color: #888; /* Matches grey metadata tones */
     }
 
     .nav-item.has-dropdown:hover > a::after {
@@ -103,11 +105,14 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #16213e;
-      border: 1px solid #e94560;
+      background-color: #1a1a2e; /* Seamless background continuation */
+      border: 1px solid #e5e7eb; /* Matches card structural layout borders */
       border-top: none;
-      min-width: 180px;
+      border-radius: 0 0 8px 8px;
+      min-width: 200px;
       flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     /* Right-side dropdowns open to the left */
@@ -121,13 +126,13 @@
     }
 
     .dropdown a {
-      color: #ccc;
+      color: #e5e7eb;
       text-decoration: none;
       font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       padding: 12px 18px;
       transition: background 0.2s, color 0.2s;
-      border-bottom: 1px solid #1a1a2e;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.1); /* Subtle white-divider row */
     }
 
     .dropdown a:last-child {
@@ -135,8 +140,8 @@
     }
 
     .dropdown a:hover {
-      background-color: #e94560;
-      color: white;
+      background-color: #e8f0fe; /* Uses badge background tone */
+      color: #1a56db; /* Matches badge deep-blue text color */
     }
 
     /* --- Hamburger (mobile) --- */
@@ -176,7 +181,7 @@
         background-color: #1a1a2e;
         padding: 10px 40px 20px;
         gap: 0;
-        border-bottom: 2px solid #e94560;
+        border-bottom: 1px solid #e5e7eb;
         right: auto;
       }
 
@@ -196,9 +201,16 @@
       .dropdown {
         position: static;
         border: none;
-        border-left: 2px solid #e94560;
+        border-left: 2px solid #e8f0fe;
         margin-left: 15px;
         margin-bottom: 8px;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .dropdown a:hover {
+        background-color: transparent;
+        color: #e8f0fe;
       }
 
       .nav-item.open .dropdown {
@@ -271,15 +283,19 @@
 </header>
 
 <script>
-  // Dynamically create and append the favicon link to the <head>
-  let link = document.querySelector("link[rel~='icon']");
-  if (!link) {
-    link = document.createElement('link');
+  // Aggressive Favicon Inserter to forcefully bypass Chrome's deep tab caching
+  (function() {
+    const existingLinks = document.querySelectorAll("link[rel~='icon']");
+    existingLinks.forEach(el => el.remove());
+
+    const link = document.createElement('link');
     link.rel = 'icon';
+    link.type = 'image/png';
+    // Appending '?v=' cache buster forces Chrome to instantly read the file
+    link.href = '/OPNatation/petitlogo.png?v=' + Date.now(); 
+    
     document.head.appendChild(link);
-  }
-  link.type = 'image/png';
-  link.href = '/OPNatation/petitlogo.png'; // Use an absolute path so it works from any folder
+  })();
 </script>
 
 <script>
