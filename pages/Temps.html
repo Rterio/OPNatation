@@ -359,6 +359,29 @@ fetch('/OPNatation/records.json')
 .then(records => {
   const container = document.getElementById('records-container');
 
+  // Helper function to format dates nicely in French
+  const formatDate = (dateStr) => {
+    if (!dateStr) return null;
+    
+    // Check if it's already in a words format (e.g., contains text like "octobre" or "mai")
+    // If it has letters, we keep it as it is.
+    if (/[a-zA-ZÀ-ÿ]/.test(dateStr)) {
+      return dateStr;
+    }
+    
+    // Otherwise, parse the ISO date structure (YYYY-MM-DD...)
+    const parsedDate = new Date(dateStr);
+    if (!isNaN(parsedDate)) {
+      return parsedDate.toLocaleDateString('fr-FR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+    }
+    
+    return dateStr; // Fallback if parsing fails
+  };
+
   Object.entries(records).forEach(([group, entries], index) => {
 
     const details = document.createElement('details');
@@ -369,7 +392,14 @@ fetch('/OPNatation/records.json')
     details.innerHTML = `
       <summary>${group}</summary>
       <div class="record-grid">
-        ${entries.map(record => `
+        ${entries.map(record => {
+          // Format the age dynamically if it exists
+          const formattedAge = record.age ? `${record.age} ans` : null;
+          
+          // Format the date dynamically
+          const formattedDate = formatDate(record.date);
+
+          return `
           <div class="record-card">
             <div class="record-discipline">${record.discipline || '—'}</div>
 
@@ -382,7 +412,7 @@ fetch('/OPNatation/records.json')
               ? `
                 <div class="record-athlete">${record.athlete}</div>
                 <div class="record-meta">
-                  ${[record.age, record.lieu, record.date]
+                  ${[formattedAge, record.lieu, formattedDate]
                     .filter(Boolean)
                     .join(' · ')}
                 </div>
@@ -394,7 +424,7 @@ fetch('/OPNatation/records.json')
               `
             }
           </div>
-        `).join('')}
+        `}).join('')}
       </div>
     `;
 
