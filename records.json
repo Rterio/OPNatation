@@ -18,7 +18,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "4 :04.77",
+      "temps": "4:04.77",
       "athlete": "Alice Lévesque",
       "age": "8",
       "lieu": "Gaspé",
@@ -26,7 +26,7 @@
     },
     {
       "discipline": "50m brasse",
-      "temps": "1 :08.70",
+      "temps": "1:08.70",
       "athlete": "Alice Lévesque",
       "age": "8",
       "lieu": "Gaspé",
@@ -50,7 +50,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "2 :19.74",
+      "temps": "2:19.74",
       "athlete": "Alice Lévesque",
       "age": "8",
       "lieu": "Sainte-Anne-des-Monts",
@@ -84,7 +84,7 @@
     },
     {
       "discipline": "50m brasse",
-      "temps": "1 :04.11",
+      "temps": "1:04.11",
       "athlete": "Louis Wertz",
       "age": "8",
       "lieu": "Matane",
@@ -108,7 +108,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :59.42",
+      "temps": "1:59.42",
       "athlete": "Louis Wertz",
       "age": "8",
       "lieu": "Matane",
@@ -126,7 +126,7 @@
     },
     {
       "discipline": "100m libre",
-      "temps": "1 :17.49",
+      "temps": "1:17.49",
       "athlete": "Kamilie Ross",
       "age": "10",
       "lieu": "Rimouski",
@@ -134,7 +134,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "3 :04.95",
+      "temps": "3:04.95",
       "athlete": "Kamilie Ross",
       "age": "10",
       "lieu": "Matane",
@@ -174,7 +174,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :44.81",
+      "temps": "1:44.81",
       "athlete": "Kamilie Ross",
       "age": "10",
       "lieu": "Edmunston",
@@ -182,7 +182,7 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "3 :54.42",
+      "temps": "3:54.42",
       "athlete": "Kamilie Ross",
       "age": "10",
       "lieu": "Edmunston",
@@ -198,7 +198,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :29.59",
+      "temps": "1:29.59",
       "athlete": "Kamilie Ross",
       "age": "10",
       "lieu": "Sherbrooke",
@@ -206,7 +206,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "3 :19.56",
+      "temps": "3:19.56",
       "athlete": "Camille Keeney",
       "age": "10",
       "lieu": "Rimouski",
@@ -222,7 +222,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "2 :49.53",
+      "temps": "2:49.53",
       "athlete": "Alexandra Lévesque",
       "age": "10",
       "lieu": "Rimouski",
@@ -238,7 +238,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :30.26",
+      "temps": "1:30.26",
       "athlete": "Kamilie Ross",
       "age": "10",
       "lieu": "Sherbrooke",
@@ -246,7 +246,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "3 :18.79",
+      "temps": "3:18.79",
       "athlete": "Kamilie Ross",
       "age": "10",
       "lieu": "Rimouski",
@@ -272,7 +272,7 @@
     },
     {
       "discipline": "100m libre",
-      "temps": "1 :34.09",
+      "temps": "1:34.09",
       "athlete": "Olivier Thériault",
       "age": "10",
       "lieu": "Amqui",
@@ -280,7 +280,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "3 :11.47",
+      "temps": "3:11.47",
       "athlete": "Olivier Thériault",
       "age": "10",
       "lieu": "Gaspé",
@@ -288,7 +288,7 @@
     },
     {
       "discipline": "400m libre",
-      "temps": "6 :48.25",
+      "temps": "6:48.25",
       "athlete": "Olivier Thériault",
       "age": "10",
       "lieu": "Gaspé",
@@ -320,7 +320,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :51.73",
+      "temps": "1:51.73",
       "athlete": "Louis Wertz",
       "age": "10",
       "lieu": "Rivière-du-Loup",
@@ -344,7 +344,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "2 :09.20",
+      "temps": "2:09.20",
       "athlete": "Arya Julien Aram",
       "age": "10",
       "lieu": "Amqui",
@@ -384,7 +384,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :53.93",
+      "temps": "1:53.93",
       "athlete": "Guillaume Gagnon",
       "age": "10",
       "lieu": "Sainte-Anne-des-Monts",
@@ -418,7 +418,7 @@
     },
     {
       "discipline": "100m libre",
-      "temps": "1 :12.67",
+      "temps": "1:12.67",
       "athlete": "Kamilie Ross",
       "age": "12",
       "lieu": "Québec",
@@ -426,7 +426,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :51.75",
+      "temps": "2:51.75",
       "athlete": "Kamilie Ross",
       "age": "11",
       "lieu": "Jonquière",
@@ -442,7 +442,7 @@
     },
     {
       "discipline": "800m libre",
-      "temps": "12 :50.88",
+      "temps": "12:50.88",
       "athlete": "Kamilie Ross",
       "age": "12",
       "lieu": "Rivière-du-Loup",
@@ -490,7 +490,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :21.51",
+      "temps": "1:21.51",
       "athlete": "Kamilie Ross",
       "age": "12",
       "lieu": "Rivière-du-Loup",
@@ -498,7 +498,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "3 :08.00",
+      "temps": "3:08.00",
       "athlete": "Camille Keeney",
       "age": "12",
       "lieu": "Rimouski",
@@ -514,7 +514,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "1 :40.39",
+      "temps": "1:40.39",
       "athlete": "Coralie Laflamme",
       "age": "12",
       "lieu": "Jonquière",
@@ -530,7 +530,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :22.47",
+      "temps": "1:22.47",
       "athlete": "Kamilie Ross",
       "age": "12",
       "lieu": "Amqui",
@@ -538,7 +538,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "3 :05.36",
+      "temps": "3:05.36",
       "athlete": "Kamilie Ross",
       "age": "12",
       "lieu": "Québec",
@@ -546,7 +546,7 @@
     },
     {
       "discipline": "400m QNI",
-      "temps": "7 :52.10",
+      "temps": "7:52.10",
       "athlete": "Coralie Laflamme",
       "age": "12",
       "lieu": "Jonquière",
@@ -564,7 +564,7 @@
     },
     {
       "discipline": "100m libre",
-      "temps": "1 :10.98",
+      "temps": "1:10.98",
       "athlete": "François Duquette",
       "age": "12",
       "lieu": "Gaspé",
@@ -572,7 +572,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :35.86",
+      "temps": "2:35.86",
       "athlete": "François Duquette",
       "age": "12",
       "lieu": "Gaspé",
@@ -580,7 +580,7 @@
     },
     {
       "discipline": "400m libre",
-      "temps": "5 :52.07",
+      "temps": "5:52.07",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "12",
       "lieu": "Rivière-du-Loup",
@@ -612,7 +612,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :31.40",
+      "temps": "1:31.40",
       "athlete": "François Duquette",
       "age": "12",
       "lieu": "Gaspé",
@@ -620,7 +620,7 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "3 :19.06",
+      "temps": "3:19.06",
       "athlete": "François Duquette",
       "age": "12",
       "lieu": "Gaspé",
@@ -636,7 +636,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :28.72",
+      "temps": "1:28.72",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "12",
       "lieu": "Gaspé",
@@ -644,11 +644,11 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "3 :07.28",
+      "temps": "3:07.28",
       "athlete": "Nicolas Lévesque",
       "age": "12",
       "lieu": "Alma",
-      "date": "1er mai 2016"
+      "date": "1er mai 2016"
     },
     {
       "discipline": "50m papillon",
@@ -660,7 +660,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "2 :11.60",
+      "temps": "2:11.60",
       "athlete": "Émile Pelletier",
       "age": "12",
       "lieu": "Gaspé",
@@ -676,7 +676,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :31.54",
+      "temps": "1:31.54",
       "athlete": "Philip Bélanger",
       "age": "12",
       "lieu": "Rimouski",
@@ -684,7 +684,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "2 :59.22",
+      "temps": "2:59.22",
       "athlete": "Nicolas Lévesque",
       "age": "12",
       "lieu": "Edmunston",
@@ -706,11 +706,11 @@
       "athlete": "Emilie Lepage",
       "age": "14",
       "lieu": "Rivière-du-Loup",
-      "date": "1er mai 2015"
+      "date": "1er mai 2015"
     },
     {
       "discipline": "100m libre",
-      "temps": "1 :14.76",
+      "temps": "1:14.76",
       "athlete": "Emilie Lepage",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -718,7 +718,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :41.40",
+      "temps": "2:41.40",
       "athlete": "Emilie Lepage",
       "age": "14",
       "lieu": "Matane",
@@ -726,7 +726,7 @@
     },
     {
       "discipline": "400m libre",
-      "temps": "5 :49.10",
+      "temps": "5:49.10",
       "athlete": "Camille Keeney",
       "age": "14",
       "lieu": "Rimouski",
@@ -758,7 +758,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :31.90",
+      "temps": "1:31.90",
       "athlete": "Kamilie Ross",
       "age": "13",
       "lieu": "Rivière-du-Loup",
@@ -766,7 +766,7 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "3 :18.14",
+      "temps": "3:18.14",
       "athlete": "Emilie Lepage",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -782,7 +782,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :31.63",
+      "temps": "1:31.63",
       "athlete": "Catherine Rioux",
       "age": "14",
       "lieu": "Matane",
@@ -790,7 +790,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "2 :59.31",
+      "temps": "2:59.31",
       "athlete": "Camille Keeney",
       "age": "14",
       "lieu": "Rimouski",
@@ -806,7 +806,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "1 :31.79",
+      "temps": "1:31.79",
       "athlete": "Ann Beatrice Pelletier",
       "age": "14",
       "lieu": "Gaspé",
@@ -814,7 +814,7 @@
     },
     {
       "discipline": "200m papillon",
-      "temps": "3 :27.85",
+      "temps": "3:27.85",
       "athlete": "Ann Beatrice Pelletier",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -822,7 +822,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :22.28",
+      "temps": "1:22.28",
       "athlete": "Kamilie Ross",
       "age": "13",
       "lieu": "Rivière-du-Loup",
@@ -838,7 +838,7 @@
     },
     {
       "discipline": "400m QNI",
-      "temps": "7 :28.82",
+      "temps": "7:28.82",
       "athlete": "Coralie Laflamme",
       "age": "14",
       "lieu": "Rimouski",
@@ -860,11 +860,11 @@
       "athlete": "Maxime-Olivier Lévesque",
       "age": "14",
       "lieu": "Alma",
-      "date": "1er mai 2016"
+      "date": "1er mai 2016"
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :11.96",
+      "temps": "2:11.96",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "14",
       "lieu": "Alma",
@@ -872,7 +872,7 @@
     },
     {
       "discipline": "400m libre",
-      "temps": "4 :38.50",
+      "temps": "4:38.50",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "14",
       "lieu": "Gaspé",
@@ -880,7 +880,7 @@
     },
     {
       "discipline": "800m libre",
-      "temps": "10 :15.73",
+      "temps": "10:15.73",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "14",
       "lieu": "Alma",
@@ -888,7 +888,7 @@
     },
     {
       "discipline": "1500m libre",
-      "temps": "19 :31.78",
+      "temps": "19:31.78",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "14",
       "lieu": "Alma",
@@ -904,7 +904,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :23.13",
+      "temps": "1:23.13",
       "athlete": "François Duquette",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -912,7 +912,7 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "3 :04.17",
+      "temps": "3:04.17",
       "athlete": "François Duquette",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -928,7 +928,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :10.16",
+      "temps": "1:10.16",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "14",
       "lieu": "Alma",
@@ -936,7 +936,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "2 :30.19",
+      "temps": "2:30.19",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "14",
       "lieu": "Gaspé",
@@ -952,7 +952,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "1 :15.38",
+      "temps": "1:15.38",
       "athlete": "Philip Bélanger",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -968,7 +968,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :15.53",
+      "temps": "1:15.53",
       "athlete": "François Duquette",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -976,7 +976,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "2 :39.81",
+      "temps": "2:39.81",
       "athlete": "Philip Bélanger",
       "age": "14",
       "lieu": "Gaspé",
@@ -984,7 +984,7 @@
     },
     {
       "discipline": "400m QNI",
-      "temps": "6 :18.86",
+      "temps": "6:18.86",
       "athlete": "François Duquette",
       "age": "14",
       "lieu": "Rivière-du-Loup",
@@ -1002,7 +1002,7 @@
     },
     {
       "discipline": "100m libre",
-      "temps": "1 :05.79",
+      "temps": "1:05.79",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Gaspé",
@@ -1010,7 +1010,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :41.83",
+      "temps": "2:41.83",
       "athlete": "Ann Beatrice Pelletier",
       "age": "17",
       "lieu": "Rimouski",
@@ -1018,7 +1018,7 @@
     },
     {
       "discipline": "400m libre",
-      "temps": "5 :55.79",
+      "temps": "5:55.79",
       "athlete": "Ann Beatrice Pelletier",
       "age": "17",
       "lieu": "Rimouski",
@@ -1026,7 +1026,7 @@
     },
     {
       "discipline": "800m libre",
-      "temps": "12 :13.22",
+      "temps": "12:13.22",
       "athlete": "Ann Beatrice Pelletier",
       "age": "16",
       "lieu": "Alma",
@@ -1046,11 +1046,11 @@
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Alma",
-      "date": "1er mai 2016"
+      "date": "1er mai 2016"
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :25.65",
+      "temps": "1:25.65",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Gaspé",
@@ -1058,11 +1058,11 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "3 :02.42",
+      "temps": "3:02.42",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Alma",
-      "date": "1er mai 2016"
+      "date": "1er mai 2016"
     },
     {
       "discipline": "50m dos",
@@ -1074,7 +1074,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :16.98",
+      "temps": "1:16.98",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Alma",
@@ -1082,7 +1082,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "2 :48.12",
+      "temps": "2:48.12",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Jonquière",
@@ -1098,7 +1098,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "1 :15.94",
+      "temps": "1:15.94",
       "athlete": "Emilie Lepage",
       "age": "17",
       "lieu": "Rimouski",
@@ -1106,7 +1106,7 @@
     },
     {
       "discipline": "200m papillon",
-      "temps": "3 :24.91",
+      "temps": "3:24.91",
       "athlete": "Ann Beatrice Pelletier",
       "age": "15",
       "lieu": "Rivière-du-Loup",
@@ -1114,7 +1114,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :16.38",
+      "temps": "1:16.38",
       "athlete": "Emilie Lepage",
       "age": "17",
       "lieu": "Rivière-du-Loup",
@@ -1122,7 +1122,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "3 :04.75",
+      "temps": "3:04.75",
       "athlete": "Ann Beatrice Pelletier",
       "age": "16",
       "lieu": "Alma",
@@ -1130,7 +1130,7 @@
     },
     {
       "discipline": "400m QNI",
-      "temps": "6 :52.24",
+      "temps": "6:52.24",
       "athlete": "Ann Beatrice Pelletier",
       "age": "17",
       "lieu": "Rivière-du-Loup",
@@ -1156,7 +1156,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :12.12",
+      "temps": "2:12.12",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "16",
       "lieu": "Rivière-du-Loup",
@@ -1164,7 +1164,7 @@
     },
     {
       "discipline": "400m libre",
-      "temps": "4 :41.12",
+      "temps": "4:41.12",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "15",
       "lieu": "Edmunston",
@@ -1196,7 +1196,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :22.14",
+      "temps": "1:22.14",
       "athlete": "François Duquette",
       "age": "15",
       "lieu": "Edmunston",
@@ -1204,7 +1204,7 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "3 :00.22",
+      "temps": "3:00.22",
       "athlete": "François Duquette",
       "age": "16",
       "lieu": "Rimouski",
@@ -1220,7 +1220,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :06.47",
+      "temps": "1:06.47",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "16",
       "lieu": "Rimouski",
@@ -1228,7 +1228,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "2 :30.24",
+      "temps": "2:30.24",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "16",
       "lieu": "Edmunston",
@@ -1244,7 +1244,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "1 :10.88",
+      "temps": "1:10.88",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "16",
       "lieu": "Gaspé",
@@ -1252,7 +1252,7 @@
     },
     {
       "discipline": "200m papillon",
-      "temps": "3 :27.49",
+      "temps": "3:27.49",
       "athlete": "Henri Gosselin",
       "age": "16",
       "lieu": "Gaspé",
@@ -1260,7 +1260,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :20.32",
+      "temps": "1:20.32",
       "athlete": "Justin Lévesque",
       "age": "16",
       "lieu": "Gaspé",
@@ -1268,7 +1268,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "2 :40.47",
+      "temps": "2:40.47",
       "athlete": "Maxime-Olivier Lévesque",
       "age": "16",
       "lieu": "Gaspé",
@@ -1294,7 +1294,7 @@
     },
     {
       "discipline": "100m libre",
-      "temps": "1 :05.79",
+      "temps": "1:05.79",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Gaspé",
@@ -1302,7 +1302,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :41.40",
+      "temps": "2:41.40",
       "athlete": "Emilie Lepage",
       "age": "14",
       "lieu": "Matane",
@@ -1318,7 +1318,7 @@
     },
     {
       "discipline": "800m libre",
-      "temps": "12 :13.22",
+      "temps": "12:13.22",
       "athlete": "Ann Beatrice Pelletier",
       "age": "16",
       "lieu": "Alma",
@@ -1342,7 +1342,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :25.65",
+      "temps": "1:25.65",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Gaspé",
@@ -1350,11 +1350,11 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "3 :02.42",
+      "temps": "3:02.42",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Alma",
-      "date": "1er mai 2016"
+      "date": "1er mai 2016"
     },
     {
       "discipline": "50m dos",
@@ -1366,7 +1366,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :16.98",
+      "temps": "1:16.98",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Alma",
@@ -1374,7 +1374,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "2 :48.12",
+      "temps": "2:48.12",
       "athlete": "Emilie Lepage",
       "age": "16",
       "lieu": "Jonquière",
@@ -1390,7 +1390,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "1 :15.94",
+      "temps": "1:15.94",
       "athlete": "Emilie Lepage",
       "age": "17",
       "lieu": "Rimouski",
@@ -1398,7 +1398,7 @@
     },
     {
       "discipline": "200m papillon",
-      "temps": "3 :14.36",
+      "temps": "3:14.36",
       "athlete": "Jessica Roy",
       "age": "24",
       "lieu": "Lasalle",
@@ -1406,7 +1406,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :16.38",
+      "temps": "1:16.38",
       "athlete": "Emilie Lepage",
       "age": "17",
       "lieu": "Rivière-du-Loup",
@@ -1414,7 +1414,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "3 :02.01",
+      "temps": "3:02.01",
       "athlete": "Jessica Roy",
       "age": "24",
       "lieu": "Lasalle",
@@ -1422,7 +1422,7 @@
     },
     {
       "discipline": "400m QNI",
-      "temps": "6 :52.24",
+      "temps": "6:52.24",
       "athlete": "Ann Beatrice Pelletier",
       "age": "17",
       "lieu": "Rivière-du-Loup",
@@ -1436,7 +1436,7 @@
       "athlete": "Kevin Bouchard",
       "age": "30",
       "lieu": "Rivière-du-Loup",
-      "date": "1er mars 2014"
+      "date": "1er mars 2014"
     },
     {
       "discipline": "100m libre",
@@ -1448,7 +1448,7 @@
     },
     {
       "discipline": "200m libre",
-      "temps": "2 :02.75",
+      "temps": "2:02.75",
       "athlete": "Kevin Bouchard",
       "age": "31",
       "lieu": "Montréal",
@@ -1456,7 +1456,7 @@
     },
     {
       "discipline": "400m libre",
-      "temps": "4 :21.44",
+      "temps": "4:21.44",
       "athlete": "Kevin Bouchard",
       "age": "32",
       "lieu": "Québec",
@@ -1464,7 +1464,7 @@
     },
     {
       "discipline": "800m libre",
-      "temps": "9 :25.45",
+      "temps": "9:25.45",
       "athlete": "Kevin Bouchard",
       "age": "31",
       "lieu": "Montréal",
@@ -1472,7 +1472,7 @@
     },
     {
       "discipline": "1500m libre",
-      "temps": "17 :57.30",
+      "temps": "17:57.30",
       "athlete": "Kevin Bouchard",
       "age": "32",
       "lieu": "Québec",
@@ -1488,7 +1488,7 @@
     },
     {
       "discipline": "100m brasse",
-      "temps": "1 :12.10",
+      "temps": "1:12.10",
       "athlete": "Kevin Bouchard",
       "age": "30",
       "lieu": "Québec",
@@ -1496,7 +1496,7 @@
     },
     {
       "discipline": "200m brasse",
-      "temps": "2 :37.45",
+      "temps": "2:37.45",
       "athlete": "Kevin Bouchard",
       "age": "32",
       "lieu": "Montréal",
@@ -1512,7 +1512,7 @@
     },
     {
       "discipline": "100m dos",
-      "temps": "1 :00.22",
+      "temps": "1:00.22",
       "athlete": "Kevin Bouchard",
       "age": "31",
       "lieu": "Montréal",
@@ -1520,7 +1520,7 @@
     },
     {
       "discipline": "200m dos",
-      "temps": "2 :10.22",
+      "temps": "2:10.22",
       "athlete": "Kevin Bouchard",
       "age": "31",
       "lieu": "Montréal",
@@ -1536,7 +1536,7 @@
     },
     {
       "discipline": "100m papillon",
-      "temps": "1 :00.04",
+      "temps": "1:00.04",
       "athlete": "Kevin Bouchard",
       "age": "29",
       "lieu": "Montréal",
@@ -1544,7 +1544,7 @@
     },
     {
       "discipline": "200m papillon",
-      "temps": "2 :17.49",
+      "temps": "2:17.49",
       "athlete": "Kevin Bouchard",
       "age": "33",
       "lieu": "Québec",
@@ -1552,7 +1552,7 @@
     },
     {
       "discipline": "100m QNI",
-      "temps": "1 :02.00",
+      "temps": "1:02.00",
       "athlete": "Kevin Bouchard",
       "age": "33",
       "lieu": "Québec",
@@ -1560,7 +1560,7 @@
     },
     {
       "discipline": "200m QNI",
-      "temps": "2 :12.82",
+      "temps": "2:12.82",
       "athlete": "Kevin Bouchard",
       "age": "33",
       "lieu": "Québec",
@@ -1568,7 +1568,7 @@
     },
     {
       "discipline": "400m QNI",
-      "temps": "4 :43.76",
+      "temps": "4:43.76",
       "athlete": "Kevin Bouchard",
       "age": "32",
       "lieu": "Québec",
