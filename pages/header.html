@@ -271,6 +271,18 @@
 </header>
 
 <script>
+  // Dynamically create and append the favicon link to the <head>
+  let link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+  link.type = 'image/png';
+  link.href = '/OPNatation/petitlogo.png'; // Use an absolute path so it works from any folder
+</script>
+
+<script>
   function toggleMenu() {
     document.getElementById('nav-left').classList.toggle('open');
     document.getElementById('nav-right').classList.toggle('open');
