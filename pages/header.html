@@ -26,11 +26,10 @@
       z-index: 1000;
     }
 
-    /* Target the master structural navigation wrappers */
+    /* Target the master structural navigation wrapper box */
     .nav-container {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       width: 100%;
     }
 
@@ -40,9 +39,17 @@
       gap: 30px;
     }
 
+    /* Left side menus occupy flexible grid space to align the logo center */
+    nav.left {
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    /* Right side menus handle spacing alignment from center outward */
     nav.right {
+      flex: 1;
       justify-content: flex-end;
-      margin-left: auto;
+      gap: 30px;
     }
 
     nav.far-right {
@@ -51,6 +58,7 @@
       align-items: center;
     }
 
+    /* Center layout styling for the branding logo */
     .logo {
       flex-shrink: 0;
       margin: 0 20px;
@@ -199,7 +207,7 @@
         padding: 10px 40px 30px 40px;
         border-bottom: 1px solid #e5e7eb;
         max-height: calc(100vh - 70px);
-        overflow-y: auto; /* Gracefully scroll internally if screens are extremely short */
+        overflow-y: auto;
       }
 
       .nav-container.open {
@@ -207,13 +215,14 @@
       }
 
       /* Allow items to stack cleanly without absolute conflicts */
-      nav, nav.right, nav.far-right {
+      nav, nav.left, nav.right, nav.far-right {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
         gap: 0;
         margin: 0;
         justify-content: flex-start;
+        flex: none;
       }
 
       .nav-item {
@@ -258,6 +267,7 @@
 
       .logo {
         margin: 0;
+        order: -1; /* Ensures logo stays pinned to top of code reading flow on mobile screen */
       }
 
       .logo img {
@@ -292,11 +302,9 @@
 
 <header>
 
-  <a href="/OPNatation/index.html" class="logo">
-    <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
-  </a>
-
+  <!-- Structural Flex Container combining elements together cleanly -->
   <div class="nav-container" id="nav-container">
+    <!-- LEFT NAV -->
     <nav class="left">
       <div class="nav-item has-dropdown">
         <a href="#">Compétitions</a>
@@ -314,6 +322,12 @@
       </div>
     </nav>
 
+    <!-- CENTER LOGO (Moved inside the master container for grid calculation layout balancing) -->
+    <a href="/OPNatation/index.html" class="logo">
+      <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
+    </a>
+
+    <!-- RIGHT NAV -->
     <nav class="right">
       <div class="nav-item has-dropdown">
         <a href="#">Financement</a>
@@ -325,9 +339,8 @@
       <div class="nav-item">
         <a href="/OPNatation/pages/Boutique.html">Boutique</a>
       </div>
-    </nav>
-
-    <nav class="far-right">
+      
+      <!-- FAR RIGHT NAVIGATION ACTION BUTTON -->
       <div class="nav-item">
         <button class="zeffy-trigger" onclick="
           (function(){
@@ -354,6 +367,7 @@
     </nav>
   </div>
 
+  <!-- HAMBURGER (mobile only) -->
   <button class="hamburger" onclick="document.getElementById('nav-container').classList.toggle('open');">
     <span></span><span></span><span></span>
   </button>
