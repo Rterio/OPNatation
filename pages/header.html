@@ -254,7 +254,6 @@
 
 <header>
 
-  <!-- LEFT NAV -->
   <nav class="left" id="nav-left">
     <div class="nav-item has-dropdown">
       <a href="#">Compétitions</a>
@@ -272,12 +271,10 @@
     </div>
   </nav>
 
-  <!-- CENTER LOGO -->
   <a href="/OPNatation/index.html" class="logo">
     <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
   </a>
 
-  <!-- RIGHT NAV -->
   <nav class="right" id="nav-right">
     <div class="nav-item has-dropdown">
       <a href="#">Financement</a>
@@ -291,7 +288,6 @@
     </div>
   </nav>
 
-  <!-- FAR RIGHT NAVIGATION ACTION BUTTON -->
   <nav class="far-right" id="nav-far-right">
     <div class="nav-item">
       <button class="zeffy-trigger" zeffy-form-link="https://www.zeffy.com/embed/ticketing/inscriptions-2025--2026-4?modal=true">
@@ -300,7 +296,6 @@
     </div>
   </nav>
 
-  <!-- HAMBURGER (mobile only) -->
   <button class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
@@ -310,6 +305,21 @@
 <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 
 <script>
+  // Dynamic Click Interceptor: Triggers Zeffy's form parsing directly on button click
+  document.addEventListener('click', function(e) {
+    const trigger = e.target.closest('.zeffy-trigger');
+    if (trigger) {
+      // If the official script initialized its global layout library, refresh it on click to open the modal
+      if (window.initializeZeffyLinkEmbed) {
+        window.initializeZeffyLinkEmbed();
+      } else {
+        // Safe ad-blocker backup fallback link
+        window.open("https://www.zeffy.com/fr-CA/ticketing/inscriptions-2025--2026-4", '_blank');
+      }
+    }
+  });
+
+  // Aggressive Favicon Inserter to forcefully bypass Chrome's deep tab caching
   (function() {
     const existingLinks = document.querySelectorAll("link[rel~='icon']");
     existingLinks.forEach(el => el.remove());
