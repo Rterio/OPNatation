@@ -31,16 +31,15 @@
       padding: 0 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* Centers the unified nav block perfectly */
       position: relative;
     }
 
-    /* Master desktop layout wrapper */
+    /* Master desktop container */
     .nav-container {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
+      justify-content: center;
     }
 
     nav {
@@ -49,18 +48,18 @@
       gap: 30px;
     }
 
+    /* Set fixed, equal widths so the menus meet beautifully right at the center logo */
     nav.left {
-      justify-content: flex-start;
-      margin-right: auto;
+      width: 260px;
+      justify-content: flex-end;
     }
 
     nav.right {
-      justify-content: flex-end;
-      margin-left: auto;
-      margin-right: 150px; /* Leaves a gap so links don't slide under the absolute button */
+      width: 260px;
+      justify-content: flex-start;
     }
 
-    /* Absolute centering formula for the desktop logo */
+    /* Absolute centering formula for the desktop logo badge */
     .logo {
       position: absolute;
       left: 50%;
@@ -156,7 +155,7 @@
       color: #1a56db;
     }
 
-    /* Pins the action registration item strictly to the right edge boundary */
+    /* Puts the Action Button neatly on the right margin of the layout */
     .cta-container {
       position: absolute;
       right: 40px;
@@ -208,7 +207,7 @@
         justify-content: space-between;
       }
 
-      /* Logo resets to basic flow, keeping it static on mobile top bar */
+      /* Resets logo to standard positioning layout on mobile top bar */
       .logo {
         position: static;
         transform: none;
@@ -219,7 +218,7 @@
         height: 36px;
       }
 
-      /* Mobile vertical drawer navigation layout rules */
+      /* Mobile vertical menu container list stack */
       .nav-container {
         display: none;
         flex-direction: column;
