@@ -89,11 +89,20 @@
     }
 
     /* --- Stroke cards --- */
-    .stroke-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
+.stroke-grid-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.stroke-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 66%;
+  margin: 0 auto;
+}
 
     .stroke-card {
       background: white;
@@ -184,53 +193,52 @@
         Standards régionaux
         <span class="badge">3 standards · 2 nages différentes</span>
       </p>
-      <div class="stroke-grid">
+     <div class="stroke-grid-top">
+  <div class="stroke-card">
+    <div class="stroke-header"><h3>Libre (crawl)</h3></div>
+    <div class="stroke-body">
+      <div class="stroke-row"><span class="dist">50m</span><span class="t">40.00</span></div>
+      <div class="stroke-row"><span class="dist">100m</span><span class="t">1:25.00</span></div>
+      <div class="stroke-row"><span class="dist">200m</span><span class="t">3:15.00</span></div>
+      <div class="stroke-row"><span class="dist">400m</span><span class="t">6:45.00</span></div>
+    </div>
+  </div>
+  <div class="stroke-card">
+    <div class="stroke-header"><h3>Brasse</h3></div>
+    <div class="stroke-body">
+      <div class="stroke-row"><span class="dist">50m</span><span class="t">50.00</span></div>
+      <div class="stroke-row"><span class="dist">100m</span><span class="t">1:50.00</span></div>
+      <div class="stroke-row"><span class="dist">200m</span><span class="t">4:00.00</span></div>
+    </div>
+  </div>
+  <div class="stroke-card">
+    <div class="stroke-header"><h3>Dos</h3></div>
+    <div class="stroke-body">
+      <div class="stroke-row"><span class="dist">50m</span><span class="t">45.00</span></div>
+      <div class="stroke-row"><span class="dist">100m</span><span class="t">1:40.00</span></div>
+      <div class="stroke-row"><span class="dist">200m</span><span class="t">3:40.00</span></div>
+    </div>
+  </div>
+</div>
 
-        <div class="stroke-card">
-          <div class="stroke-header"><h3>Libre (crawl)</h3></div>
-          <div class="stroke-body">
-            <div class="stroke-row"><span class="dist">50m</span><span class="t">40.00</span></div>
-            <div class="stroke-row"><span class="dist">100m</span><span class="t">1:25.00</span></div>
-            <div class="stroke-row"><span class="dist">200m</span><span class="t">3:15.00</span></div>
-            <div class="stroke-row"><span class="dist">400m</span><span class="t">6:45.00</span></div>
-          </div>
-        </div>
-
-        <div class="stroke-card">
-          <div class="stroke-header"><h3>Brasse</h3></div>
-          <div class="stroke-body">
-            <div class="stroke-row"><span class="dist">50m</span><span class="t">50.00</span></div>
-            <div class="stroke-row"><span class="dist">100m</span><span class="t">1:50.00</span></div>
-            <div class="stroke-row"><span class="dist">200m</span><span class="t">4:00.00</span></div>
-          </div>
-        </div>
-
-        <div class="stroke-card">
-          <div class="stroke-header"><h3>Dos</h3></div>
-          <div class="stroke-body">
-            <div class="stroke-row"><span class="dist">50m</span><span class="t">45.00</span></div>
-            <div class="stroke-row"><span class="dist">100m</span><span class="t">1:40.00</span></div>
-            <div class="stroke-row"><span class="dist">200m</span><span class="t">3:40.00</span></div>
-          </div>
-        </div>
-
-        <div class="stroke-card">
-          <div class="stroke-header"><h3>Papillon</h3></div>
-          <div class="stroke-body">
-            <div class="stroke-row"><span class="dist">50m</span><span class="t">45.00</span></div>
-            <div class="stroke-row"><span class="dist">100m</span><span class="t">1:40.00</span></div>
-            <div class="stroke-row"><span class="dist">200m</span><span class="t">3:40.00</span></div>
-          </div>
-        </div>
-
-        <div class="stroke-card">
-          <div class="stroke-header"><h3>QNI</h3></div>
-          <div class="stroke-body">
-            <div class="stroke-row"><span class="dist">100m</span><span class="t">1:40.00</span></div>
-            <div class="stroke-row"><span class="dist">200m</span><span class="t">3:25.00</span></div>
-            <div class="stroke-row"><span class="dist">400m</span><span class="t">7:30.00</span></div>
-          </div>
-        </div>
+<div class="stroke-grid-bottom">
+  <div class="stroke-card">
+    <div class="stroke-header"><h3>Papillon</h3></div>
+    <div class="stroke-body">
+      <div class="stroke-row"><span class="dist">50m</span><span class="t">45.00</span></div>
+      <div class="stroke-row"><span class="dist">100m</span><span class="t">1:40.00</span></div>
+      <div class="stroke-row"><span class="dist">200m</span><span class="t">3:40.00</span></div>
+    </div>
+  </div>
+  <div class="stroke-card">
+    <div class="stroke-header"><h3>QNI</h3></div>
+    <div class="stroke-body">
+      <div class="stroke-row"><span class="dist">100m</span><span class="t">1:40.00</span></div>
+      <div class="stroke-row"><span class="dist">200m</span><span class="t">3:25.00</span></div>
+      <div class="stroke-row"><span class="dist">400m</span><span class="t">7:30.00</span></div>
+    </div>
+  </div>
+</div>
 
       </div>
     </div>
