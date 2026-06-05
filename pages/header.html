@@ -25,23 +25,22 @@
       z-index: 1000;
     }
 
-    /* Fixed alignment wrapper box keeping elements unified */
+    /* Sets the centered canvas bounding box */
     .header-wrapper {
       width: 100%;
       max-width: 1200px;
       padding: 0 40px;
       display: flex;
       align-items: center;
-      justify-content: center; /* Centers the whole block naturally on desktop viewports */
-      position: relative;
+      justify-content: center;
+      position: relative; /* Allows the CTA button to anchor to the far right on desktop */
     }
 
-    /* Master desktop alignment layout container */
+    /* Master desktop container holding the left links, logo, and right links */
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
     }
 
     nav {
@@ -50,22 +49,19 @@
       gap: 30px;
     }
 
-    /* Keeps elements wrapped tightly instead of extending out to the page edges */
+    /* Left and Right navigation blocks now have exact mirror layouts */
     nav.left {
-      display: flex;
       justify-content: flex-end;
     }
 
     nav.right {
-      display: flex;
       justify-content: flex-start;
-      gap: 30px;
     }
 
-    /* Logo stays centered between the menus naturally */
+    /* Brand Logo stays dead-centered mathematically */
     .logo {
       flex-shrink: 0;
-      margin: 0 40px; /* Adjust this value to bring links closer or push them away */
+      margin: 0 40px;
     }
 
     .logo img {
@@ -155,6 +151,14 @@
       color: #1a56db;
     }
 
+    /* Desktop CTA Button Container: Pinned safely to the right wall */
+    .cta-container {
+      position: absolute;
+      right: 40px;
+      display: flex;
+      align-items: center;
+    }
+
     .nav-item > button.zeffy-trigger {
       background-color: transparent;
       color: #ffffff;
@@ -201,7 +205,7 @@
         justify-content: space-between;
       }
 
-      /* Responsive vertical stacking view rules */
+      /* Mobile overlay layout rules */
       .nav-container {
         display: none;
         flex-direction: column;
@@ -228,6 +232,13 @@
         gap: 0;
         margin: 0;
         justify-content: flex-start;
+      }
+
+      /* Re-flow the CTA container cleanly back into vertical menu list on mobile */
+      .cta-container {
+        position: static;
+        width: 100%;
+        display: block;
       }
 
       .nav-item {
@@ -342,7 +353,9 @@
         <div class="nav-item">
           <a href="/OPNatation/pages/Boutique.html">Boutique</a>
         </div>
-        
+      </nav>
+      
+      <div class="cta-container">
         <div class="nav-item">
           <button class="zeffy-trigger" onclick="
             (function(){
@@ -366,7 +379,7 @@
             })()
           ">Inscriptions</button>
         </div>
-      </nav>
+      </div>
     </div>
 
     <button class="hamburger" onclick="document.getElementById('nav-container').classList.toggle('open');">
