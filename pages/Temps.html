@@ -155,7 +155,100 @@
       h1 { font-size: 1.5rem; }
       .novice-card .time { font-size: 1.5rem; }
     }
-  </style>
+
+    /* --- Club records --- */
+.records-section {
+  margin-top: 4rem;
+}
+
+.record-group {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.record-group summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 20px;
+  background: #1a1a2e;
+  color: white;
+  font-weight: bold;
+}
+
+.record-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.record-group summary::after {
+  content: "+";
+  float: right;
+}
+
+.record-group[open] summary::after {
+  content: "−";
+}
+
+.record-table-wrapper {
+  overflow-x: auto;
+}
+
+.record-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.record-table th,
+.record-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.record-table th {
+  background: #f8fafc;
+}
+
+.empty-record {
+  color: #aaa;
+}
+  
+/* --- Improved Records Layout --- */
+.record-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;
+  padding:16px;
+}
+.record-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:12px;
+}
+.record-discipline{
+  font-size:.85rem;
+  color:#666;
+  margin-bottom:6px;
+}
+.record-time{
+  font-size:1.35rem;
+  font-weight:bold;
+  color:#1a1a2e;
+  margin-bottom:8px;
+}
+.record-athlete{
+  font-size:.9rem;
+}
+.record-meta{
+  font-size:.8rem;
+  color:#888;
+  margin-top:4px;
+}
+
+</style>
 </head>
 <body>
 
@@ -239,6 +332,14 @@
   </div>
 </div>
 
+<div class="records-section">
+  <p class="section-label">
+    Records du club
+    <span class="badge">par groupe d'âge</span>
+  </p>
+
+  <div id="records-container"></div>
+</div>
       </div>
     </div>
   </main>
@@ -251,5 +352,56 @@
       .then(html => document.getElementById('footer').innerHTML = html);
   </script>
 
+
+<script>
+fetch('/OPNatation/records.json')
+.then(r => r.json())
+.then(records => {
+  const container = document.getElementById('records-container');
+
+  Object.entries(records).forEach(([group, entries], index) => {
+
+    const details = document.createElement('details');
+    details.className = 'record-group';
+
+    if(index === 0) details.open = true;
+
+    details.innerHTML = `
+      <summary>${group}</summary>
+      <div class="record-grid">
+        ${entries.map(record => `
+          <div class="record-card">
+            <div class="record-discipline">${record.discipline || '—'}</div>
+
+            <div class="record-time">
+              ${record.temps || '—'}
+            </div>
+
+            ${
+              record.athlete
+              ? `
+                <div class="record-athlete">${record.athlete}</div>
+                <div class="record-meta">
+                  ${[record.age, record.lieu, record.date]
+                    .filter(Boolean)
+                    .join(' · ')}
+                </div>
+              `
+              : `
+                <div class="record-meta">
+                  Aucun record enregistré
+                </div>
+              `
+            }
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    container.appendChild(details);
+  });
+})
+.catch(err => console.error(err));
+</script>
 </body>
 </html>
