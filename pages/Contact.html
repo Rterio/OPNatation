@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
       justify-content: center;
       align-items: flex-start;
       padding: 60px 20px;
-      background-color: #f5f5f5;
+      background-color: #f8fafc; /* Matches your premium boutique grey backdrop */
     }
 
     .contact-wrapper {
@@ -29,21 +29,25 @@
 
     h1 {
       font-size: 2rem;
-      color: #1a1a2e;
+      color: #1a1a2e; /* Exact brand dark navy */
       margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      text-align: center;
     }
 
     .subtitle {
       color: #888;
       margin-bottom: 40px;
       font-size: 0.95rem;
+      text-align: center;
     }
 
     .contact-form {
       background: white;
       padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 16px; /* Smooth rounded corners matching your layouts */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer shadows matching premium cards */
     }
 
     .form-group {
@@ -54,7 +58,7 @@
       display: block;
       font-size: 0.85rem;
       font-weight: bold;
-      color: #333;
+      color: #1a1a2e; /* Matches brand typography standard codes */
       margin-bottom: 6px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -63,7 +67,7 @@
     input, textarea, select {
       width: 100%;
       padding: 12px 16px;
-      border: 1px solid #ddd;
+      border: 1px solid #e5e7eb; /* Soft structural grey line borders */
       border-radius: 8px;
       font-size: 0.95rem;
       font-family: Arial, sans-serif;
@@ -73,10 +77,11 @@
       box-sizing: border-box;
     }
 
+    /* Fixed: Now utilizes your brand blue (#1a56db) focus indicators */
     input:focus, textarea:focus, select:focus {
       outline: none;
-      border-color: #e94560;
-      box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+      border-color: #1a56db;
+      box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
       background-color: white;
     }
 
@@ -94,29 +99,32 @@
       flex: 1;
     }
 
+    /* Fixed: Buttons match the brand call-to-actions */
     .submit-btn {
       width: 100%;
       padding: 14px;
-      background-color: #e94560;
+      background-color: #1a56db; /* Primary brand action blue color token */
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 99px; /* Smooth pill button design matching Inscriptions */
       font-size: 1rem;
       font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
       cursor: pointer;
       transition: background 0.2s, transform 0.1s;
       margin-top: 10px;
     }
 
     .submit-btn:hover {
-      background-color: #c73652;
+      background-color: #1546b5; /* Deeper hover tone override */
     }
 
     .submit-btn:active {
       transform: scale(0.98);
     }
 
-    /* Info section below form */
+    /* Info sections below form fields */
     .contact-info {
       margin-top: 30px;
       display: flex;
@@ -126,11 +134,11 @@
 
     .info-card {
       flex: 1;
-      min-width: 150px;
+      min-width: 160px;
       background: white;
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
 
@@ -140,118 +148,17 @@
     }
 
     .info-card h3 {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #888;
       margin-bottom: 6px;
+      font-weight: bold;
     }
 
     .info-card p, .info-card a {
       font-size: 0.9rem;
       color: #1a1a2e;
       text-decoration: none;
+      word-break: break-word; /* Prevents overflow issues from long email chains */
     }
-
-    .info-card a:hover {
-      color: #e94560;
-    }
-
-    @media (max-width: 600px) {
-      .form-row {
-        flex-direction: column;
-        gap: 0;
-      }
-
-      .contact-form {
-        padding: 25px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <div id="header"></div>
-  <script>
-    fetch('/OPNatation/pages/header.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('header').innerHTML = html);
-  </script>
-
-  <main>
-    <div class="contact-wrapper">
-      <h1>Nous contacter</h1>
-      <p class="subtitle">Une question? N'hésitez pas à nous écrire.</p>
-
-      <div class="contact-form">
-        <form action="https://formspree.io/f/xqeoapjd" method="POST">
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
-            </div>
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" placeholder="Tremblay" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Courriel</label>
-            <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="sujet">Sujet</label>
-            <select id="sujet" name="sujet">
-              <option value="">Choisir un sujet...</option>
-              <option value="information">Demande d'information</option>
-              <option value="plainte">Plainte</option>
-              <option value="commandite">Commandite</option>
-              <option value="autre">Autre</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Envoyer le message</button>
-        </form>
-      </div>
-
-      <!-- Info cards below form -->
-      <div class="contact-info">
-        <div class="info-card">
-          <div class="icon">📧</div>
-          <h3>Courriel</h3>
-          <a href="mailto:info@opnatation.ca">info@opnatation.ca</a>
-        </div>
-        <div class="info-card">
-          <div class="icon">📍</div>
-          <h3>Adresse</h3>
-          <p>Votre adresse ici</p>
-        </div>
-        <div class="info-card">
-          <div class="icon">📱</div>
-          <h3>Téléphone</h3>
-          <a href="tel:+15551234567">+1 (555) 123-4567</a>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <div id="footer"></div>
-  <script>
-    fetch('/OPNatation/pages/footer.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('footer').innerHTML = html);
-  </script>
-
-</body>
-</html>
