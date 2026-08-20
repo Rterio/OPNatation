@@ -20,7 +20,7 @@
     }
 
     .wrapper {
-      max-width: 900px;
+      max-width: 1200px; /* Widened from 900px to give the larger sponsor logos room */
       margin: 0 auto;
     }
 
@@ -54,18 +54,18 @@
     .sponsor-list {
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 56px;
       margin-bottom: 3rem;
     }
 
     .sponsor-row {
       display: flex;
       align-items: center;
-      gap: 56px;
+      gap: 112px;
       background: white;
       border: 1px solid #e5e7eb; /* Matched card border from Temps.html */
       border-radius: 12px; /* Matched card radius from Temps.html */
-      padding: 2.75rem;
+      padding: 5.5rem;
     }
 
     /* Alternates logo left/right — applied via nth-child, see JS-free rule below */
@@ -74,8 +74,8 @@
     }
 
     .sponsor-logo {
-      flex: 0 0 240px;
-      height: 140px;
+      flex: 0 0 480px;
+      height: 280px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -104,15 +104,15 @@
     }
 
     .sponsor-text h3 {
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       color: #1a1a2e;
-      margin: 0 0 0.6rem 0;
+      margin: 0 0 0.5rem 0;
     }
 
     .sponsor-text p {
       color: #555;
-      line-height: 1.75;
-      font-size: 1.02rem;
+      line-height: 1.7;
+      font-size: 0.95rem;
       margin: 0;
     }
 
@@ -127,8 +127,8 @@
 
       .sponsor-logo {
         flex: 0 0 auto;
-        width: 190px;
-        height: 110px;
+        width: 380px;
+        height: 220px;
       }
     }
 
