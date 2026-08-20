@@ -111,9 +111,9 @@
       flex-direction: column;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      
+
       /* Fixed: padding-top forms an invisible bridge so the menu won't close on your mouse */
-      padding-top: 10px; 
+      padding-top: 10px;
     }
 
     .nav-item:hover .dropdown {
@@ -289,6 +289,7 @@
       width: 100%; max-width: 550px; height: 90%; max-height: 750px;
       background: white; border-radius: 16px; overflow: hidden;
       box-shadow: 0 12px 40px rgba(0,0,0,0.3); position: relative;
+      display: flex; flex-direction: column; /* Stacks the info block above the iframe */
     }
     .zeffy-modal-close {
       position: absolute; top: 12px; right: 16px;
@@ -298,6 +299,34 @@
       display: flex; align-items: center; justify-content: center;
       z-index: 10;
     }
+
+    /* --- Static info block, attached above the Zeffy iframe --- */
+    .zeffy-info-block {
+      background: #f5f5f5; /* Matches main content background */
+      border-bottom: 1px solid #e5e7eb; /* Matches site's card border color */
+      padding: 16px 50px 16px 20px; /* Right padding clears the close button */
+      font-family: Arial, sans-serif;
+      color: #1a1a2e;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      flex-shrink: 0;
+    }
+
+    .zeffy-info-block .zeffy-info-title {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888; /* Matches .section-label color */
+      margin-bottom: 6px;
+    }
+
+    .zeffy-modal-iframe {
+      width: 100%;
+      flex: 1 1 auto; /* Fills whatever height remains under the info block */
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -305,7 +334,7 @@
 <header>
 
   <div class="header-wrapper">
-    
+
     <!-- BRAND PROFILE LOGO -->
     <a href="/OPNatation/index.html" class="logo">
       <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
@@ -313,7 +342,7 @@
 
     <!-- MAIN LINKS SHELL -->
     <div class="nav-container" id="nav-container">
-      
+
       <nav>
         <div class="nav-item has-dropdown">
           <a href="#">Compétitions</a>
@@ -345,27 +374,7 @@
       <!-- REGISTRATION ACTION WRAPPER -->
       <div class="cta-container">
         <div class="nav-item">
-          <button class="zeffy-trigger" onclick="
-            (function(){
-              const overlay = document.createElement('div');
-              overlay.className = 'zeffy-modal-overlay';
-              const modalBox = document.createElement('div');
-              modalBox.className = 'zeffy-modal-box';
-              const closeBtn = document.createElement('button');
-              closeBtn.className = 'zeffy-modal-close';
-              closeBtn.innerHTML = '&times;';
-              const iframe = document.createElement('iframe');
-              iframe.src = 'https://www.zeffy.com/embed/ticketing/inscriptions-2025--2026-4';
-              iframe.style.width = '100%'; iframe.style.height = '100%'; iframe.style.border = 'none';
-              iframe.setAttribute('allowpaymentrequest', 'true');
-              iframe.setAttribute('allowTransparency', 'true');
-              modalBox.appendChild(closeBtn); modalBox.appendChild(iframe);
-              overlay.appendChild(modalBox); document.body.appendChild(overlay);
-              const closeMdl = () => overlay.remove();
-              closeBtn.addEventListener('click', closeMdl);
-              overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
-            })()
-          ">Inscriptions</button>
+          <button class="zeffy-trigger" onclick="openZeffyModal()">Inscriptions</button>
         </div>
       </div>
 
@@ -379,6 +388,49 @@
   </div>
 
 </header>
+
+<script>
+  // Builds and displays the Zeffy registration modal, with a static
+  // explanation block attached above the embedded ticketing iframe.
+  function openZeffyModal() {
+    const overlay = document.createElement('div');
+    overlay.className = 'zeffy-modal-overlay';
+
+    const modalBox = document.createElement('div');
+    modalBox.className = 'zeffy-modal-box';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'zeffy-modal-close';
+    closeBtn.innerHTML = '&times;';
+
+    // Static text block explaining how sold items are distributed.
+    // Edit the innerHTML below to update the message.
+    const infoBlock = document.createElement('div');
+    infoBlock.className = 'zeffy-info-block';
+    infoBlock.innerHTML = `
+      <span class="zeffy-info-title">Titre</span>
+      Texte
+    `;
+
+    const iframe = document.createElement('iframe');
+    iframe.className = 'zeffy-modal-iframe';
+    iframe.src = 'https://www.zeffy.com/embed/ticketing/inscriptions-2025--2026-4';
+    iframe.setAttribute('allowpaymentrequest', 'true');
+    iframe.setAttribute('allowTransparency', 'true');
+
+    modalBox.appendChild(closeBtn);
+    modalBox.appendChild(infoBlock);
+    modalBox.appendChild(iframe);
+    overlay.appendChild(modalBox);
+    document.body.appendChild(overlay);
+
+    const closeModal = () => overlay.remove();
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (ev) => {
+      if (ev.target === overlay) closeModal();
+    });
+  }
+</script>
 
 </body>
 </html>
