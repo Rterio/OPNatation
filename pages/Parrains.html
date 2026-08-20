@@ -54,8 +54,8 @@
     /* --- Parrain cards --- */
     .parrain-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
       margin-bottom: 3rem;
     }
 
@@ -96,26 +96,32 @@
     }
 
     .parrain-info {
-      padding: 1rem;
+      padding: 0.75rem;
     }
 
     .parrain-info h3 {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #1a1a2e;
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 0.4rem 0;
     }
 
     .parrain-swimmer {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: normal;
       color: #1a56db;
       background-color: #e8f0fe; /* Matched .badge style from Temps.html */
-      padding: 3px 12px;
+      padding: 3px 10px;
       border-radius: 99px;
     }
 
     @media (max-width: 700px) {
+      .parrain-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
       .parrain-list {
         grid-template-columns: 1fr;
       }
