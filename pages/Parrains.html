@@ -1,51 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OPNatation</title>
+  <title>OPNatation — Parrains</title>
   <style>
     html, body {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       margin: 0;
+      font-family: Arial, sans-serif; /* Matched from Temps.html */
     }
 
     main {
       flex: 1;
+      padding: 60px 20px;
+      background-color: #f5f5f5; /* Matched from Temps.html */
+    }
+
+    .wrapper {
+      max-width: 1200px; /* Matched from Commanditaires.html to give the photos room */
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* --- Parrain rows --- */
+    .parrain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-bottom: 3rem;
+    }
+
+    .parrain-row {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      background: white;
+      border: 1px solid #e5e7eb; /* Matched card border from Temps.html */
+      border-radius: 12px; /* Matched card radius from Temps.html */
+      padding: 2rem;
+    }
+
+    /* Alternates photo left/right, same principle as Commanditaires.html */
+    .parrain-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .parrain-photo {
+      flex: 0 0 160px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%; /* Circular, since this is a portrait rather than a logo */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .parrain-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Placeholder photo — remove this and use a real <img> once photos are available */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      border: 1px dashed #cbd5e1;
+      background: #f8fafc; /* Matched table header bg from Temps.html */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .parrain-text h3 {
+      font-size: 1.15rem;
+      color: #1a1a2e;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .parrain-swimmer {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: normal;
+      color: #1a56db;
+      background-color: #e8f0fe; /* Matched .badge style from Temps.html */
+      padding: 4px 14px;
+      border-radius: 99px;
+    }
+
+    @media (max-width: 700px) {
+      .parrain-row,
+      .parrain-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding: 1.5rem;
+      }
+
+      .parrain-photo {
+        flex: 0 0 auto;
+        width: 130px;
+        height: 130px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; } /* Matched from Temps.html */
     }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-<div id="header"></div>
-<script>
-  fetch('/OPNatation/pages/header.html')
-    .then(r => r.text())
-    .then(html => {
-      const headerEl = document.getElementById('header');
-      headerEl.innerHTML = html;
+  <div id="header"></div>
+  <script>
+    fetch('/OPNatation/pages/header.html')
+      .then(r => r.text())
+      .then(html => {
+        const headerEl = document.getElementById('header');
+        headerEl.innerHTML = html;
 
-      // innerHTML doesn't run <script> tags automatically — re-create
-      // them so they actually execute.
-      headerEl.querySelectorAll('script').forEach(oldScript => {
-        const newScript = document.createElement('script');
-        if (oldScript.src) {
-          newScript.src = oldScript.src;
-        } else {
-          newScript.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(newScript);
+        // innerHTML doesn't run <script> tags automatically — re-create
+        // them so they actually execute.
+        headerEl.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
       });
-    });
-</script>
+  </script>
 
-  <!-- Page content -->
   <main>
-    <h1>Hello, World!</h1>
-    <p>My local server is working.</p>
+    <div class="wrapper">
+
+      <h1>Nos parrains</h1>
+      <p class="subtitle">Merci à ceux qui contribuent aux frais d'inscription de nos jeunes nageurs.</p>
+
+      <p class="section-label">Parrains actuels</p>
+
+      <!--
+        PLACEHOLDER CONTENT — replace names, sponsored swimmer names, and
+        the .photo-placeholder blocks with real <img src="..." alt="...">
+        photos. Rows alternate photo-left / photo-right via the "reverse"
+        class, same principle as Commanditaires.html.
+      -->
+      <div class="parrain-list">
+
+        <div class="parrain-row">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 1</div>
+          </div>
+          <div class="parrain-text">
+            <h3>Parrain 1</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 1</span>
+          </div>
+        </div>
+
+        <div class="parrain-row reverse">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 2</div>
+          </div>
+          <div class="parrain-text">
+            <h3>Parrain 2</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 2</span>
+          </div>
+        </div>
+
+        <div class="parrain-row">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 3</div>
+          </div>
+          <div class="parrain-text">
+            <h3>Parrain 3</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 3</span>
+          </div>
+        </div>
+
+        <div class="parrain-row reverse">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 4</div>
+          </div>
+          <div class="parrain-text">
+            <h3>Parrain 4</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 4</span>
+          </div>
+        </div>
+
+        <div class="parrain-row">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 5</div>
+          </div>
+          <div class="parrain-text">
+            <h3>Parrain 5</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 5</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </main>
 
   <!-- Footer -->
