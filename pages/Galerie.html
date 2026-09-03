@@ -99,7 +99,27 @@
 </head>
 <body>
 
-  <div id="header"></div>
+<div id="header"></div>
+<script>
+  fetch('/OPNatation/pages/header.html')
+    .then(r => r.text())
+    .then(html => {
+      const headerEl = document.getElementById('header');
+      headerEl.innerHTML = html;
+
+      // innerHTML doesn't run <script> tags automatically — re-create
+      // them so they actually execute.
+      headerEl.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+        document.body.appendChild(newScript);
+      });
+    });
+</script>
 
   <div class="gallery-container">
     <h1 class="gallery-title">Galerie</h1>

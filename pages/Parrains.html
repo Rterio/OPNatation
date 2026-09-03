@@ -1,19 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OPNatation</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAcVQTFRFAAAAtq6uzMjI5OTj6ejn7erp7evr7+3t7uzt7uzs6+np5+blwLu5komHycbG5uTk9PLy+/v6/f39/v7+/v39/v39+/v77evr1NDO7uvs9PLz9vT09PPz8u/w7OrpwLu5saus7evr8vDw8/Ly8vHx8vHw8/Ly7evr3NnYy8XF7Orq9vX1/Pz8/////f399fPz9/b2/fz8//7+/f389vX0vLe06ubm+/v7/f39/v39/v39/f399vX1wLy47+3t+fn59/f28/Hy/v7+/fz85+Pi9vT0/f39/v7++vn53tzc+/v75+bk+vn5/f387+zs4t/g/Pz8/f396ujm+vn5+vn4ysLD19PR/Pv7+vn51tTT7+3s+Pb2+vr5+/r62tXV/Pz8/////f399fPz9/b2/fz8//7+/f389vX0vLe06ubm+/v7/f39/v39/v39/f399vX1wLy47+3t+fn59/f28/Hy/v7+/fz85+Pi9vT0/f39/v7++vn53tzc+/v75+bk+vn5/f387+zs4t/g/Pz8/f396ujm+vn5+vn4ysLD19PR/Pv7+vn51tTT7+3s+Pb2+vr5+/r62tXV/Pz89vX0ta6s7uvq/f38+Pf3ioSD9vX1/v7+8vDv6OXl/fz89fX07uvr/v7+/Pz8+/v7/Pz87+3s9/b2///++fj39PPy+vj4/f396Obl9/b1/v7++/r6+/v6+vn58e/vsKmp8/Ly9vX11dDP+/r64uDh8vDx9/b3/Pv7/Pz8/Pz8+/v79/X28vHx4t/g4d3d9vX29vT17uztu7W3xcDBy8bIz8nLx8LE8NCLLgAAAJd0Uk5TAAASFhUUFBQUFBQVEQIYRpni7+7u79pXJj1bZmFFGQABHiIiIiIhFgIBHHjk/+w/fOn+8HkAJ+v8+/zxigAryJJX/OcOZf//1hPnQszgTDXj8BWmtgwX281tS2XC3A/iZAEk7ZIIe/4qD/OdOv36+Ocwif9vNZX2Mo/3zc2zQABclATTBVrB3eHg16ZKBg+hoU4ABAYFAlgR2IUAAADcSURBVHicY2QgABhHFVBLAQz8ZwKRn7Eo4IUoQChlZHyoABe5AbJCE6HgN5DLBlX2j4GRifEIxA22jIzvhBkZX0NMFWNkfPubQZLxGQOD9A6YIz1BJjOAjL7LoMLIeItBHci8xqC9Au6LSMa3zxj0ljLEXGQwYGQ8x2AMVHCKwXwOXEEq43EGK8YZmYyHGewYGQ8wODKe/MrgzNiPCIei3QxuQF3bGbwYGbcw+AI9zgD0eSNCQcPbA2Ba1J6RcRVDQDNGSLYgwqGpnpExH0tQTwJJZEcF6MKiFMAAOcqLCG9YASGAAAAAElFTkSuQmCC">
+  <title>OPNatation — Parrains</title>
   <style>
     html, body {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       margin: 0;
+      font-family: Arial, sans-serif; /* Matched from Temps.html */
     }
 
     main {
       flex: 1;
+      padding: 60px 20px;
+      background-color: #f5f5f5; /* Matched from Temps.html */
+    }
+
+    .wrapper {
+      max-width: 1200px; /* Matched from Commanditaires.html to give the photos room */
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* --- Parrain cards --- */
+    .parrain-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 3rem;
+    }
+
+    .parrain-card {
+      background: white;
+      border: 1px solid #e5e7eb; /* Matched card border from Temps.html */
+      border-radius: 12px; /* Matched card radius from Temps.html */
+      overflow: hidden; /* Lets the photo's top corners follow the card's radius */
+      text-align: center;
+    }
+
+    .parrain-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* Square photo filling the full card width */
+    }
+
+    .parrain-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Placeholder photo — remove this and use a real <img> once photos are available */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      border: 1px dashed #cbd5e1;
+      background: #f8fafc; /* Matched table header bg from Temps.html */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .parrain-info {
+      padding: 0.75rem;
+    }
+
+    .parrain-info h3 {
+      font-size: 0.9rem;
+      color: #1a1a2e;
+      margin: 0 0 0.4rem 0;
+    }
+
+    .parrain-swimmer {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: normal;
+      color: #1a56db;
+      background-color: #e8f0fe; /* Matched .badge style from Temps.html */
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
+
+    @media (max-width: 700px) {
+      .parrain-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .parrain-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; } /* Matched from Temps.html */
     }
   </style>
 </head>
@@ -24,13 +139,92 @@
   <script>
     fetch('/OPNatation/pages/header.html')
       .then(r => r.text())
-      .then(html => document.getElementById('header').innerHTML = html);
+      .then(html => {
+        const headerEl = document.getElementById('header');
+        headerEl.innerHTML = html;
+
+        // innerHTML doesn't run <script> tags automatically — re-create
+        // them so they actually execute.
+        headerEl.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
   </script>
 
-  <!-- Page content -->
   <main>
-    <h1>Hello, World!</h1>
-    <p>My local server is working.</p>
+    <div class="wrapper">
+
+      <h1>Nos parrains</h1>
+      <p class="subtitle">Merci à ceux qui contribuent aux frais d'inscription de nos jeunes nageurs.</p>
+
+      <p class="section-label">Parrains actuels</p>
+
+      <!--
+        PLACEHOLDER CONTENT — replace names, sponsored swimmer names, and
+        the .photo-placeholder blocks with real <img src="..." alt="...">
+        photos. Cards are laid out 2 per row via CSS grid.
+      -->
+      <div class="parrain-list">
+
+        <div class="parrain-card">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 1</div>
+          </div>
+          <div class="parrain-info">
+            <h3>Parrain 1</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 1</span>
+          </div>
+        </div>
+
+        <div class="parrain-card">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 2</div>
+          </div>
+          <div class="parrain-info">
+            <h3>Parrain 2</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 2</span>
+          </div>
+        </div>
+
+        <div class="parrain-card">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 3</div>
+          </div>
+          <div class="parrain-info">
+            <h3>Parrain 3</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 3</span>
+          </div>
+        </div>
+
+        <div class="parrain-card">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 4</div>
+          </div>
+          <div class="parrain-info">
+            <h3>Parrain 4</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 4</span>
+          </div>
+        </div>
+
+        <div class="parrain-card">
+          <div class="parrain-photo">
+            <div class="photo-placeholder">Photo<br>Parrain 5</div>
+          </div>
+          <div class="parrain-info">
+            <h3>Parrain 5</h3>
+            <span class="parrain-swimmer">Nageur parrainé : Nageur 5</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </main>
 
   <!-- Footer -->
