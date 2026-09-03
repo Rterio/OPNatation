@@ -385,7 +385,7 @@
               closeBtn.innerHTML = '&times;';
               const iframe = document.createElement('iframe');
               iframe.src = 'https://www.zeffy.com/fr-CA/ticketing/inscriptions-2026--2027-2';
-              iframe.style.width = '100%'; iframe.style.height = '100%'; iframe.style.border = 'none';
+              iframe.style.width = '100%'; iframe.style.height = 'calc(100% - 60px)'; iframe.style.border = 'none';
               iframe.setAttribute('allowpaymentrequest', 'true');
               iframe.setAttribute('allowTransparency', 'true');
               modalBox.appendChild(closeBtn); modalBox.appendChild(iframe);
