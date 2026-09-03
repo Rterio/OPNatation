@@ -373,30 +373,49 @@
 
       <!-- REGISTRATION ACTION WRAPPER -->
       <div class="cta-container">
-        <div class="nav-item">
-          <button class="zeffy-trigger" onclick="
-            (function(){
-              const overlay = document.createElement('div');
-              overlay.className = 'zeffy-modal-overlay';
-              const modalBox = document.createElement('div');
-              modalBox.className = 'zeffy-modal-box';
-              const closeBtn = document.createElement('button');
-              closeBtn.className = 'zeffy-modal-close';
-              closeBtn.innerHTML = '&times;';
-              const iframe = document.createElement('iframe');
-              iframe.src = 'https://www.zeffy.com/fr-CA/ticketing/inscriptions-2026--2027-2';
-              iframe.style.width = '100%'; iframe.style.height = 'calc(100% - 60px)'; iframe.style.border = 'none';
-              iframe.setAttribute('allowpaymentrequest', 'true');
-              iframe.setAttribute('allowTransparency', 'true');
-              modalBox.appendChild(closeBtn); modalBox.appendChild(iframe);
-              overlay.appendChild(modalBox); document.body.appendChild(overlay);
-              const closeMdl = () => overlay.remove();
-              closeBtn.addEventListener('click', closeMdl);
-              overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
-            })()
-          ">Inscriptions</button>
-        </div>
-      </div>
+  <div class="nav-item">
+    <button class="zeffy-trigger" onclick="
+      (function(){
+        const overlay = document.createElement('div');
+        overlay.className = 'zeffy-modal-overlay';
+        
+        const modalBox = document.createElement('div');
+        modalBox.className = 'zeffy-modal-box';
+        
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'zeffy-modal-close';
+        closeBtn.innerHTML = '&times;';
+
+        /* --- CREATION DE LA ZONE DE TEXTE --- */
+        const modalHeader = document.createElement('div');
+        modalHeader.className = 'zeffy-modal-header';
+        modalHeader.style.padding = '15px';
+        modalHeader.style.textAlign = 'center';
+        // Remplacez le texte ci-dessous par le message exact de votre collègue :
+        modalHeader.innerHTML = '<h3 style=\"margin:0 0 5px 0;\">Information importante</h3><p style=\"margin:0; font-size:14px;\">Veuillez remplir le formulaire ci-dessous pour compléter votre inscription.</p>';
+        /* ----------------------------------- */
+        
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.zeffy.com/fr-CA/ticketing/inscriptions-2026--2027-2';
+        iframe.style.width = '100%'; 
+        iframe.style.height = 'calc(100% - 70px)'; /* Ajuste la hauteur pour laisser la place au texte */
+        iframe.style.border = 'none';
+        iframe.setAttribute('allowpaymentrequest', 'true');
+        iframe.setAttribute('allowTransparency', 'true');
+        
+        modalBox.appendChild(closeBtn); 
+        modalBox.appendChild(modalHeader); /* On insère le texte au-dessus du formulaire */
+        modalBox.appendChild(iframe);
+        overlay.appendChild(modalBox); 
+        document.body.appendChild(overlay);
+        
+        const closeMdl = () => overlay.remove();
+        closeBtn.addEventListener('click', closeMdl);
+        overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
+      })()
+    ">Inscriptions</button>
+  </div>
+</div>
 
     </div>
 
