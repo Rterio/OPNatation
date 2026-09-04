@@ -480,6 +480,11 @@ SCRIPTS
         
         const modalBox = document.createElement('div');
         modalBox.className = 'zeffy-modal-box';
+
+        /* PERMET DE SCROLLER DANS LA MODALE SI LE CONTENU EST TROP LONG */
+        modalBox.style.maxHeight = '90vh';
+        modalBox.style.display = 'flex';
+        modalBox.style.flexDirection = 'column';
         
         const closeBtn = document.createElement('button');
         closeBtn.className = 'zeffy-modal-close';
@@ -489,6 +494,12 @@ SCRIPTS
         modalHeader.className = 'zeffy-modal-header';
         modalHeader.style.padding = '15px';
         modalHeader.style.textAlign = 'center';
+
+          /* ZONE DE TEXTE DÉFILABLE */
+        modalHeader.style.maxHeight = '350px'; 
+        modalHeader.style.overflowY = 'auto';
+        modalHeader.style.borderBottom = '2px solid #ccc';
+        
         modalHeader.innerHTML = `
         <h1>INFORMATIONS CONCERNANT LA SAISON 2025-2026</h1>
         
@@ -546,7 +557,7 @@ Le paiement par carte de crédit, par carte de débit et par débit préautoris�
         /*************************************************************
          AFFICHER FORMULAIRE
          ************************************************************/
-        /*
+        
         const iframe = document.createElement('iframe');
         iframe.src = 'https://www.zeffy.com/fr-CA/ticketing/inscriptions-2026--2027-2';
         iframe.style.width = '100%'; 
@@ -564,7 +575,7 @@ Le paiement par carte de crédit, par carte de débit et par débit préautoris�
         const closeMdl = () => overlay.remove();
         closeBtn.addEventListener('click', closeMdl);
         overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
-        */
+        
       }
 
 </script>
