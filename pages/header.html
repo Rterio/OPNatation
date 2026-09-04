@@ -24,6 +24,12 @@
       position: relative;
       z-index: 1000;
     }
+h1 {
+      font-size: 2rem; /* Matched from Temps (1).html */
+      color: #1a1a2e; /* Matched from Temps (1).html */
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
 
     .header-wrapper {
       width: 100%;
@@ -485,7 +491,7 @@ SCRIPTS
         modalHeader.style.textAlign = 'center';
         modalHeader.innerHTML = `
         <h1>INFORMATIONS CONCERNANT LA SAISON 2025-2026</h1>
-        <!--
+        
         <h1>AIDE FINANCIÈRE</h1>
         <p style="margin:0">Le programme Bon Départ offre du soutien financier aux familles défavorisées.  Pour savoir si votre enfant pourrait profiter de ce programme, veuillez consulter la page suivante :</p>
         <h1>MODALITÉS D'INSCRIPTIONS</h1>
@@ -535,12 +541,12 @@ Le paiement par carte de crédit, par carte de débit et par débit préautoris�
         <h1>POUR VOUS INSCRIRE</h1>
         <p style="margin:0">Veuillez utiliser le formulaire qui suit.</p>
         <p style="margin:0">IMPORTANT : si vous désirez faire une demande à Bon Départ ou payer en deux versements, veuillez communiquer avec la coordonnatrice au 418 967-7706 avant de procéder à votre inscription.</p>
-        -->
+        
         `
         /*************************************************************
          AFFICHER FORMULAIRE
          ************************************************************/
-        
+        /*
         const iframe = document.createElement('iframe');
         iframe.src = 'https://www.zeffy.com/fr-CA/ticketing/inscriptions-2026--2027-2';
         iframe.style.width = '100%'; 
@@ -558,6 +564,7 @@ Le paiement par carte de crédit, par carte de débit et par débit préautoris�
         const closeMdl = () => overlay.remove();
         closeBtn.addEventListener('click', closeMdl);
         overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
+        */
       }
 
 </script>
