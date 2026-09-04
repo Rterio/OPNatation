@@ -510,7 +510,7 @@ SCRIPTS
   modalHeader.style.overflowY = 'auto';  /* Barre déroulante propre au texte */
   modalHeader.style.borderBottom = '2px solid #ccc';
   modalHeader.style.flexShrink = '0';    /* Empêche le texte de s'écraser */
-  
+
   modalHeader.innerHTML = `
     <h1>INFORMATIONS CONCERNANT LA SAISON 2025-2026</h1>
     
@@ -580,10 +580,10 @@ SCRIPTS
   /*************************************************************
    AFFICHER FORMULAIRE
    ************************************************************/
-  const iframe = document.createElement('iframe');
+ const iframe = document.createElement('iframe');
   iframe.src = 'https://www.zeffy.com/fr-CA/ticketing/inscriptions-2026--2027-2';
   iframe.style.width = '100%'; 
-  iframe.style.height = '500px';
+  iframe.style.flex = '1'; /* Permet au formulaire d'occuper TOUT l'espace restant */
   iframe.style.border = 'none';
   iframe.setAttribute('allowpaymentrequest', 'true');
   iframe.setAttribute('allowTransparency', 'true');
