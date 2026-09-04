@@ -491,12 +491,12 @@ SCRIPTS
   
   const modalBox = document.createElement('div');
   modalBox.className = 'zeffy-modal-box';
-  /* PERMET DE SCROLLER DANS LA MODALE SI LE CONTENU EST TROP LONG */
-  modalBox.style.maxHeight = '90vh';
+  
+  /* AJUSTEMENTS DU CONTENEUR PRINCIPAL */
   modalBox.style.display = 'flex';
   modalBox.style.flexDirection = 'column';
   modalBox.style.maxHeight = '85vh'; /* Limite la hauteur globale à 85% de l'écran */
-  modalBox.style.height = '85vh'; /* Force à utiliser toute la hauteur disponible */
+  modalBox.style.height = '85vh';    /* Force la boîte à utiliser toute la hauteur disponible */
   
   const closeBtn = document.createElement('button');
   closeBtn.className = 'zeffy-modal-close';
@@ -506,10 +506,10 @@ SCRIPTS
   modalHeader.className = 'zeffy-modal-header';
   modalHeader.style.padding = '20px';
   modalHeader.style.textAlign = 'left';
-  /* ZONE DE TEXTE DÉFILABLE */
-  modalHeader.style.maxHeight = '350px'; 
-  modalHeader.style.overflowY = 'auto';
+  modalHeader.style.maxHeight = '300px'; /* Hauteur max pour la partie texte */
+  modalHeader.style.overflowY = 'auto';  /* Barre déroulante propre au texte */
   modalHeader.style.borderBottom = '2px solid #ccc';
+  modalHeader.style.flexShrink = '0';    /* Empêche le texte de s'écraser */
   
   modalHeader.innerHTML = `
     <h1>INFORMATIONS CONCERNANT LA SAISON 2025-2026</h1>
