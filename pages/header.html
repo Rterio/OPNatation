@@ -329,18 +329,36 @@
     }
   </style>
 </head>
-<body>
+<!-- 
+*****************************************************
+CORPS DE LA PAGE
+*****************************************************
+-->
 
+<body>
+<!-- 
+*****************************************************
+EN-TETE
+*****************************************************
+-->
 <header>
 
   <div class="header-wrapper">
 
-    <!-- BRAND PROFILE LOGO -->
+   <!--  
+   *****************************************************
+   LOGO 
+   *****************************************************
+    -->
     <a href="/OPNatation/index.html" class="logo">
       <img src="/OPNatation/static/image-removebg-preview.png" alt="Site Logo">
     </a>
 
-    <!-- MAIN LINKS SHELL -->
+    <!--
+   *****************************************************
+   MENU
+   *****************************************************
+   -->
     <div class="nav-container" id="nav-container">
 
       <nav>
@@ -371,15 +389,23 @@
         </div>
       </nav>
 
-      <!-- REGISTRATION ACTION WRAPPER -->
-     <div class="cta-container">
-  <div class="nav-item">
-    <button class="zeffy-trigger" onclick="OuvrirZeffy()"">Inscriptions</button>
-  </div>
-</div>
+      <!-- 
+      *****************************************************
+      BOUTON INSCRIPTION
+      *****************************************************
+      -->
+      <div class="cta-container">
+        <div class="nav-item">
+          <button class="zeffy-trigger" onclick="OuvrirZeffy()"">Inscriptions</button>
+        </div>
+      </div>
     </div>
 
-    <!-- HAMBURGER (mobile only) -->
+   <!-- 
+   *****************************************************
+   MENU HAMBURGER POUR MOBILE
+   *****************************************************
+   -->
     <button class="hamburger" onclick="document.getElementById('nav-container').classList.toggle('open');">
       <span></span><span></span><span></span>
     </button>
@@ -388,6 +414,12 @@
 
 </header>
 
+<!-- 
+*****************************************************
+SCRIPTS
+*****************************************************
+-->
+   
 <script>
   // Builds and displays the Zeffy registration modal, with a static
   // explanation block attached above the embedded ticketing iframe.
@@ -431,6 +463,7 @@
   }
       function OuvrirZeffy()
       {
+/*
         const overlay = document.createElement('div');
         overlay.className = 'zeffy-modal-overlay';
         
@@ -516,7 +549,7 @@ Le paiement par carte de crédit, par carte de débit et par débit préautoris�
         closeBtn.addEventListener('click', closeMdl);
         overlay.addEventListener('click', (ev) => { if(ev.target === overlay) closeMdl(); });
       }
-
+*/
 </script>
 
 </body>
