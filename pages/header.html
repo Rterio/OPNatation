@@ -461,9 +461,14 @@ SCRIPTS
       if (ev.target === overlay) closeModal();
     });
   }
-      function OuvrirZeffy()
+  /*********************************************************************
+   OUVRIR ZEFFY
+   ********************************************************************/
+    function OuvrirZeffy()
       {
-
+        /*************************************************************
+         AFFICHER TEXTE
+         ************************************************************/
         const overlay = document.createElement('div');
         overlay.className = 'zeffy-modal-overlay';
         
@@ -478,9 +483,10 @@ SCRIPTS
         modalHeader.className = 'zeffy-modal-header';
         modalHeader.style.padding = '15px';
         modalHeader.style.textAlign = 'center';
-/*        modalHeader.innerHTML = `
-        <h1>INFORMATIONS CONCERNANT LA SAISON 2025-2026</h1><h1>AIDE FINANCIÈRE</h1>
-
+        modalHeader.innerHTML = `
+        <h1>INFORMATIONS CONCERNANT LA SAISON 2025-2026</h1>
+        <!--
+        <h1>AIDE FINANCIÈRE</h1>
         <p style="margin:0">Le programme Bon Départ offre du soutien financier aux familles défavorisées.  Pour savoir si votre enfant pourrait profiter de ce programme, veuillez consulter la page suivante :</p>
         <h1>MODALITÉS D'INSCRIPTIONS</h1>
         <p style="margin:0">Il est possible de s’inscrire avant le début de la saison et en tout temps en cours de saison.</p>
@@ -529,8 +535,12 @@ Le paiement par carte de crédit, par carte de débit et par débit préautoris�
         <h1>POUR VOUS INSCRIRE</h1>
         <p style="margin:0">Veuillez utiliser le formulaire qui suit.</p>
         <p style="margin:0">IMPORTANT : si vous désirez faire une demande à Bon Départ ou payer en deux versements, veuillez communiquer avec la coordonnatrice au 418 967-7706 avant de procéder à votre inscription.</p>
+        -->
         `
-*/        
+        /*************************************************************
+         AFFICHER FORMULAIRE
+         ************************************************************/
+        
         const iframe = document.createElement('iframe');
         iframe.src = 'https://www.zeffy.com/fr-CA/ticketing/inscriptions-2026--2027-2';
         iframe.style.width = '100%'; 
