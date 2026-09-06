@@ -3,325 +3,337 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité</title>
+  <title>OPNatation — Politique de confidentialité</title>
   <style>
     html, body {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       margin: 0;
-      font-family: Arial, sans-serif; /* Matched verbatim from provided code */
+      font-family: Arial, sans-serif;
     }
 
     main {
       flex: 1;
       padding: 60px 20px;
-      background-color: #f5f5f5; /* Matched layout color background */
+      background-color: #f5f5f5;
     }
 
     .wrapper {
-      max-width: 900px; /* Matched container alignment mapping */
+      max-width: 900px;
       margin: 0 auto;
     }
 
     h1 {
       font-size: 2rem;
-      color: #1a1a2e; /* Theme primary navy tone */
+      color: #1a1a2e;
       text-align: center;
       margin-bottom: 0.5rem;
     }
-    h2 {
-      font-size: 1.5rem; /* Matched from Temps (1).html */
-      color: #1a1a2e; /* Matched from Temps (1).html */
-      text-align: left;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
 
-    p {
-      margin-bottom: 0.5rem;
-    }
-
-    a {
-      margin-bottom: 0.5rem;
-    }
     .subtitle {
       text-align: center;
       color: #888;
       font-size: 0.95rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
-    .section-label {
-      font-size: 0.8rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #888; /* Shared structure labeling rules */
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .section-label:first-of-type {
-      margin-top: 0;
-    }
-
-    .badge {
-      font-size: 0.75rem;
-      padding: 2px 10px;
-      border-radius: 99px;
-      background-color: #e8f0fe; /* Badge blue tone */
-      color: #1a56db;
-      font-weight: normal;
-      text-transform: none;
-      letter-spacing: 0;
-    }
-
-    /* --- Staff & Board Grid Layout --- */
-    .staff-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adaptive card columns */
-      gap: 20px;
-      margin-bottom: 1rem;
-    }
-
-    .staff-card {
+    /* Intro Card matching the index.html welcome card style */
+    .intro-card {
       background: white;
-      border: 1px solid #e5e7eb; /* Card layout grid border line */
+      border: 1px solid #e5e7eb;
       border-radius: 12px;
       padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #1a1a2e;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
-    /* --- Member Portrait Elements --- */
-    .staff-photo-container {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%; /* Clean circular format */
-      overflow: hidden;
-      margin-bottom: 1.25rem;
-      background-color: #1a1a2e; /* Fallback matching card header context background */
+    .intro-card p {
+      margin: 0 0 1rem 0;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Policy Accordions - identical to the record-group styling */
+    .policy-group {
+      background: white;
       border: 1px solid #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
-    .staff-photo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Placeholder icon layout when missing an explicit image file */
-    .staff-photo-placeholder {
-      color: #e8f0fe;
-      font-size: 2.5rem;
+    .policy-group summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 20px;
+      background: #1a1a2e;
+      color: white;
       font-weight: bold;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       user-select: none;
     }
 
-    .staff-name {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #1a1a2e;
-      margin-bottom: 4px;
+    .policy-group summary::-webkit-details-marker {
+      display: none;
     }
 
-    .staff-position {
-      font-size: 0.85rem;
-      color: #888; /* Matches metadata description hierarchy */
+    .policy-group summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #e5e7eb;
+    }
+
+    .policy-group[open] summary::after {
+      content: "−";
+    }
+
+    .policy-content {
+      padding: 24px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #334155;
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .policy-content h3 {
+      font-size: 1rem;
+      color: #1a1a2e;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
       font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    }
+
+    .policy-content h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .policy-content p {
+      margin: 0 0 0.85rem 0;
+    }
+
+    .policy-content ul {
+      margin: 0 0 1rem 1.25rem;
+      padding: 0;
+    }
+
+    .policy-content li {
+      margin-bottom: 0.35rem;
+    }
+
+    .policy-content a {
+      color: #1a56db;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .policy-content a:hover {
+      text-decoration: underline;
+    }
+
+    .policy-footer-note {
+      text-align: center;
+      color: #888;
+      font-size: 0.85rem;
+      margin-top: 2rem;
     }
 
     @media (max-width: 600px) {
       h1 { font-size: 1.5rem; }
+      .policy-content { padding: 16px; }
     }
   </style>
 </head>
 <body>
-<!--
-*******************************************
-EN-TETE
-*******************************************
--->
- <div id="header"></div>
-<script>
-  fetch('/OPNatation/pages/header.html')
-    .then(r => r.text())
-    .then(html => {
-      const headerEl = document.getElementById('header');
-      headerEl.innerHTML = html;
 
-      // innerHTML doesn't run <script> tags automatically — re-create
-      // them so they actually execute.
-      headerEl.querySelectorAll('script').forEach(oldScript => {
-        const newScript = document.createElement('script');
-        if (oldScript.src) {
-          newScript.src = oldScript.src;
-        } else {
-          newScript.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(newScript);
+  <!-- Header -->
+  <div id="header"></div>
+  <script>
+    fetch('/pages/header.html?v=' + Date.now())
+      .then(r => r.text())
+      .then(html => {
+        const headerEl = document.getElementById('header');
+        headerEl.innerHTML = html;
+
+        headerEl.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
       });
-    });
-</script>
+  </script>
 
-<!--
-*******************************************
-TEXTE DE LA POLITIQUE
-*******************************************
--->
   <main>
-    <h1>Politique de confidentialité</h1>
-    <p>Le Club de natation Opti-Plus (ci-après le « Club de natation ») est un organisme sans but lucratif ayant pour mission de promouvoir la promotion et le développement de la natation et ce, en favorisant tant l’initiation au sport, la progression des membres athlètes que le développement de l’excellence. Pour atteindre nos objectifs, nous devons entre autres travailler en étroite collaboration avec la Fédération de natation du Québec (ci-après la « FNQ »).</p>
-    <p>Dans le cadre de la prestation de nos activités, nous devons traiter des renseignements personnels. Afin de maintenir votre confiance, nous nous engageons à suivre la politique de confidentialité suivante (ci-après la « Politique ») pour protéger la confidentialité, la sécurité et l’exactitude des renseignements personnels que nous recueillons, détenons, utilisons ou communiquons conformément à la législation applicable. Nous avons en outre défini la présente Politique afin d’expliquer nos pratiques quant aux renseignements personnels que nous recueillons lorsque vous visitez notre site internet, https://www.natationop.com (ci après le « Site internet »). </p>
-    <p>Cette Politique tient compte des exigences de la Loi sur la protection des renseignements personnels dans le secteur privé, R.L.R.Q., ch. P-39.1 (ci-après la « Loi ») et de toute autre loi applicable.
-    <h2>RENSEIGNEMENTS PERSONNELS</h2>  
-    <p>Un renseignement personnel se définit comme tout renseignement qui concerne une personne physique et qui permet, directement ou indirectement, de l’identifier.</p>
-    <p>Les renseignements de nature professionnelle, tels que le titre, l’adresse postale, l’adresse courriel ou le numéro de téléphone d’affaires ne sont pas inclus dans la notion de renseignement personnel.</p>
+    <div class="wrapper">
+      <h1>Politique de confidentialité</h1>
+      <p class="subtitle">Protection et gestion des renseignements personnels</p>
 
-    <h2>CONSENTEMENT</h2>
-    <p>Toute collecte de renseignements personnels s’effectue sous diverses formes, notamment par téléphone, lorsque vous nous transmettez un courriel ou lorsque vous créez un compte ou effectuez une transaction sur une plateforme numérique que nous utilisons ou sur notre Site internet ou lorsque vous fréquentez ce dernier .</p>
-    <p>Nous nous assurons de requérir votre consentement à la collecte, à l’utilisation et à la communication de vos renseignements personnels avant ou au moment d’effectuer la collecte, sauf dans le cas où des exceptions peuvent trouver application suivant la Loi. Ainsi, un renseignement personnel ne peut être utilisé par le Club de natation qu’aux fins pour lesquelles il a été recueilli, à moins de votre consentement ou que l’utilisation soit autrement permise par la Loi.</p>
-    <p>Nous pourrons valablement considérer qu’un consentement à l’utilisation de vos renseignements personnels recueillis pour une ou des fins spécifiques a été fourni de façon manifeste, libre et éclairée lorsque :</p>
-    <p>•	Vous avez consenti verbalement ou par écrit à la collecte et à l’utilisation des renseignements personnels;</p>
-    <p>•	Vous avez fourni volontairement les renseignements personnels.</p>
-    <p>Toute personne ayant besoin d’assistance au moment de fournir un consentement afin d’en comprendre la portée peut communiquer avec la personne responsable de la protection des renseignements personnels identifiée dans la présente Politique.</p>
-    <p>Nous ne sollicitons ni ne recueillons sciemment aucun renseignement personnel directement auprès d’une personne âgée de moins de quatorze (14) ans.</p>
-    <p>Vous pouvez suspendre ou retirer votre consentement à l’utilisation et à la communication de renseignements personnels vous concernant. Toutefois, et selon les circonstances, le fait de retirer votre consentement pourrait nous empêcher de continuer à vous fournir les produits ou les services que vous avez demandés ou d’évaluer adéquatement vos demandes et les traiter.</p>
+      <!-- Welcome & Context Card -->
+      <div class="intro-card">
+        <p>Le Club de natation Opti-Plus (ci-après le « Club de natation ») est un organisme sans but lucratif ayant pour mission de promouvoir la promotion et le développement de la natation et ce, en favorisant tant l’initiation au sport, la progression des membres athlètes que le développement de l’excellence. Pour atteindre nos objectifs, nous devons entre autres travailler en étroite collaboration avec la Fédération de natation du Québec (ci-après la « FNQ »).</p>
+        <p>Dans le cadre de la prestation de nos activités, nous devons traiter des renseignements personnels. Afin de maintenir votre confiance, nous nous engageons à suivre la politique de confidentialité suivante pour protéger la confidentialité, la sécurité et l’exactitude des renseignements personnels que nous recueillons, détenons, utilisons ou communiquons conformément à la législation applicable.</p>
+        <p>Cette Politique tient compte des exigences de la <em>Loi sur la protection des renseignements personnels dans le secteur privé</em>, R.L.R.Q., ch. P-39.1 et de toute autre loi applicable.</p>
+      </div>
 
-    <h2>QUELS RENSEIGNEMENTS PERSONNELS RECUEILLONS-NOUS ET POURQUOI ?</h2>
-    <p>Nous pouvons recueillir des renseignements personnels par l’entremise de l’un ou l’autre de nos fournisseurs ou partenaires, donc d’un tiers, comme l’autorise la Loi.</p>
-    <p>Nous recueillons principalement les renseignements personnels ci-dessous, et ce, dans les circonstances suivantes :</p>
+      <!-- 1. Renseignements personnels (Open by default) -->
+      <details class="policy-group" open>
+        <summary>1. Définition d'un renseignement personnel</summary>
+        <div class="policy-content">
+          <p>Un renseignement personnel se définit comme tout renseignement qui concerne une personne physique et qui permet, directement ou indirectement, de l’identifier.</p>
+          <p>Les renseignements de nature professionnelle, tels que le titre, l’adresse postale, l’adresse courriel ou le numéro de téléphone d’affaires ne sont pas inclus dans la notion de renseignement personnel.</p>
+        </div>
+      </details>
 
-    <h3>Lors de votre inscription comme participant à des activités liées à la natation (affiliation comme membre individuel auprès du Club de natation)</h3>
-    <p>Nom, prénom, date de naissance, adresse postale, adresse courriel, numéro de téléphone ainsi que certaines informations de nature médicale . Une fois avoir recueilli ces informations, le Club de natation procédera à la création de votre compte sur la plateforme SportLomo, qui est gérée par Natation Canada.</p>
-    <p>Afin de compléter la création de votre compte sur la plateforme SportLomo, vous devez y ajouter de nouveaux renseignements personnels vous concernant, notamment la langue de communication et votre état de citoyenneté. De façon entièrement volontaire, vous pouvez également indiquer votre identité de genre et votre appartenance ethnique. Dans le cas des membres nageurs uniquement, la présence d’un handicap et la nature de celui-ci peuvent également être fournis sur une base volontaire, le cas échéant. Les informations suivantes sont aussi collectées concernant votre personne contact en cas d’urgence : son nom, prénom, numéro de téléphone et le lien qui vous unit.   </p>
-    <p>Pendant toute la durée de votre affiliation auprès du Club de natation, il est possible que d’autres renseignements personnels vous concernant soient collectés, requis ou ajoutés à votre compte accessible sur la plateforme SportLomo lorsque vous participez à des compétitions, tels que les résultats de ces compétitions le cas échéant.</p>
+      <!-- 2. Consentement -->
+      <details class="policy-group">
+        <summary>2. Consentement</summary>
+        <div class="policy-content">
+          <p>Toute collecte de renseignements personnels s’effectue sous diverses formes, notamment par téléphone, lorsque vous nous transmettez un courriel ou lorsque vous créez un compte ou effectuez une transaction sur une plateforme numérique que nous utilisons ou sur notre Site internet ou lorsque vous fréquentez ce dernier.</p>
+          <p>Nous nous assurons de requérir votre consentement à la collecte, à l’utilisation et à la communication de vos renseignements personnels avant ou au moment d’effectuer la collecte, sauf dans le cas où des exceptions peuvent trouver application suivant la Loi. Ainsi, un renseignement personnel ne peut être utilisé par le Club de natation qu’aux fins pour lesquelles il a été recueilli, à moins de votre consentement ou que l’utilisation soit autrement permise par la Loi.</p>
+          <p>Nous pourrons valablement considérer qu’un consentement à l’utilisation de vos renseignements personnels recueillis pour une ou des fins spécifiques a été fourni de façon manifeste, libre et éclairée lorsque :</p>
+          <ul>
+            <li>Vous avez consenti verbalement ou par écrit à la collecte et à l’utilisation des renseignements personnels;</li>
+            <li>Vous avez fourni volontairement les renseignements personnels.</li>
+          </ul>
+          <p>Toute personne ayant besoin d’assistance au moment de fournir un consentement afin d’en comprendre la portée peut communiquer avec la personne responsable de la protection des renseignements personnels identifiée dans la présente Politique.</p>
+          <p>Nous ne sollicitons ni ne recueillons sciemment aucun renseignement personnel directement auprès d’une personne âgée de moins de quatorze (14) ans.</p>
+          <p>Vous pouvez suspendre ou retirer votre consentement à l’utilisation et à la communication de renseignements personnels vous concernant. Toutefois, et selon les circonstances, le fait de retirer votre consentement pourrait nous empêcher de continuer à vous fournir les produits ou les services que vous avez demandés ou d’évaluer adéquatement vos demandes et les traiter.</p>
+        </div>
+      </details>
 
-    <h3>Lors de vos communications avec nous</h3>
-    <p>Nom, prénom, adresse courriel et numéro de téléphone.</p>
+      <!-- 3. Collecte et finalités -->
+      <details class="policy-group">
+        <summary>3. Renseignements recueillis et objectifs</summary>
+        <div class="policy-content">
+          <p>Nous pouvons recueillir des renseignements personnels par l’entremise de l’un ou l’autre de nos fournisseurs ou partenaires, donc d’un tiers, comme l’autorise la Loi.</p>
+          <p>Nous recueillons principalement les renseignements personnels ci-dessous, et ce, dans les circonstances suivantes :</p>
 
-    <h3>Lors de votre participation à tout événement organisé par le Club de natation</h3>
-    <p>Nom, prénom, date de naissance, adresse courriel, numéro de téléphone.</p>
+          <h3>Inscription aux activités et affiliation</h3>
+          <p>Nom, prénom, date de naissance, adresse postale, adresse courriel, numéro de téléphone ainsi que certaines informations de nature médicale. Une fois ces informations recueillies, le Club de natation procédera à la création de votre compte sur la plateforme SportLomo, gérée par Natation Canada.</p>
+          <p>Afin de compléter la création de votre compte sur SportLomo, vous devez y ajouter de nouveaux renseignements personnels vous concernant, notamment la langue de communication et votre état de citoyenneté. De façon entièrement volontaire, vous pouvez également indiquer votre identité de genre et votre appartenance ethnique. Dans le cas des membres nageurs uniquement, la présence d’un handicap et la nature de celui-ci peuvent également être fournies sur une base volontaire. Les coordonnées de votre contact d'urgence sont aussi recueillies (nom, prénom, numéro de téléphone et lien de parenté).</p>
+          <p>Pendant la durée de votre affiliation, d'autres informations (comme les résultats de compétitions) pourront être ajoutées à votre profil.</p>
 
-    <h3>Lorsque vous vous inscrivez à notre infolettre </h3>
-    <p>Nom, prénom, adresse courriel et montant du don. Nous ne recueillons pas les renseignements bancaires ou de crédit dans les cas de dons en ligne que vous effectuez à travers Zeffy. Ces données ne nous sont pas accessibles ni à la consultation, ni à la conservation. L’usage que vous faites du site Internet https://fr.zeffy.com/ est assujetti à l’ensemble des conditions et politiques édictées par Zeffy.</p>
+          <h3>Communications générales</h3>
+          <p>Nom, prénom, adresse courriel et numéro de téléphone.</p>
 
-    <h3>Lorsque vous faites un don au Club de natation </h3>
-    <p>Nom, prénom, adresse courriel et montant du don. Nous ne recueillons pas les renseignements bancaires ou de crédit dans les cas de dons en ligne que vous effectuez à travers Zeffy. Ces données ne nous sont pas accessibles ni à la consultation, ni à la conservation. L’usage que vous faites du site Internet https://fr.zeffy.com/ est assujetti à l’ensemble des conditions et politiques édictées par Zeffy.</p>
-    <p>Suivant la réception d’un don de votre part, nous pourrons utiliser, notamment, votre nom, votre prénom, votre adresse de courriel et le montant de votre don afin de vous transmettre un courriel de remerciement et vous inviter à faire à nouveau un don. Dans le cadre d’une telle communication, la possibilité vous sera laissée de retirer votre consentement à l’utilisation de vos renseignements personnels à cette fin de prospection philanthropique.</p>
+          <h3>Participation aux événements</h3>
+          <p>Nom, prénom, date de naissance, adresse courriel, numéro de téléphone.</p>
 
-    <h3>Lorsque vous faites un achat via notre boutique en ligne </h3>
-    <p>Nom, prénom, adresse courriel, adresse civique et numéro de téléphone. Nous n’avons n’a pas accès à vos renseignements bancaires ou de crédit. Ces renseignements ne nous sont pas accessibles ni à la consultation, ni à la conservation et ils sont régis par l’ensemble des conditions et politiques édictées par notre partenaire Zeffy.</p>
+          <h3>Infolettre et dons</h3>
+          <p>Nom, prénom, adresse courriel et montant du don. Nous ne recueillons pas les renseignements bancaires ou de crédit dans les cas de dons en ligne effectués via Zeffy. Ces données ne nous sont pas accessibles ni conservées. L’usage de la plateforme est assujetti aux politiques édictées par Zeffy.</p>
+          <p>Suivant la réception d’un don, nous pourrons vous transmettre un courriel de remerciement et vous inviter à faire à nouveau un don, avec possibilité de retirer votre consentement en tout temps.</p>
 
-    <h3>Lorsque vous soumettez votre candidature à une offre d’emploi </h3>
-    <p>Nom, prénom, adresse courriel, adresse civique, numéro de téléphone, expériences professionnelles, et profil d’emploi et tout autre renseignement pertinent à la nature du poste affiché par le Club de natation y compris, le cas échéant, les renseignements obtenus dans le cadre de la vérification de vos antécédents judiciaires effectuée, le tout en conformité avec toute politique du Club de natation applicable en telle matière. Une fois l’embauche confirmée, des informations supplémentaires seront également collectés.</p>
+          <h3>Achats via la boutique en ligne</h3>
+          <p>Nom, prénom, adresse courriel, adresse civique et numéro de téléphone. Les informations bancaires sont sécurisées et traitées par Zeffy sans nous être transmises.</p>
 
-    <h3>Lorsque vous soumettez votre candidature à titre de bénévole </h3>
-    <p>nom, prénom, adresse courriel, adresse civique, numéro de téléphone et expériences de bénévolat, et tout autre renseignement pertinent à la nature de la prestation de bénévolat concernée y compris, le cas échéant, les renseignements obtenus dans le cadre de la vérification de vos antécédents judiciaires effectuée, le tout en conformité avec toute politique du Club de natation applicable en telle matière.</p>
+          <h3>Candidatures à un emploi, bénévolat ou conseil d’administration</h3>
+          <p>Nom, prénom, coordonnées complètes, expériences professionnelles ou bénévoles, ainsi que les vérifications d’antécédents judiciaires applicables. Pour les administrateurs élus, une pièce d’identité avec photo est également requise.</p>
 
-    <h3>Lorsque vous soumettez votre candidature afin de siéger sur le conseil d’administration du Club de natation </h3>
-    <p>Nom, prénom, adresse courriel, adresse civique, date de naissance, profession, l’ensemble des informations demandées au bulletin de mise en candidature prescrit, le cas échéant, y compris les renseignements obtenus dans le cadre de la vérification de vos antécédents judiciaires effectuée, le tout en conformité avec toute politique du Club de natation applicable en telle matière. Une fois élu, nommé ou désigné, tout administrateur doit en outre, notamment, fournir une pièce d’identité avec photo.</p>
+          <h3>Navigation sur le site web</h3>
+          <p>Certaines données de navigation anonymes sont recueillies (fichiers témoins/cookies). Voir la section correspondante ci-dessous.</p>
+        </div>
+      </details>
 
-    <h3>Lors de votre navigation sur notre Site internet  </h3>
-    <p>certaines informations sont automatiquement recueillies pour rendre votre expérience de navigation agréable. Nous vous invitons à consulter la section relative aux fichiers témoins ci-dessous.</p>
+      <!-- 4. Durée de conservation -->
+      <details class="policy-group">
+        <summary>4. Durée de conservation des renseignements</summary>
+        <div class="policy-content">
+          <p>Nous utilisons, communiquons et conservons vos renseignements personnels uniquement pour la durée nécessaire pour atteindre les fins pour lesquelles ils ont été recueillis, et dans la mesure permise ou exigée par la législation applicable.</p>
+          <p>Dès le moment où vous retirez votre consentement ou dès que les fins sont accomplies, le Club de natation peut conserver vos renseignements personnels, sans les utiliser, selon un calendrier de conservation établi dans le respect des lois et des exigences administratives.</p>
+        </div>
+      </details>
 
-    <h2>DURÉE DE CONSERVATION DES RENSEIGNEMENTS PERSONNELS</h2>
-    <p>Nous utilisons, communiquons et conservons vos renseignements personnels uniquement pour la durée nécessaire pour atteindre les fins pour lesquelles ces renseignements personnels ont été recueillis et dans la mesure permise ou exigée par la législation applicable.</p>
-    <p>Dès le moment où vous retirez votre consentement ou dès que les fins pour lesquelles vos renseignements personnels ont été collectés sont accomplies, le Club de natation pourrait tout de même conserver vos renseignements personnels, sans les utiliser, selon un calendrier de conservation qu’il peut établir de temps à autre, dans le respect des lois et de ses besoins.</p>
+      <!-- 5. Mesures de sécurité -->
+      <details class="policy-group">
+        <summary>5. Mesures de sécurité</summary>
+        <div class="policy-content">
+          <p>Tous les renseignements personnels que nous recueillons sont sauvegardés dans des emplacements sécurisés ainsi que sur des serveurs contrôlés situés, dans la mesure du possible, au Québec et dans le reste du Canada. Si un fournisseur tiers héberge des données hors du Canada, nous prenons les mesures raisonnables pour nous assurer qu'elles bénéficient d’une protection équivalente.</p>
+          <p>L’accès aux renseignements est strictement limité aux membres autorisés de notre personnel et aux bénévoles dont les fonctions exigent un tel accès. Ces personnes sont sensibilisées à la protection de la vie privée.</p>
+          <p>Nous veillons à la destruction sécurisée des renseignements personnels dès qu’ils ne sont plus nécessaires.</p>
+        </div>
+      </details>
 
-    <h2>LES MESURES DE SÉCURITÉ </h2>
-    <p>Tous les renseignements personnels que nous recueillons sont sauvegardés dans des emplacements sécurisés ainsi que sur des serveurs contrôlés situés, dans la mesure du possible au Québec et dans le reste du Canada. Toutefois, nos fournisseurs de services peuvent conserver les renseignements personnels sur des serveurs situés à l’extérieur du Canada et être assujettis à la loi en vigueur dans ce pays. Dans de telles circonstances, nous prenons les moyens raisonnables pour nous assurer que vos renseignements personnels bénéficient d’une protection adéquate en conformité avec la présente Politique.</p>
-    <p>Nous limitons l’accès aux renseignements personnels aux membres autorisés de notre personnel et à nos bénévoles dont les fonctions rendent nécessaire un tel accès. Ces personnes sont adéquatement formées pour assurer la protection des renseignements personnels et le respect à la vie privée.</p>
-    <p>Nous veillons à la destruction des renseignements personnels lorsque ceux-ci ne sont plus nécessaires et que les fins pour lesquelles ils sont recueillis sont accomplies.</p>
+      <!-- 6. Accès des tiers -->
+      <details class="policy-group">
+        <summary>6. Communication à des tiers</summary>
+        <div class="policy-content">
+          <p>Outre notre personnel et nos bénévoles autorisés, les partenaires suivants pourraient avoir accès à certaines données nécessaires à nos opérations :</p>
+          <ul>
+            <li><strong>La FNQ :</strong> Coordonnées et date de naissance pour l'affiliation et la gestion des comptes SportLomo.</li>
+            <li><strong>Natation Canada :</strong> Gestion de la plateforme nationale SportLomo.</li>
+            <li><strong>SwimRankings / SplashMe :</strong> Nom, prénom, date de naissance/âge et sexe des membres participants aux compétitions officielles pour la diffusion des résultats.</li>
+            <li><strong>Clubs de natation hôtes :</strong> Données d’inscription nécessaires à la logistique des compétitions.</li>
+            <li><strong>Fournisseurs de services :</strong> Fournisseurs techniques liés par contrat interdisant tout autre usage de vos renseignements.</li>
+            <li><strong>Assureurs du club :</strong> Aux fins de couverture d’assurance responsabilité et accidents.</li>
+            <li><strong>Autorités judiciaires :</strong> Lorsque requis par la loi ou par ordonnance d'un tribunal compétent.</li>
+          </ul>
+          <p><strong>Nous ne vendons ni n'échangeons aucune liste de nos membres à des tiers.</strong></p>
+        </div>
+      </details>
 
-    <h2>QUELS SONT LES TIERS QUI PEUVENT AVOIR ACCÈS À VOS RENSEIGNEMENTS PERSONNELS?</h2>
-    <p>Outre les employés et les bénévoles du Club de natation dont les fonctions rendent nécessaire l’accès aux renseignements personnels recueillis, les personnes suivantes auront ou pourraient avoir accès à vos renseignements personnels. </p>
+      <!-- 7. Liens externes et Témoins (Cookies) -->
+      <details class="policy-group">
+        <summary>7. Liens externes et fichiers témoins (cookies)</summary>
+        <div class="policy-content">
+          <h3>Liens vers des sites externes</h3>
+          <p>Notre Site internet peut contenir des liens vers des sites tiers (notamment SportLomo, Zeffy ou la FNQ). Ces sites disposent de leurs propres politiques de confidentialité auxquelles nous vous invitons à vous référer.</p>
 
-    <h3>La FNQ </h3>
-    <p>Le prénom, le nom, la date de naissance, l’adresse postale, l’adresse courriel et le numéro de téléphone de chacun des membres lui sont communiqués dans le cadre de votre affiliation et de la création de votre compte sur la plateforme SportLomo.</p>
+          <h3>Témoins de navigation (« Cookies »)</h3>
+          <p>Vous pouvez naviguer sur notre site de manière anonyme. Notre serveur peut utiliser des témoins de connexion pour compiler des rapports d'achalandage anonymes (nombre de visiteurs, pages consultées) dans le but d'optimiser l'expérience utilisateur. Vous pouvez désactiver ou supprimer les témoins à tout moment via les paramètres de votre navigateur.</p>
+        </div>
+      </details>
 
-    <h3>Natation Canada </h3>
-    <p>Le prénom, le nom, la date de naissance, l’adresse postale, l’adresse courriel et le numéro de téléphone de chacun des membres lui sont communiqués dans le cadre de la création de votre compte sur la plateforme SportLomo.</p>
+      <!-- 8. Accès, rectification et plaintes -->
+      <details class="policy-group">
+        <summary>8. Accès, rectification et plaintes</summary>
+        <div class="policy-content">
+          <p>Vous avez le droit de demander l’accès aux renseignements personnels que nous détenons à votre sujet ou d’en exiger la rectification s’ils sont inexacts ou incomplets. Nous répondrons à votre demande dans un délai de trente (30) jours suivant sa réception.</p>
+          <p>Pour déposer une plainte relative à la protection des renseignements personnels, veuillez transmettre une demande écrite comportant vos nom, prénom, coordonnées et le motif de votre plainte à la responsable désignée ci-dessous. Un accusé de réception vous sera transmis dans les 5 jours ouvrables.</p>
+        </div>
+      </details>
 
-    <h3>SwimRankings</h3>
-    <p>Nom, prénom, date de naissance et/ ou l’âge et le sexe des membres participants à une compétition de natation. La plateforme SwimRankings permet de diffuser en temps réel les résultats des compétitions de natation, notamment à travers son application mobile SplashMe. </p>
+      <!-- 9. Coordonnées de la personne responsable -->
+      <details class="policy-group">
+        <summary>9. Responsable de la protection des renseignements personnels</summary>
+        <div class="policy-content">
+          <p>Pour toute question, demande d'accès ou plainte relative à cette politique, veuillez contacter :</p>
+          <p>
+            <strong>Josée Brisebois</strong><br>
+            Coordonnatrice<br>
+            143 7e rue Ouest<br>
+            Sainte-Anne-des-Monts (QC) G4V 2L4<br>
+            Téléphone : <a href="tel:14189677706">418 967-7706</a><br>
+            Courriel : <a href="mailto:josee.brisebois@natationop.com">josee.brisebois@natationop.com</a>
+          </p>
+        </div>
+      </details>
 
-    <h3>Clubs de natation hôtes responsables de l’organisation des compétitions de natation </h3>
-    <p>nom, prénom, date de naissance et/ ou l’âge et le sexe des membres participants à une compétition de natation. Cette communication est nécessaire pour permettre l’inscription à la compétition et la gestion logistique de celle-ci.</p>
+      <div class="policy-footer-note">
+        <p>Politique adoptée par le conseil d'administration · Dernière mise à jour : 4 septembre 2025</p>
+      </div>
 
-    <h3>Certains fournisseurs de services </h3>
-    <p>Ils peuvent avoir accès à vos renseignements personnels afin de fournir le service requis, mais il leur est strictement interdit d’utiliser ces renseignements à d’autres fins. Le Club de natation s’assure de signer une entente de service avec chacun de ses fournisseurs afin de s’assurer de la protection des renseignements personnels qui leur seraient transmis;</p>
-
-    <h3>L’un ou l’autre des assureurs du Club de natation</h3>
-    <p>Pour des fins de couverture d’assurance.</p>
-
-    <h3>Toute personne ayant le pouvoir de contraindre à leur communication et qui les requiert dans l’exercice de ses fonctions</h3>
-    <p>Par exemple, s’il est nécessaire ou permis de les communiquer en vertu d’une loi applicable.</p>
-
-    <p>Le Club de natation pourrait également utiliser et communiquer vos renseignements personnels lorsqu’il pense que cette utilisation ou cette communication est autorisée, nécessaire ou appropriée dans l’un ou l’autre des cas suivants:</p>
-    <p>a.	Pour se conformer à une procédure judiciaire;</p>
-    <p>b.	Pour répondre à des demandes des autorités publiques et gouvernementales;</p>
-    <p>c.	Pour faire respecter ses ententes contractuelles;</p>
-    <p>d.	Pour protéger ses droits, sa sécurité ou ses biens, de vous-même ou d’autres personnes;</p>
-    <p>e.	Pour lui permettre d’exercer les recours disponibles ou limiter les dommages qu’il pourrait subir.</p>
-    <p>Nous ne communiquons jamais vos renseignements personnels à des tiers, à l’exception des personnes mentionnées ci-dessus, à moins d’avoir obtenu votre consentement.</p>
-    <p>Nous ne vendons pas notre liste de membres à aucun organisme ou compagnie ni ne l’échangeons avec quiconque.</p>
-
-    <h2>LIENS VERS LES SITES EXTERNES </h2>
-    <p>Le Site internet exploité par le Club de natation peut contenir des liens vers des sites externes (de tiers, de fournisseurs ou de partenaires, notamment celui permettant l’utilisation de la plateforme exploitée par Natation Canada aux fins de l’affiliation comme membre) qui ne sont pas couverts par cette Politique. Les renseignements que vous fournissez dans ces sites sont soumis à la politique de confidentialité du site externe, s’il en existe une.</p>
-    <p>Nous ne sommes pas responsables des politiques de confidentialité adoptées par des tiers ou tout autre partenaire étant donné que chacun doit respecter la législation en vigueur dans son pays de résidence. Nous vous suggérons donc d’étudier les politiques de confidentialité affichées sur chacun de ces sites afin de savoir comment les renseignements personnels peuvent y être recueillis, détenus, utilisés ou communiqués.</p>
-
-    <h2>LES « TÉMOINS » (« COOKIES ») SUR LE SITE INTERNET </h2>
-    <p>Vous pouvez visiter le Site internet de manière anonyme en tout temps, et ce, sans nous révéler de renseignements personnels. Lorsque vous vous connectez à notre Site internet, notre serveur, par l’entremise de témoins de connexion, identifie l’adresse IP de votre ordinateur, votre tablette ou votre appareil mobile (ci-après l’« Appareil ») afin de permettre l’échange de données. Aucun renseignement personnel n’est relié à votre adresse IP.</p>
-    <p>Les témoins sont des morceaux d’information qui vous sont envoyés par un site internet lorsque vous le visitez. Ils se stockent de façon temporaire ou permanente sur votre Appareil pour garder des traces de votre visite. Nous pouvons utiliser des témoins afin de faciliter votre navigation ou de personnaliser l’utilisation que vous faites de notre Site internet. Les témoins sont inoffensifs en ce sens qu’ils ne peuvent pas extraire des renseignements personnels de votre Appareil. Vous pouvez les consulter et les détruire si vous le désirez. Vous en avez donc le plein contrôle. Nous vous conseillons de vous référer aux paramètres de votre navigateur pour effectuer les modifications appropriées. </p>
-    <p>Le Site internet utilise notamment des témoins. Ces témoins servent à recueillir de l’information sur la manière dont les visiteurs utilisent notre Site internet. Nous utilisons l’information pour compiler des rapports et pour nous aider à améliorer notre Site internet. Les témoins recueillent de l’information sous forme anonyme, y compris le nombre de visiteurs sur le Site internet, leur provenance avant de naviguer sur le Site internet et les pages qu’ils ont visitées.</p>
-
-    <h2>L’ACCÈS À VOS RENSEIGNEMENTS PERSONNELS</h2>
-    <p>Nous permettons à toute personne concernée par les renseignements personnels recueillis et détenus par nous de rectifier tout renseignement personnel la concernant qui serait inexact ou incomplet. Pour toute demande, veuillez communiquer par écrit avec la personne responsable de la protection des renseignements personnels ci-dessous identifiée. Nous répondrons à toute demande d’accès ou de rectification dans les trente (30) jours de la date de réception de la demande. Si la demande est refusée, les motifs du refus seront communiqués à la personne qui a fait une telle demande.</p>
-
-    <h2>PLAINTE</h2>
-    <p>Dans un objectif de maintenir et d’améliorer la qualité de nos services, nous offrons la possibilité à toute personne d’exprimer son insatisfaction à l’égard de la protection des renseignements personnels que nous recueillons, détenons, utilisons ou communiquons. Ainsi, la personne qui désire formuler une plainte doit communiquer par écrit avec la personne responsable de la protection des renseignements personnels ci-dessous identifiée. La plainte devra indiquer les éléments suivants relatifs au plaignant :</p>
-    <p>•	Nom et prénom;</p>
-    <p>•	Numéro de téléphone;</p>
-    <p>•	Adresse postale ou adresse courriel;</p>
-    <p>•	Motif(s) de la plainte.</p>
-    <p>Toute plainte sera traitée de façon confidentielle. Le Club de natation accusera réception de la plainte dans les cinq (5) jours ouvrables de la date de sa réception et répondra à toute plainte dans les trente (30) jours de la date de sa réception.</p>
-
-    <h2>COORDONNÉES DE LA PERSONNE RESPONSABLE DE LA PROTECTION DES RENSEIGNEMENTS PERSONNELS </h2>
-    <p>Josée Brisebois</p>
-    <p>Coordonnatrice</p>
-    <p>143 7e rue Ouest</p>
-    <p>Sainte-Anne-des-Monts QC G4V 2L4</p>
-    <p>418 967-7706</p>
-    <p>josee.brisebois@natationop.com</p>
-
-    <h2>MISE EN VIGUEUR ET MODIFICATION DE LA POLITIQUE</h2>
-    <p>La présente Politique entre en vigueur le jour de son adoption par le conseil d’administration du Club de natation et elle a effet dès cette adoption. La présente Politique pourra être modifiée par le Club de natation en tout temps. Les modifications à la présente Politique entreront en vigueur dès leur publication sur notre Site internet. </p>
-    <p>Dernière mise à jour : 2025-09-04</p>
-
-
+    </div>
   </main>
 
-  <!-- 
-  ********************************************
-  BAS DE PAGE
-  ********************************************
-  -->
+  <!-- Footer -->
   <div id="footer"></div>
   <script>
-    fetch('/OPNatation/pages/footer.html')
+    fetch('/pages/footer.html')
       .then(r => r.text())
       .then(html => document.getElementById('footer').innerHTML = html);
   </script>
