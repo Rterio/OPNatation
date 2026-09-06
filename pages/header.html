@@ -485,7 +485,7 @@
       color: #64748b;
     }
 
-    /* Logo tinted to match the site's brand navy (#1a1a2e) */
+    /* Logo tinted to match brand navy */
     .zeffy-locked-logo {
       height: 52px;
       width: auto;
@@ -618,7 +618,7 @@ function OuvrirZeffy() {
   topBar.className = 'zeffy-modal-top';
 
   topBar.innerHTML = `
-    <details class="zeffy-record-group">
+    <details class="zeffy-record-group" id="zeffy-details-dropdown">
       <summary>Informations et règlements de la saison 2025-2026</summary>
       <div class="zeffy-content-body">
         <h1>INFORMATIONS CONCERNANT LA SAISON 2025-2026</h1>
@@ -697,7 +697,7 @@ function OuvrirZeffy() {
     </div>
   `;
 
-  // 3. PLACEHOLDER CARD (Displays the Club Logo tinted in brand navy)
+  // 3. PLACEHOLDER CARD
   const placeholder = document.createElement('div');
   placeholder.className = 'zeffy-locked-placeholder';
   placeholder.innerHTML = `
@@ -706,7 +706,7 @@ function OuvrirZeffy() {
     <p class="zeffy-locked-sub">Veuillez cocher la case ci-dessus confirmant que vous avez lu et accepté les règlements pour afficher le formulaire d'inscription.</p>
   `;
 
-  // 4. ROUNDED IFRAME FRAME (When accepted)
+  // 4. ROUNDED IFRAME FRAME
   const iframeWrapper = document.createElement('div');
   iframeWrapper.className = 'zeffy-iframe-wrapper';
 
@@ -730,10 +730,14 @@ function OuvrirZeffy() {
   overlay.appendChild(modalBox);
   document.body.appendChild(overlay);
 
-  // Toggle placeholder vs iframe based on checkbox state
+  // Toggle placeholder vs iframe and close dropdown on check
   const consentCheckbox = topBar.querySelector('#zeffy-consent-check');
+  const detailsDropdown = topBar.querySelector('#zeffy-details-dropdown');
+
   consentCheckbox.addEventListener('change', (e) => {
     if (e.target.checked) {
+      // Closes the terms and conditions dropdown accordion automatically
+      detailsDropdown.open = false;
       placeholder.style.display = 'none';
       iframeWrapper.style.display = 'block';
     } else {
