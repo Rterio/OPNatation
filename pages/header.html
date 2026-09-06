@@ -485,10 +485,12 @@
       color: #64748b;
     }
 
-    .zeffy-locked-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      color: #1a56db;
+    .zeffy-locked-logo {
+      height: 52px;
+      width: auto;
+      margin-bottom: 16px;
+      opacity: 0.85;
+      display: block;
     }
 
     .zeffy-locked-title {
@@ -595,7 +597,7 @@ function OuvrirZeffy() {
   const modalBox = document.createElement('div');
   modalBox.className = 'zeffy-modal-box';
 
-  // 1. DEDICATED TITLE BAR (Header bar holding title + close button)
+  // 1. DEDICATED TITLE BAR
   const headerBar = document.createElement('div');
   headerBar.className = 'zeffy-modal-header-bar';
 
@@ -694,11 +696,11 @@ function OuvrirZeffy() {
     </div>
   `;
 
-  // 3. PLACEHOLDER CARD (When not accepted)
+  // 3. PLACEHOLDER CARD (Displays the Club Logo instead of the lock)
   const placeholder = document.createElement('div');
   placeholder.className = 'zeffy-locked-placeholder';
   placeholder.innerHTML = `
-    <div class="zeffy-locked-icon">🔒</div>
+    <img src="/static/image-removebg-preview.png" alt="Logo OPNatation" class="zeffy-locked-logo">
     <div class="zeffy-locked-title">Accepter pour continuer</div>
     <p class="zeffy-locked-sub">Veuillez cocher la case ci-dessus confirmant que vous avez lu et accepté les règlements pour afficher le formulaire d'inscription.</p>
   `;
@@ -719,7 +721,7 @@ function OuvrirZeffy() {
   iframeFrame.appendChild(iframe);
   iframeWrapper.appendChild(iframeFrame);
 
-  // Assemble the modal in order
+  // Assemble the modal elements
   modalBox.appendChild(headerBar);
   modalBox.appendChild(topBar);
   modalBox.appendChild(placeholder);
