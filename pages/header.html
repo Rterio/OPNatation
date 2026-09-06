@@ -275,7 +275,7 @@
       }
     }
 
-    /* --- Custom Modal Layout Styles (Matched to site UI) --- */
+    /* --- Custom Modal Layout Styles --- */
     .zeffy-modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -301,31 +301,48 @@
       font-family: Arial, sans-serif;
     }
 
-    .zeffy-modal-close {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
+    /* Dedicated Top Title Bar */
+    .zeffy-modal-header-bar {
+      background: #1a1a2e;
+      color: #ffffff;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .zeffy-modal-title {
+      font-size: 0.95rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    /* Standardized Close Button */
+    .zeffy-modal-close-btn {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
       border: none;
       width: 28px;
       height: 28px;
       border-radius: 50%;
       font-size: 16px;
+      line-height: 1;
       font-weight: bold;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 30;
       transition: background 0.2s;
     }
 
-    .zeffy-modal-close:hover {
+    .zeffy-modal-close-btn:hover {
       background: rgba(255, 255, 255, 0.35);
     }
 
-    /* Modal Top Header */
+    /* Modal Accordion & Consent Body */
     .zeffy-modal-top {
       background: #f5f5f5;
       border-bottom: 1px solid #e5e7eb;
@@ -333,7 +350,7 @@
       flex-shrink: 0;
     }
 
-    /* Accordion Details - styled identical to .record-group */
+    /* Dropdown Accordion */
     .zeffy-record-group {
       background: white;
       border: 1px solid #e5e7eb;
@@ -414,7 +431,7 @@
       text-decoration: underline;
     }
 
-    /* Consent Bar with Site Badge */
+    /* Consent Bar */
     .zeffy-consent-wrapper {
       display: flex;
       align-items: center;
@@ -455,25 +472,65 @@
       white-space: nowrap;
     }
 
-    /* Disabled/Active Iframe Wrapper */
-    .zeffy-iframe-container {
-      position: relative;
+    /* Clean Locked Placeholder Card */
+    .zeffy-locked-placeholder {
       flex: 1;
-      width: 100%;
-      background: #ffffff;
-      transition: filter 0.25s ease, opacity 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      background: #f8fafc;
+      color: #64748b;
     }
 
-    .zeffy-iframe-container.disabled {
-      filter: grayscale(100%);
-      opacity: 0.25;
-      pointer-events: none;
+    .zeffy-locked-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #1a56db;
+    }
+
+    .zeffy-locked-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .zeffy-locked-sub {
+      font-size: 0.85rem;
+      color: #888;
+      max-width: 380px;
+      line-height: 1.5;
+    }
+
+    /* Rounded Iframe Container */
+    .zeffy-iframe-wrapper {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      padding: 12px;
+      background: #ffffff;
+      display: none;
+    }
+
+    .zeffy-iframe-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
     }
 
     .zeffy-modal-iframe {
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
     }
   </style>
 </head>
@@ -538,10 +595,22 @@ function OuvrirZeffy() {
   const modalBox = document.createElement('div');
   modalBox.className = 'zeffy-modal-box';
 
+  // 1. DEDICATED TITLE BAR (Header bar holding title + close button)
+  const headerBar = document.createElement('div');
+  headerBar.className = 'zeffy-modal-header-bar';
+
+  const titleSpan = document.createElement('span');
+  titleSpan.className = 'zeffy-modal-title';
+  titleSpan.textContent = 'Inscriptions 2026-2027';
+
   const closeBtn = document.createElement('button');
-  closeBtn.className = 'zeffy-modal-close';
+  closeBtn.className = 'zeffy-modal-close-btn';
   closeBtn.innerHTML = '&times;';
 
+  headerBar.appendChild(titleSpan);
+  headerBar.appendChild(closeBtn);
+
+  // 2. MODAL BODY (Dropdown + Consent check)
   const topBar = document.createElement('div');
   topBar.className = 'zeffy-modal-top';
 
@@ -597,14 +666,14 @@ function OuvrirZeffy() {
         <p>Le casque aux couleurs du club (vert) est obligatoire pour les compétitions. Il est disponible au coût de 16$.</p>
         <p>Si votre enfant a besoin de lunettes de natation, le club en offre au coût de 28$.</p>
         <p>Vous pouvez acquitter les frais en accédant à notre boutique :</p>
-        <p><a href="/OPNatation/pages/boutique.html">Boutique</a></p>
+        <p><a href="/pages/boutique.html">Boutique</a></p>
         
         <h2>Entraîneur-chef</h2>
         <p>L’entraîneur-chef pour l’année 2026-2027 sera Audrey Anderson.</p>
         
         <h2>Politique de confidentialité</h2>
         <p>Vous pouvez consulter notre politique de confidentialité ici :</p>
-        <p><a href="/OPNatation/pages/Politique.html">Politique de confidentialité</a></p>
+        <p><a href="/pages/Politique.html">Politique de confidentialité</a></p>
         
         <h2>Politique d’intégrité</h2>
         <p>La Fédération de Natation du Québec (FNQ) s’est dotée d’une politique d’intégrité. Nous vous invitons à la consulter ici :</p>
@@ -625,8 +694,21 @@ function OuvrirZeffy() {
     </div>
   `;
 
-  const iframeContainer = document.createElement('div');
-  iframeContainer.className = 'zeffy-iframe-container disabled';
+  // 3. PLACEHOLDER CARD (When not accepted)
+  const placeholder = document.createElement('div');
+  placeholder.className = 'zeffy-locked-placeholder';
+  placeholder.innerHTML = `
+    <div class="zeffy-locked-icon">🔒</div>
+    <div class="zeffy-locked-title">Accepter pour continuer</div>
+    <p class="zeffy-locked-sub">Veuillez cocher la case ci-dessus confirmant que vous avez lu et accepté les règlements pour afficher le formulaire d'inscription.</p>
+  `;
+
+  // 4. ROUNDED IFRAME FRAME (When accepted)
+  const iframeWrapper = document.createElement('div');
+  iframeWrapper.className = 'zeffy-iframe-wrapper';
+
+  const iframeFrame = document.createElement('div');
+  iframeFrame.className = 'zeffy-iframe-frame';
 
   const iframe = document.createElement('iframe');
   iframe.className = 'zeffy-modal-iframe';
@@ -634,21 +716,26 @@ function OuvrirZeffy() {
   iframe.setAttribute('allowpaymentrequest', 'true');
   iframe.setAttribute('allowTransparency', 'true');
 
-  iframeContainer.appendChild(iframe);
+  iframeFrame.appendChild(iframe);
+  iframeWrapper.appendChild(iframeFrame);
 
-  modalBox.appendChild(closeBtn);
+  // Assemble the modal in order
+  modalBox.appendChild(headerBar);
   modalBox.appendChild(topBar);
-  modalBox.appendChild(iframeContainer);
+  modalBox.appendChild(placeholder);
+  modalBox.appendChild(iframeWrapper);
   overlay.appendChild(modalBox);
   document.body.appendChild(overlay);
 
-  // Toggle Zeffy iframe disabled/active state
+  // Toggle placeholder vs iframe based on checkbox state
   const consentCheckbox = topBar.querySelector('#zeffy-consent-check');
   consentCheckbox.addEventListener('change', (e) => {
     if (e.target.checked) {
-      iframeContainer.classList.remove('disabled');
+      placeholder.style.display = 'none';
+      iframeWrapper.style.display = 'block';
     } else {
-      iframeContainer.classList.add('disabled');
+      placeholder.style.display = 'flex';
+      iframeWrapper.style.display = 'none';
     }
   });
 
