@@ -485,12 +485,13 @@
       color: #64748b;
     }
 
+    /* Logo tinted to match the site's brand navy (#1a1a2e) */
     .zeffy-locked-logo {
       height: 52px;
       width: auto;
       margin-bottom: 16px;
-      opacity: 0.85;
       display: block;
+      filter: brightness(0) invert(11%) sepia(21%) saturate(1638%) hue-rotate(202deg) brightness(91%) contrast(93%);
     }
 
     .zeffy-locked-title {
@@ -696,7 +697,7 @@ function OuvrirZeffy() {
     </div>
   `;
 
-  // 3. PLACEHOLDER CARD (Displays the Club Logo instead of the lock)
+  // 3. PLACEHOLDER CARD (Displays the Club Logo tinted in brand navy)
   const placeholder = document.createElement('div');
   placeholder.className = 'zeffy-locked-placeholder';
   placeholder.innerHTML = `
