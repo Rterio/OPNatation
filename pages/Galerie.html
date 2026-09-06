@@ -103,7 +103,7 @@
 
 <div id="header"></div>
 <script>
-  fetch('/OPNatation/pages/header.html')
+  fetch('/pages/header.html')
     .then(r => r.text())
     .then(html => {
       const headerEl = document.getElementById('header');
@@ -137,11 +137,11 @@
 
   <script>
     // Component Loader Engine for Header & Footer Components
-    fetch('/OPNatation/pages/header.html?v=' + Date.now())
+    fetch('/pages/header.html?v=' + Date.now())
       .then(r => r.text())
       .then(h => document.getElementById('header').innerHTML = h);
 
-    fetch('/OPNatation/pages/footer.html')
+    fetch('/pages/footer.html')
       .then(r => r.text())
       .then(h => document.getElementById('footer').innerHTML = h);
 

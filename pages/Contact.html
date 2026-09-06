@@ -189,7 +189,7 @@
   <!-- Dynamic Header Injection Point -->
   <div id="header"></div>
 <script>
-  fetch('/OPNatation/pages/header.html')
+  fetch('/pages/header.html')
     .then(r => r.text())
     .then(html => {
       const headerEl = document.getElementById('header');
@@ -280,14 +280,14 @@
   <!-- Component Loader JavaScript (Cleaned and separated completely below the body to avoid render freezes) -->
   <script>
     // Fetch Header Component with active cache-busting timestamp string parameter
-    fetch('/OPNatation/pages/header.html?v=' + Date.now())
+    fetch('/pages/header.html?v=' + Date.now())
       .then(response => response.text())
       .then(html => {
         document.getElementById('header').innerHTML = html;
       });
 
     // Fetch Footer Component
-    fetch('/OPNatation/pages/footer.html')
+    fetch('/pages/footer.html')
       .then(response => response.text())
       .then(html => {
         document.getElementById('footer').innerHTML = html;
